@@ -20,12 +20,12 @@ const Header = () => {
 
   const navigationItems = [
     { name: 'Home', href: '/', active: true },
-    { name: 'About Us', href: '/about', hasDropdown: true },
-    { name: 'Services', href: '/services', hasDropdown: true },
-    { name: 'News & Events', href: '/news' },
-    { name: 'Careers', href: '/careers' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'About Us', href: '/aboutus' },
+    { name: 'Services', href: 'https://www.macnross.com/services', hasDropdown: true },
+    { name: 'Taxation', href: 'https://www.macnross.com/taxation', hasDropdown: true },
+    { name: 'News & Events', href: 'https://www.macnross.com/news' },
+    { name: 'Careers', href: 'https://www.macnross.com/careers' },
+    { name: 'Contact Us', href: 'https://www.macnross.com/contact' },
   ];
 
   return (
@@ -52,7 +52,7 @@ const Header = () => {
               </div>
               <div className="flex items-center space-x-2 text-gray-600">
                 <Phone className="w-4 h-4" />
-                <span>+971-4-227-0977</span>
+                <span>+971-4-3584999</span>
               </div>
             </div>
 
@@ -84,8 +84,8 @@ const Header = () => {
             {/* Logo - Always visible */}
             {!isScrolled && (
             <div className="flex items-center">
-              <a href="/" className="flex items-center space-x-2">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-green-600 rounded-lg flex items-center justify-center">
+              <a href="https://www.macnross.com/" className="flex items-center space-x-2">
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-green-600 rounded-[4px] flex items-center justify-center">
                   <div className="w-6 h-6 bg-white rounded transform rotate-12"></div>
                 </div>
                 <span className="text-white text-2xl font-bold">Mac & Ross</span>
@@ -114,8 +114,8 @@ const Header = () => {
             {/* CTA Button - Always visible */}
              {!isScrolled && (
             <div className="hidden md:block">
-              <button className="bg-[#FFFFFF33] backdrop-blur-[28px]  hover:bg-[#FFFFFF42] hover:backdrop-blur-[28px] text-white px-6 py-2 rounded-md font-semibold transition-colors duration-200">
-                CONSULTATION
+              <button className="bg-[#FFFFFF33] backdrop-blur-[28px] cursor-pointer hover:bg-[#FFFFFF42] hover:backdrop-blur-[28px] text-white px-6 py-2 rounded-[4px] font-semibold transition-colors duration-200">
+                GET CONSULTATION
               </button>
             </div>
              )}
@@ -125,7 +125,7 @@ const Header = () => {
           <nav className={`transition-all duration-300 ${
             isScrolled ? 'mt-2  ' : 'mt-4'
           }`}>
-            <div className={`flex justify-center items-center mx-auto max-w-6xl ${
+            <div className={`flex justify-center items-center rounded-[4px] mx-auto max-w-6xl ${
             isScrolled ? '  ' : 'bg-[#FFFFFF33] backdrop-blur-[28px] py-2'
           } `}>
               <ul className="flex space-x-8">
@@ -144,12 +144,41 @@ const Header = () => {
                         <ChevronDown className="w-4 h-4" />
                       )}
                     </a>
-                    {item.hasDropdown && (
-                      <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    {item.hasDropdown && item.name === 'Services' && (
+                      <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-[4px] shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                         <div className="py-2">
-                          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">Audit & Assurance</a>
-                          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">VAT Consultancy</a>
+                          <div className="relative group/sub">
+                            <a href="#" className="px-4 py-2 text-gray-800 hover:bg-blue-50 flex items-center justify-between">
+                              Audit and Assurance
+                              <ChevronDown className="w-3 h-3 rotate-[-90deg]" />
+                            </a>
+                            <div className="absolute left-full top-0 mt-0 ml-2 w-48 bg-white rounded-[4px] shadow-lg opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200">
+                              <div className="py-2">
+                                <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">External Audit</a>
+                                <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">Internal Audit</a>
+                                <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">IFRS Advisory</a>
+                                <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">Custom Audit</a>
+                                <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">Investigation Audit</a>
+                              </div>
+                            </div>
+                          </div>
+                          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">Accounting Services</a>
+                          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">Management Consultancy</a>
                           <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">Corporate Finance</a>
+                          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">Company Formation</a>
+                        </div>
+                      </div>
+                    )}
+                    {item.hasDropdown && item.name === 'Taxation' && (
+                      <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-[4px] shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                        <div className="py-2">
+                          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">Value Added Tax (VAT)</a>
+                          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">UAE Corporate Tax</a>
+                          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">Excise Tax</a>
+                          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">Country by Country Reporting (CBCR)</a>
+                          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">Ultimate Beneficial Ownership(UBO)</a>
+                          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">Anti Money Laundering</a>
+                          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">Transfer Pricing</a>
                         </div>
                       </div>
                     )}

@@ -17,7 +17,7 @@ import {
 const Footer = () => {
   return (
    <>
-    <footer className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-12 px-6 max-w-6xl mx-auto relative overflow-hidden">
+    <footer className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-12 my-10 px-6 max-w-6xl mx-auto relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full animate-pulse"></div>

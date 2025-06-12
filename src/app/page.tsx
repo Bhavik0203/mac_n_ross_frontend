@@ -9,6 +9,7 @@ import banner3 from "@/app/images/bgg.png"; // Adjust the path as necessary
 import banner1 from "@/app/images/bgg2.png"; // Adjust the path as necessary
 import OneBlog from "./components/legacyScrollBar";
 import pic from "@/app/images/accounting_services.jpg"; // Adjust the path as necessary
+import ScrollImageAnimation from "./components/ui/ScrollImageAnimation";
 // Font configurations
 
 
@@ -22,7 +23,35 @@ interface Slide {
 
 export default function Home() {
   // State management
-  
+    const itemsRef = useRef<HTMLDivElement[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in-up');
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    itemsRef.current.forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      itemsRef.current.forEach((el) => {
+        if (el) observer.unobserve(el);
+      });
+    };
+  }, []);
+
+  const titles = ['OUR STRATEGY', 'OUR STANDARDS', 'OUR TEAM', 'OUR STRENGTH'];
+
    const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -107,20 +136,20 @@ export default function Home() {
   // Slide data
   const slides: Slide[] = [
     {
-      title: "we help",
-      subtitle: "growing business",
+      title: "We Help",
+      subtitle: "Growing Business",
       description: "We help you managing asset, provide financial advice. Leave money issue with us and focus on your core business.",
       buttonText: "Contact Us"
     },
     {
-      title: "we support",
-      subtitle: "scaling ventures",
+      title: "We Support",
+      subtitle: "Scaling Ventures",
       description: "Transform your business with our comprehensive financial solutions and expert guidance for sustainable growth.",
       buttonText: "Learn More"
     },
     {
-      title: "we empower",
-      subtitle: "success stories",
+      title: "We Empower",
+      subtitle: "Success Stories",
       description: "Partner with us to unlock your business potential through strategic financial planning and asset management.",
       buttonText: "Get Started"
     }
@@ -295,7 +324,7 @@ export default function Home() {
         </div>
 
         {/* Content Container - Now properly centered */}
-        <div className="relative z-10 mt-20 w-full max-w-6xl  text-start">
+        <div className="relative px-4 z-10 mt-20 w-full max-w-6xl  text-start">
           <div className="max-w-4xl px-4">
             {/* Animated Content */}
             <div 
@@ -396,7 +425,7 @@ export default function Home() {
       {/* Additional content sections can go here */}
       
    <section
-  className="relative pb-20 bg-cover bg-center bg-no-repeat bg-fixed"
+  className="relative pb-20 px-4 bg-cover bg-center bg-no-repeat bg-fixed"
   style={{ backgroundImage: `url('${banner1.src}')` }}
 >
   {/* Background Image with Overlay */}
@@ -408,7 +437,7 @@ export default function Home() {
   style={{ backgroundImage: `url('${banner1.src}')` }}>
    
     {/* Title */}
-    <h2 className="uppercase text-[22px] tracking-widest text-gray-800 mb-2">
+    <h2 className="uppercase text-[22px] tracking-widest text-gray-800 mt-16 mb-2">
       Mac & Ross Chartered Accountants L.L.C
     </h2>
     <h2 className="text-5xl font-bold text-gray-800 mb-6">
@@ -416,7 +445,7 @@ export default function Home() {
     </h2>
 
     {/* Two Column Content */}
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-left pb-6">
+    <div className="grid grid-cols-1 lg:grid-cols-2 px-4 gap-8 text-left pb-6">
       <div className="leading-relaxed">
         <p>
           Mac & Ross Chartered Accountants L.L.C, an Auditing & Consulting firm in U.A.E and a member of RT ASEAN Network (a member of Forum of Firms), has had a presence in the UAE for over a decade. It has earned its place in the field of Audit & Assurance, Accounting, Management Consultancy, and Taxation.
@@ -433,8 +462,8 @@ export default function Home() {
       </div>
     </div>
   </div>
-   <div className="max-w-6xl z-50 mx-auto my-10 shadow-lg">
-     <div className="grid grid-cols-1 md:grid-cols-2 gap-0 max-w-6xl mx-auto">
+   <div className="max-w-6xl  z-50 mx-auto px-4 my-10 ">
+     <div className="grid grid-cols-1 md:grid-cols-2 gap-0 max-w-6xl mx-auto shadow-lg ">
           {/* Top Left - Video Section */}
           <div className="relative bg-gray-100">
             <div className="relative w-full h-full min-h-[400px]">
@@ -513,130 +542,66 @@ export default function Home() {
         </div>
     </div>
 </section>
-    <section className="bg-red-50 py-16 px-4">
+
+{/* <ScrollImageAnimation/> */}
+     <section className="bg-red-50 py-16 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-5xl font-bold text-gray-800 mb-6">
+        <div className="text-center ">
+          <h2 className="text-5xl font-bold text-gray-800 ">
             A Brief About{' '}
-            <span className="text-red-500 relative inline-block">
+            <span className="text-red-500 relative inline-block underline-animation">
               Mac N Ross
-              <div className="absolute -bottom-2 left-0 w-full h-1 bg-red-500 transform scale-x-0 animate-underline-expand"></div>
+              <span className="absolute -bottom-2 left-0 w-full h-1 bg-red-500 scale-x-0 animation-underline"></span>
             </span>
           </h2>
         </div>
 
-        {/* Four Pillars Grid */}
+        {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          
-          {/* Our Strategy */}
-          <div className="flex flex-col items-center text-center group animate-fade-in-up animation-delay-100">
-            <div className="w-48 h-48 bg-white cursor-pointer rounded-full shadow-lg flex items-center justify-center mb-6 relative overflow-hidden transform transition-all duration-500 ease-out group-hover:scale-110 group-hover:shadow-2xl group-hover:-translate-y-2">
-              <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <Image
-                src={pic}
-                alt="Business team meeting"
-                fill
-                className="object-cover cursor-pointer transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+          {titles.map((title, index) => (
+            <div
+              key={title}
+              ref={el => { itemsRef.current[index] = el!; }}
+              className="opacity-0 transform translate-y-10 transition-all duration-700 delay-[index * 100] ease-out"
+              style={{ transitionDelay: `${index * 200}ms` }}
+            >
+              <div className="flex flex-col items-center text-center group">
+                <div className="w-48 h-48 bg-white rounded-[10px] shadow-lg flex items-center justify-center mb-6 relative overflow-hidden transform transition-all duration-500 ease-out group-hover:scale-110 group-hover:shadow-2xl group-hover:-translate-y-2 cursor-pointer">
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <Image
+                    src={pic}
+                    alt="Pillar Image"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-red-500 group-hover:scale-105 transition-all duration-300">
+                  {title}
+                </h3>
+                <div className="w-0 h-0.5 bg-red-500 group-hover:w-full transition-all duration-300"></div>
               </div>
             </div>
-            <h3 className="text-xl font-bold cursor-pointer text-gray-800 mb-2 transform transition-all duration-300 group-hover:text-red-500 group-hover:scale-105">
-              OUR STRATEGY
-            </h3>
-            <div className="w-0 h-0.5 bg-red-500 group-hover:w-full transition-all duration-300"></div>
-          </div>
-
-          {/* Our Standards */}
-          <div className="flex flex-col items-center cursor-pointer text-center group animate-fade-in-up animation-delay-200">
-            <div className="w-48 h-48 bg-white rounded-full shadow-lg flex items-center justify-center mb-6 relative overflow-hidden transform transition-all duration-500 ease-out group-hover:scale-110 group-hover:shadow-2xl group-hover:-translate-y-2">
-              <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <Image
-                src={pic}
-                alt="Business team meeting"
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <h3 className="text-xl font-bold text-gray-800 mb-2 transform transition-all duration-300 group-hover:text-red-500 group-hover:scale-105">
-              OUR STANDARDS
-            </h3>
-            <div className="w-0 h-0.5 bg-red-500 group-hover:w-full transition-all duration-300"></div>
-          </div>
-
-          {/* Our Team */}
-          <div className="flex flex-col items-center cursor-pointer text-center group animate-fade-in-up animation-delay-300">
-            <div className="w-48 h-48 bg-white rounded-full shadow-lg flex items-center justify-center mb-6 relative overflow-hidden transform transition-all duration-500 ease-out group-hover:scale-110 group-hover:shadow-2xl group-hover:-translate-y-2">
-              <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <Image
-                src={pic}
-                alt="Business team meeting"
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <h3 className="text-xl font-bold text-gray-800 mb-2 transform transition-all duration-300 group-hover:text-red-500 group-hover:scale-105">
-              OUR TEAM
-            </h3>
-            <div className="w-0 h-0.5 bg-red-500 group-hover:w-full transition-all duration-300"></div>
-          </div>
-
-          {/* Our Strength */}
-          <div className="flex flex-col items-center cursor-pointer text-center group animate-fade-in-up animation-delay-400">
-            <div className="w-48 h-48 bg-white rounded-full shadow-lg flex items-center justify-center mb-6 relative overflow-hidden transform transition-all duration-500 ease-out group-hover:scale-110 group-hover:shadow-2xl group-hover:-translate-y-2">
-              <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <Image
-                src={pic}
-                alt="Business team meeting"
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <h3 className="text-xl font-bold text-gray-800 mb-2 transform transition-all duration-300 group-hover:text-red-500 group-hover:scale-105">
-              OUR STRENGTH
-            </h3>
-            <div className="w-0 h-0.5 bg-red-500 group-hover:w-full transition-all duration-300"></div>
-          </div>
+          ))}
         </div>
       </div>
 
       <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+        .fade-in-up {
+          opacity: 1 !important;
+          transform: translateY(0px) !important;
+        }
+
+        .animation-underline {
+          animation: underlineExpand 1s ease-out forwards;
+          animation-delay: 0.5s;
         }
 
         @keyframes underlineExpand {
@@ -647,32 +612,8 @@ export default function Home() {
             transform: scaleX(1);
           }
         }
-
-        .animate-fade-in-up {
-          animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        .animate-underline-expand {
-          animation: underlineExpand 1s ease-out 0.5s forwards;
-        }
-
-        .animation-delay-100 {
-          animation-delay: 0.1s;
-        }
-
-        .animation-delay-200 {
-          animation-delay: 0.2s;
-        }
-
-        .animation-delay-300 {
-          animation-delay: 0.3s;
-        }
-
-        .animation-delay-400 {
-          animation-delay: 0.4s;
-        }
       `}</style>
-    </section> 
+    </section>
     </div>
     <section >
                  <div className="min-h-screen pt-16  bg-cover bg-center bg-no-repeat bg-fixed"
