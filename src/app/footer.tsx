@@ -17,7 +17,7 @@ import {
 const Footer = () => {
   return (
    <>
-    <footer className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-12 my-10 px-6 max-w-6xl mx-auto relative overflow-hidden">
+    <footer className="bg-gradient-to-br from-gray-900 to-blue-900 text-white py-12 mt-10 mb-2 px-6 max-w-6xl mx-auto relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full animate-pulse"></div>
@@ -52,13 +52,13 @@ const Footer = () => {
     {/* Main Office */}
     <div className="mb-6 group">
       <p className="text-blue-200 font-medium mb-3 group-hover:text-white transition-colors duration-300">Main Office</p>
-      <div className="flex items-start text-sm group hover:bg-blue-800 hover:bg-opacity-30 p-2 rounded-lg transition-all duration-300 hover:translate-x-2">
+      <div className="flex items-start text-sm group hover:bg-gradient-to-br hover:from-gray-800 hover:to-blue-900 hover:bg-opacity-30 p-2 rounded-lg transition-all duration-300 hover:translate-x-2">
         <Phone className="w-4 h-4 mr-2 flex-shrink-0 mt-0.5 group-hover:text-blue-300 group-hover:animate-bounce transition-all duration-300" />
         <a href="tel:+97142511626" className="text-blue-200 hover:text-white transition-all duration-300 hover:underline decoration-wavy">
           +971 4 251 1626
         </a>
       </div>
-      <div className="flex items-center text-sm group hover:bg-blue-800 hover:bg-opacity-30 p-2 rounded-lg transition-all duration-300 hover:translate-x-2">
+      <div className="flex items-center text-sm group hover:bg-gradient-to-br hover:from-gray-800 hover:to-blue-900 hover:bg-opacity-30 p-2 rounded-lg transition-all duration-300 hover:translate-x-2">
         <Mail className="w-4 h-4 mr-2 flex-shrink-0 group-hover:text-blue-300 group-hover:animate-bounce transition-all duration-300" />
         <a href="mailto:info@macnross.com" className="text-blue-200 hover:text-white transition-all duration-300 hover:underline decoration-wavy">
           info@macnross.com
@@ -110,7 +110,7 @@ const Footer = () => {
   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
     
     {/* Recent News */}
-    <div className="transform hover:scale-105 transition-all duration-500 ease-out hover:bg-blue-800 hover:bg-opacity-20 p-4 rounded-lg hover:shadow-xl">
+    <div className="transform hover:scale-105 transition-all duration-500 ease-out hover:bg-gradient-to-br hover:from-gray-800 hover:to-blue-900 hover:bg-opacity-20 p-4 rounded-lg hover:shadow-xl">
       <h3 className="font-semibold text-xl mb-6 hover:text-blue-200 transition-all duration-300 cursor-default relative group">
         Recent News
         <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-300 to-purple-400 transition-all duration-500 group-hover:w-full"></div>
@@ -123,13 +123,13 @@ const Footer = () => {
     </div>
 
     {/* Useful Links */}
-    <div className="transform hover:scale-105 transition-all duration-500 ease-out hover:bg-blue-800 hover:bg-opacity-20 p-4 rounded-lg hover:shadow-xl">
+    <div className="transform hover:scale-105 transition-all duration-500 ease-out hover:bg-gradient-to-br hover:from-gray-800 hover:to-blue-900 hover:bg-opacity-20 p-4 rounded-lg hover:shadow-xl">
       <h3 className="font-semibold text-xl mb-6 hover:text-blue-200 transition-all duration-300 cursor-default relative group">
         Useful Links
         <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-green-300 to-blue-400 transition-all duration-500 group-hover:w-full"></div>
       </h3>
       <ul className="space-y-3 text-sm text-blue-200">
-        {['About Us', 'Our Team', 'Our Services', 'News', 'Career'].map((link, index) => (
+        {['About Us', 'Our Team', 'Our Services', 'News', 'Careers','Privacy Policy','Terms Conditions'].map((link, index) => (
           <li key={link} className="hover:translate-x-2 transition-all duration-300">
             <Link href={`/${link.toLowerCase().replace(/ /g, '-')}`} className="group relative hover:text-white transition-all duration-300">
               {link}
@@ -164,7 +164,7 @@ const Footer = () => {
         }
       `}</style>
     </footer>
-    <div className="bg-blue-900 text-center py-4 my-4 mx-auto max-w-6xl">
+    <div className="bg-gradient-to-br from-gray-900 to-blue-900 text-center py-4  mx-auto max-w-6xl">
       <p className="text-sm text-blue-200">
         © {new Date().getFullYear()} Mac & Ross. All rights reserved. / Carefully crafted by <Link href="https://digitalizetheglobe.com">Digitalize The Globe.</Link>
       </p>

@@ -9,6 +9,7 @@ import banner3 from "@/app/images/bgg.png"; // Adjust the path as necessary
 import banner1 from "@/app/images/bgg2.png"; // Adjust the path as necessary
 import OneBlog from "./components/legacyScrollBar";
 import pic from "@/app/images/accounting_services.jpg"; // Adjust the path as necessary
+import tests from "@/app/images/hero-8.jpg"; // Adjust the path as necessary
 import ScrollImageAnimation from "./components/ui/ScrollImageAnimation";
 // Font configurations
 
@@ -445,22 +446,19 @@ export default function Home() {
     </h2>
 
     {/* Two Column Content */}
-    <div className="grid grid-cols-1 lg:grid-cols-2 px-4 gap-8 text-left pb-6">
-      <div className="leading-relaxed">
-        <p>
-          Mac & Ross Chartered Accountants L.L.C, an Auditing & Consulting firm in U.A.E and a member of RT ASEAN Network (a member of Forum of Firms), has had a presence in the UAE for over a decade. It has earned its place in the field of Audit & Assurance, Accounting, Management Consultancy, and Taxation.
-        </p>
-      </div>
-      <div className="leading-relaxed">
-        <p>
-          Members in the Forum confirm policies and methodologies for transnational audits based on International Standards on Auditing, conforming to the International Ethics Standards Board for Accountants’ Code of Ethics and national codes of ethics, with quality control standards as per International Standards on Quality Control and relevant national standards.
-        </p>
-        <br />
-        <p>
-          RT ASEAN is the first Singapore-headquartered network offering Audit & Assurance, Taxation, Corporate Finance, Digital & Legal services across jurisdictions. Through this association, Mac & Ross delivers financial services tailored to help clients reach business potential with strategic solutions. In today’s digital era, secure, scalable, and customizable solutions are vital for success.
-        </p>
-      </div>
-    </div>
+   <div className="grid grid-cols-1 lg:grid-cols-2 px-4 gap-8 text-left pb-6">
+  <div className="leading-relaxed">
+    <p>
+      Mac & Ross Chartered Accountants L.L.C, a UAE-based auditing and consulting firm and a member of the RT ASEAN Network, has over a decade of expertise in Audit & Assurance, Accounting, Consultancy, and Taxation.
+    </p>
+  </div>
+  <div className="leading-relaxed">
+    <p>
+      As part of the Forum of Firms, we follow international standards for auditing, ethics, and quality control. Through RT ASEAN, we offer cross-border financial, legal, and digital services—tailored to drive business growth with secure and scalable solutions.
+    </p>
+  </div>
+</div>
+
   </div>
    <div className="max-w-6xl  z-50 mx-auto px-4 my-10 ">
      <div className="grid grid-cols-1 md:grid-cols-2 gap-0 max-w-6xl mx-auto shadow-lg ">
@@ -744,7 +742,11 @@ export default function Home() {
     </div>
        <OneBlog/>
     </section>
-     <section className="relative min-h-[400px] md:max-h-[580px] bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 overflow-hidden">
+      <section
+  className="relative px-4 py-10 bg-cover bg-center bg-no-repeat bg-fixed"
+  style={{ backgroundImage: `url('${tests.src}')` }}
+>
+     {/* <section className="relative min-h-[400px] md:max-h-[580px] "> */}
       {/* Navigation Arrows - Hidden on mobile, visible on tablet+ */}
       <button
         onClick={prevSlide}
@@ -761,7 +763,7 @@ export default function Home() {
       </button>
 
       {/* Main Content */}
-      <div className="relative z-5 flex flex-col items-center justify-center min-h-[400px] md:min-h-screen px-4 sm:px-6 lg:px-8 py-8 md:pb-10">
+      <div className="relative z-5 flex flex-col items-center justify-center min-h-[400px]  px-4 sm:px-6 lg:px-8 py-8 md:pb-10">
         <div className="max-w-4xl mx-auto text-center w-full">
           {/* Title */}
           <h2 className="text-5xl font-bold text-white mb-4 md:mb-6 tracking-tight leading-tight">

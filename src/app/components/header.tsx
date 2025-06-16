@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-
+import Link from 'next/link';
 import { ChevronDown, Search, ShoppingCart, Clock, Phone, Mail, Facebook, Instagram, Twitter } from 'lucide-react';
 
 const Header = () => {
@@ -21,11 +21,11 @@ const Header = () => {
   const navigationItems = [
     { name: 'Home', href: '/', active: true },
     { name: 'About Us', href: '/aboutus' },
-    { name: 'Services', href: 'https://www.macnross.com/services', hasDropdown: true },
-    { name: 'Taxation', href: 'https://www.macnross.com/taxation', hasDropdown: true },
-    { name: 'News & Events', href: 'https://www.macnross.com/news' },
-    { name: 'Careers', href: 'https://www.macnross.com/careers' },
-    { name: 'Contact Us', href: 'https://www.macnross.com/contact' },
+    { name: 'Services', href: '/services', hasDropdown: true },
+    { name: 'Taxation', href: '/taxation', hasDropdown: true },
+    { name: 'Cyber Security', href: '/cyber-security' },
+    { name: 'Careers', href: '/careers' },
+    { name: 'Contact Us', href: '/contactus' },
   ];
 
   return (
@@ -76,7 +76,7 @@ const Header = () => {
       {/* Main Header */}
       <header className={`sticky top-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-[#ffffff1e] backdrop-blur-[28px] shadow-lg py-3' 
+          ? 'bg-[#00000075] backdrop-blur-[28px] shadow-lg py-3' 
           : 'py-4'
       }`}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -114,19 +114,24 @@ const Header = () => {
             {/* CTA Button - Always visible */}
              {!isScrolled && (
             <div className="hidden md:block">
-              <button className="bg-[#FFFFFF33] backdrop-blur-[28px] cursor-pointer hover:bg-[#FFFFFF42] hover:backdrop-blur-[28px] text-white px-6 py-2 rounded-[4px] font-semibold transition-colors duration-200">
+             <Link href="/contactus">
+              <button className="bg-[#00000075] backdrop-blur-[28px] cursor-pointer hover:bg-[#FFFFFF42] hover:backdrop-blur-[28px] text-white px-6 py-2 rounded-[4px] font-semibold transition-colors duration-200">
                 GET CONSULTATION
               </button>
+             
+             </Link>
+
+             
             </div>
              )}
           </div>
             
           {/* Navigation */}
           <nav className={`transition-all duration-300 ${
-            isScrolled ? 'mt-2  ' : 'mt-4'
+            isScrolled ? 'mt-2   ' : 'mt-4'
           }`}>
             <div className={`flex justify-center items-center rounded-[4px] mx-auto max-w-6xl ${
-            isScrolled ? '  ' : 'bg-[#FFFFFF33] backdrop-blur-[28px] py-2'
+            isScrolled ? '  ' : 'bg-[#00000075] backdrop-blur-[18px] py-2'
           } `}>
               <ul className="flex space-x-8">
                 {navigationItems.map((item, index) => (
@@ -145,40 +150,169 @@ const Header = () => {
                       )}
                     </a>
                     {item.hasDropdown && item.name === 'Services' && (
-                      <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-[4px] shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                        <div className="py-2">
-                          <div className="relative group/sub">
-                            <a href="#" className="px-4 py-2 text-gray-800 hover:bg-blue-50 flex items-center justify-between">
-                              Audit and Assurance
-                              <ChevronDown className="w-3 h-3 rotate-[-90deg]" />
-                            </a>
-                            <div className="absolute left-full top-0 mt-0 ml-2 w-48 bg-white rounded-[4px] shadow-lg opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200">
-                              <div className="py-2">
-                                <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">External Audit</a>
-                                <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">Internal Audit</a>
-                                <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">IFRS Advisory</a>
-                                <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">Custom Audit</a>
-                                <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">Investigation Audit</a>
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 mx-35 w-screen justify-center items-center rounded-[4px] max-w-5xl bg-white shadow-xl border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+  <div className="px-6 py-2">
+    <div className="grid grid-cols-3 gap-8 px-8">
+      {/* Audit & Assurance Column */}
+      <div className="space-y-4">
+        <h3 className="text-xl font-bold text-black  pb-2 border-b border-gray-200">
+          Audit & Assurance
+        </h3>
+        <div className="space-y-2">
+          <a href="#" className="group/item flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200">
+            <div className="w-2 h-2 bg-blue-400 rounded-full  group-hover/item:bg-blue-500"></div>
+            <div>
+              <div className="text-black font-medium group-hover/item:text-blue-600">External Audit</div>
+              <div className="text-gray-600 text-sm">Professional external audit services</div>
+            </div>
+          </a>
+          <a href="#" className="group/item flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200">
+            <div className="w-2 h-2 bg-blue-400 rounded-full  group-hover/item:bg-blue-500"></div>
+            <div>
+              <div className="text-black font-medium group-hover/item:text-blue-600">Internal Audit</div>
+              <div className="text-gray-600 text-sm">Internal control assessments</div>
+            </div>
+          </a>
+          <a href="#" className="group/item flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200">
+            <div className="w-2 h-2 bg-blue-400 rounded-full  group-hover/item:bg-blue-500"></div>
+            <div>
+              <div className="text-black font-medium group-hover/item:text-blue-600">IFRS Advisory</div>
+              <div className="text-gray-600 text-sm">International standards guidance</div>
+            </div>
+          </a>
+          <a href="#" className="group/item flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200">
+            <div className="w-2 h-2 bg-blue-400 rounded-full group-hover/item:bg-blue-500"></div>
+            <div>
+              <div className="text-black font-medium group-hover/item:text-blue-600">Custom Audit</div>
+              <div className="text-gray-600 text-sm">Tailored audit solutions</div>
+            </div>
+          </a>
+          <a href="#" className="group/item flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200">
+            <div className="w-2 h-2 bg-blue-400 rounded-full  group-hover/item:bg-blue-500"></div>
+            <div>
+              <div className="text-black font-medium group-hover/item:text-blue-600">Investigation Audit</div>
+              <div className="text-gray-600 text-sm">Forensic and investigative services</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      {/* Business Services Column */}
+      <div className="space-y-4">
+        <h3 className="text-xl font-bold text-black mb-4 pb-2 border-b border-gray-200">
+          Business Services
+        </h3>
+        <div className="space-y-2">
+          <a href="#" className="group/item flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200">
+            <div className="w-2 h-2 bg-green-400 rounded-full mt-2 group-hover/item:bg-green-500"></div>
+            <div>
+              <div className="text-black font-medium group-hover/item:text-green-600">Accounting Services</div>
+              <div className="text-gray-600 text-sm">Bookkeeping and financial management</div>
+            </div>
+          </a>
+          <a href="#" className="group/item flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200">
+            <div className="w-2 h-2 bg-green-400 rounded-full mt-2 group-hover/item:bg-green-500"></div>
+            <div>
+              <div className="text-black font-medium group-hover/item:text-green-600">Management Consultancy</div>
+              <div className="text-gray-600 text-sm">Strategic business consulting</div>
+            </div>
+          </a>
+          <a href="#" className="group/item flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200">
+            <div className="w-2 h-2 bg-green-400 rounded-full mt-2 group-hover/item:bg-green-500"></div>
+            <div>
+              <div className="text-black font-medium group-hover/item:text-green-600">Corporate Finance</div>
+              <div className="text-gray-600 text-sm">Financial planning and advisory</div>
+            </div>
+          </a>
+          <a href="#" className="group/item flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200">
+            <div className="w-2 h-2 bg-green-400 rounded-full mt-2 group-hover/item:bg-green-500"></div>
+            <div>
+              <div className="text-black font-medium group-hover/item:text-green-600">Company Formation</div>
+              <div className="text-gray-600 text-sm">Business setup and incorporation</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      {/* Additional Services Column */}
+      <div className="space-y-4">
+        <h3 className="text-xl font-bold text-black mb-4 pb-2 border-b border-gray-200">
+          Additional Services
+        </h3>
+        <div className="space-y-2">
+          <a href="#" className="group/item flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200">
+            <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 group-hover/item:bg-purple-500"></div>
+            <div>
+              <div className="text-black font-medium group-hover/item:text-purple-600">Tax Advisory</div>
+              <div className="text-gray-600 text-sm">Comprehensive tax planning</div>
+            </div>
+          </a>
+          <a href="#" className="group/item flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200">
+            <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 group-hover/item:bg-purple-500"></div>
+            <div>
+              <div className="text-black font-medium group-hover/item:text-purple-600">Legal Compliance</div>
+              <div className="text-gray-600 text-sm">Regulatory compliance support</div>
+            </div>
+          </a>
+          <a href="#" className="group/item flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200">
+            <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 group-hover/item:bg-purple-500"></div>
+            <div>
+              <div className="text-black font-medium group-hover/item:text-purple-600">Risk Management</div>
+              <div className="text-gray-600 text-sm">Business risk assessment</div>
+            </div>
+          </a>
+          <a href="#" className="group/item flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200">
+            <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 group-hover/item:bg-purple-500"></div>
+            <div>
+              <div className="text-black font-medium group-hover/item:text-purple-600">Financial Advisory</div>
+              <div className="text-gray-600 text-sm">Strategic financial guidance</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    {/* CTA Section */}
+    <div className="bg-gray-50 border-t border-gray-200  rounded-b-[8px]">
+      <div className="flex justify-between items-center">
+        <div>
+          <h4 className="text-black font-semibold text-lg">Need Expert Consultation?</h4>
+          <p className="text-gray-600 text-sm">Get personalized advice from our experienced professionals</p>
+        </div>
+        <button className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-green-700 transition-all duration-200 shadow-lg">
+          Contact Us
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+                    )}
+                    
+                    {item.hasDropdown && item.name === 'Taxation' && (
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-5xl bg-white rounded-lg shadow-xl border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <div className="p-6">
+                          <div className="grid grid-cols-2 gap-8">
+                            {/* Tax Services Column */}
+                            <div>
+                              <h3 className="text-gray-900 font-semibold text-sm mb-4 pb-2 border-b border-gray-200">Tax Services</h3>
+                              <div className="space-y-3">
+                                <a href="#" className="block text-gray-600 hover:text-blue-600 text-sm py-1">Value Added Tax (VAT)</a>
+                                <a href="#" className="block text-gray-600 hover:text-blue-600 text-sm py-1">UAE Corporate Tax</a>
+                                <a href="#" className="block text-gray-600 hover:text-blue-600 text-sm py-1">Excise Tax</a>
+                                <a href="#" className="block text-gray-600 hover:text-blue-600 text-sm py-1">Transfer Pricing</a>
+                              </div>
+                            </div>
+
+                            {/* Compliance Services Column */}
+                            <div>
+                              <h3 className="text-gray-900 font-semibold text-sm mb-4 pb-2 border-b border-gray-200">Compliance Services</h3>
+                              <div className="space-y-3">
+                                <a href="#" className="block text-gray-600 hover:text-blue-600 text-sm py-1">Country by Country Reporting (CBCR)</a>
+                                <a href="#" className="block text-gray-600 hover:text-blue-600 text-sm py-1">Ultimate Beneficial Ownership(UBO)</a>
+                                <a href="#" className="block text-gray-600 hover:text-blue-600 text-sm py-1">Anti Money Laundering</a>
                               </div>
                             </div>
                           </div>
-                          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">Accounting Services</a>
-                          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">Management Consultancy</a>
-                          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">Corporate Finance</a>
-                          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">Company Formation</a>
-                        </div>
-                      </div>
-                    )}
-                    {item.hasDropdown && item.name === 'Taxation' && (
-                      <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-[4px] shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                        <div className="py-2">
-                          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">Value Added Tax (VAT)</a>
-                          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">UAE Corporate Tax</a>
-                          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">Excise Tax</a>
-                          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">Country by Country Reporting (CBCR)</a>
-                          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">Ultimate Beneficial Ownership(UBO)</a>
-                          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">Anti Money Laundering</a>
-                          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">Transfer Pricing</a>
                         </div>
                       </div>
                     )}
