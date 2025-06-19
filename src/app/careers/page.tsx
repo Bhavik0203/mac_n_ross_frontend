@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronRight, Users, Award, Globe, TrendingUp, Mail, Phone, MapPin, Building, Clock, DollarSign, Briefcase, GraduationCap, Heart, Target, Star } from 'lucide-react';
 import SuccessStories from '../components/ui/stats';
-
+import banner2 from '../images/pics3.jpg';
+import Link from 'next/link'; 
 const CareersPage = () => {
   const [activeTab, setActiveTab] = useState('all');
   const [isVisible, setIsVisible] = useState<{ [key: string]: boolean }>({});
@@ -163,14 +164,17 @@ const CareersPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 text-white py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <section
+      className="relative py-10 px-4 bg-cover bg-center bg-no-repeat bg-fixed min-h-screen"
+      style={{ backgroundImage: `url('${banner2.src}')` }}
+    >
+       <div className="absolute inset-0 bg-black/40"></div>
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
         
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-7xl mx-auto px-6 my-auto mt-40">
           <div 
             className="text-center transform transition-all duration-1000 opacity-0 translate-y-8"
             data-animate
@@ -180,19 +184,23 @@ const CareersPage = () => {
               transform: isVisible.hero ? 'translateY(0)' : 'translateY(2rem)'
             }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-blue-50 bg-clip-text text-transparent">
               Build Your Career with Mac & Ross
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl mb-8 text-blue-50 max-w-4xl mx-auto leading-relaxed">
               Join UAE's leading chartered accountancy firm and shape the future of financial services in the region
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-blue-900 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl">
+             <Link href="/careers#contact" >
+              <button className="bg-white cursor-pointer  text-blue-900 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl">
                 Explore Opportunities
               </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transform hover:scale-105 transition-all duration-300">
+             </Link>
+             <Link href="/aboutus">
+              <button className="border-2 cursor-pointer  border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transform hover:scale-105 transition-all duration-300">
                 Learn About Us
               </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -255,7 +263,7 @@ const CareersPage = () => {
               transform: isVisible['jobs-title'] ? 'translateY(0)' : 'translateY(2rem)'
             }}
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Current Openings</h2>
+            <h2 id='contact' className="text-4xl font-bold text-gray-900 mb-4">Current Openings</h2>
             <p className="text-xl text-gray-600">Discover exciting career opportunities across our service areas</p>
           </div>
 

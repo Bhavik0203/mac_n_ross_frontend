@@ -145,7 +145,7 @@ export default function OneBlog() {
     <div className="lg:sticky lg:top-4 lg:col-span-1">
 <div className="flex-1 w-full max-w-full pt-28 ml-0 mr-0">
       <h2 
-  className="font-[Blacker] text-gray-800 mb-4" 
+  className=" text-gray-800 mb-4" 
   style={{ fontSize: '3.25rem', lineHeight: '3.5rem' }}
 >
   News and Events

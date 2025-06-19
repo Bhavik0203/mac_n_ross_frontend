@@ -403,7 +403,7 @@ const CybersecurityPage = () => {
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-gray-800">
-       <div className="max-w-4xl mx-auto px-6">
+       <div className="max-w-6xl mx-auto px-6">
   <div className={`transform transition-all duration-1000 ${
     isVisible.contact ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
   }`}>

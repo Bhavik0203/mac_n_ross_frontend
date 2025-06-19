@@ -129,7 +129,7 @@ const Footer = () => {
         <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-green-300 to-blue-400 transition-all duration-500 group-hover:w-full"></div>
       </h3>
       <ul className="space-y-3 text-sm text-blue-200">
-        {['About Us', 'Our Team', 'Our Services', 'News', 'Careers','Privacy Policy','Terms Conditions'].map((link, index) => (
+        {['About Us', 'Our Services', 'Taxation', 'Careers','Privacy Policy','Terms Conditions'].map((link, index) => (
           <li key={link} className="hover:translate-x-2 transition-all duration-300">
             <Link href={`/${link.toLowerCase().replace(/ /g, '-')}`} className="group relative hover:text-white transition-all duration-300">
               {link}
