@@ -16,7 +16,7 @@ import {
 
 const Footer = () => {
   return (
-   <>
+   <div className='bg-white'>
     <footer className="bg-gradient-to-br from-gray-900 to-blue-900 text-white py-12 mt-10 mb-2 px-6 max-w-6xl mx-auto relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-10">
@@ -170,7 +170,7 @@ const Footer = () => {
       </p>
      
     </div>
-   </>
+   </div>
   );
 };
 
