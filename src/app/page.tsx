@@ -430,6 +430,14 @@ export default function Home() {
   style={{ backgroundImage: `url('${banner1.src}')` }}
 >
   {/* Background Image with Overlay */}
+  {/* Background Image with Overlay */}
+  {/* Background Image with Overlay */}
+  {/* Background Image with Overlay */}
+  {/* Background Image with Overlay */}
+  {/* Background Image with Overlay */}
+  {/* Background Image with Overlay */}
+  {/* Background Image with Overlay */}
+  {/* Background Image with Overlay */}
  
 
   {/* Content */}
