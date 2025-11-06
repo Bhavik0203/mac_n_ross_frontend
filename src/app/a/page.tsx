@@ -113,10 +113,10 @@ const scrollToSection = (sectionId: string): void => {
   data-section="external-audit"
   className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 group"
 >
-  {/* Header */}
+  
   
 
-  {/* Grid Content */}
+  
   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
     {/* Text Content */}
     <div className="prose prose-lg text-gray-600 leading-relaxed animate-fade-in-up transition-all duration-700">
