@@ -126,7 +126,7 @@ const cards = [
     icon: CheckSquare,
     hoverContent: {
       badge: "Client-focused Business Approach",
-      description: "Client's satisfaction and consistently high quality professional services are the priorities in our business strategy. We tailor our professional approach to the specific needs and requirements of our clients to ensure that the work is conducted in most efficient and cost effective manner."
+      description: "At Mac & Ross, our strategy is built around one core principle — client satisfaction through excellence. We are committed to delivering consistently high-quality professional services that align with each client's unique goals. By tailoring our approach to your specific business needs, we ensure every engagement is handled with efficiency, accuracy, and cost-effectiveness. Our focus on continuous improvement and personalized service helps you achieve measurable results while maintaining the highest standards of professionalism."
     }
   },
   { 
@@ -135,7 +135,7 @@ const cards = [
     icon: Users,
     hoverContent: {
       badge: "Expert Professional Team",
-      description: "A team of highly qualified and widely experienced professionals dedicated to practice the profession at its highest standards and committed to provide the best services, lead Mac & Ross, Chartered Accountants to offer a full spectrum of unified business solutions to our clients. We help our clients to improve their resource allocation and cost efficiency to fuel their growth."
+      description: "At Mac & Ross Chartered Accountants, our greatest strength lies in our team of highly qualified and experienced professionals. Each member brings deep expertise and a shared commitment to excellence, ensuring that every client receives exceptional service and reliable guidance. By combining technical knowledge with practical insight, we deliver a comprehensive range of business and financial solutions designed to enhance performance, optimize resources, and improve cost efficiency. Our collaborative approach empowers clients to achieve sustainable growth and long-term success."
     }
   },
   { 
@@ -144,7 +144,7 @@ const cards = [
     icon: Award,
     hoverContent: {
       badge: "International Quality Standards",
-      description: "In our endeavor to provide the best professional services, we follow the international standards and keep abreast with the latest developments in the respective fields of practice. We adhere to the International Financial Reporting Standards (IFRS) for the financial statements audited by us."
+      description: "At Mac & Ross Chartered Accountants, we are committed to maintaining the highest professional and ethical standards in every service we deliver. Our work strictly adheres to international best practices and remains aligned with the latest regulatory and financial developments. We comply fully with the International Financial Reporting Standards (IFRS) to ensure that every financial statement we audit reflects accuracy, transparency, and integrity. By upholding these global benchmarks, we guarantee that our clients receive reliable insights and reports they can trust."
     }
   },
 ];

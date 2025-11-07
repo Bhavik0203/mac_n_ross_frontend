@@ -10,11 +10,11 @@ export default function OneBlog() {
       title: "June 5, 2025",
       content: (
       <div>
-        <p className="mb-2 text-[18px] font-normal text-neutral-800 md:text-[30px] dark:text-neutral-200">
+        <p className="mb-2 text-[18px] font-normal text-neutral-800 md:text-[30px] ">
           <strong>Apple Unveils New AI-Powered macOS Sequoia</strong>
          
         </p>
-        <p className="mb-8 text-[18px] font-normal text-neutral-800 md:text-[20px] dark:text-neutral-200">
+        <p className="mb-8 text-[18px] font-normal text-neutral-800 md:text-[20px] ">
           At WWDC 2025, Apple introduced macOS Sequoia with built-in AI tools integrated across apps, enabling enhanced productivity and creative workflows.
         </p>
       </div>
@@ -24,11 +24,11 @@ export default function OneBlog() {
       title: "June 5, 2025",
       content: (
       <div>
-        <p className="mb-2 text-[18px] font-normal text-neutral-800 md:text-[30px] dark:text-neutral-200">
+        <p className="mb-2 text-[18px] font-normal text-neutral-800 md:text-[30px] ">
           <strong>Apple Unveils New AI-Powered macOS Sequoia</strong>
          
         </p>
-        <p className="mb-8 text-[18px] font-normal text-neutral-800 md:text-[20px] dark:text-neutral-200">
+        <p className="mb-8 text-[18px] font-normal text-neutral-800 md:text-[20px] ">
           At WWDC 2025, Apple introduced macOS Sequoia with built-in AI tools integrated across apps, enabling enhanced productivity and creative workflows.
         </p>
       </div>
@@ -38,11 +38,11 @@ export default function OneBlog() {
       title: "June 5, 2025",
       content: (
       <div>
-        <p className="mb-2 text-[18px] font-normal text-neutral-800 md:text-[30px] dark:text-neutral-200">
+        <p className="mb-2 text-[18px] font-normal text-neutral-800 md:text-[30px] ">
           <strong>Apple Unveils New AI-Powered macOS Sequoia</strong>
          
         </p>
-        <p className="mb-8 text-[18px] font-normal text-neutral-800 md:text-[20px] dark:text-neutral-200">
+        <p className="mb-8 text-[18px] font-normal text-neutral-800 md:text-[20px] ">
           At WWDC 2025, Apple introduced macOS Sequoia with built-in AI tools integrated across apps, enabling enhanced productivity and creative workflows.
         </p>
       </div>
@@ -52,11 +52,11 @@ export default function OneBlog() {
       title: "June 5, 2025",
       content: (
       <div>
-        <p className="mb-2 text-[18px] font-normal text-neutral-800 md:text-[30px] dark:text-neutral-200">
+        <p className="mb-2 text-[18px] font-normal text-neutral-800 md:text-[30px] ">
           <strong>Apple Unveils New AI-Powered macOS Sequoia</strong>
          
         </p>
-        <p className="mb-8 text-[18px] font-normal text-neutral-800 md:text-[20px] dark:text-neutral-200">
+        <p className="mb-8 text-[18px] font-normal text-neutral-800 md:text-[20px] ">
           At WWDC 2025, Apple introduced macOS Sequoia with built-in AI tools integrated across apps, enabling enhanced productivity and creative workflows.
         </p>
       </div>
@@ -66,11 +66,11 @@ export default function OneBlog() {
       title: "June 5, 2025",
       content: (
       <div>
-        <p className="mb-2 text-[18px] font-normal text-neutral-800 md:text-[30px] dark:text-neutral-200">
+        <p className="mb-2 text-[18px] font-normal text-neutral-800 md:text-[30px] ">
           <strong>Apple Unveils New AI-Powered macOS Sequoia</strong>
          
         </p>
-        <p className="mb-8 text-[18px] font-normal text-neutral-800 md:text-[20px] dark:text-neutral-200">
+        <p className="mb-8 text-[18px] font-normal text-neutral-800 md:text-[20px] ">
           At WWDC 2025, Apple introduced macOS Sequoia with built-in AI tools integrated across apps, enabling enhanced productivity and creative workflows.
         </p>
       </div>
@@ -80,11 +80,11 @@ export default function OneBlog() {
       title: "June 5, 2025",
       content: (
       <div>
-        <p className="mb-2 text-[18px] font-normal text-neutral-800 md:text-[30px] dark:text-neutral-200">
+        <p className="mb-2 text-[18px] font-normal text-neutral-800 md:text-[30px] ">
           <strong>Apple Unveils New AI-Powered macOS Sequoia</strong>
          
         </p>
-        <p className="mb-8 text-[18px] font-normal text-neutral-800 md:text-[20px] dark:text-neutral-200">
+        <p className="mb-8 text-[18px] font-normal text-neutral-800 md:text-[20px] ">
           At WWDC 2025, Apple introduced macOS Sequoia with built-in AI tools integrated across apps, enabling enhanced productivity and creative workflows.
         </p>
       </div>
@@ -94,11 +94,11 @@ export default function OneBlog() {
       title: "June 5, 2025",
       content: (
       <div>
-        <p className="mb-2 text-[18px] font-normal text-neutral-800 md:text-[30px] dark:text-neutral-200">
+        <p className="mb-2 text-[18px] font-normal text-neutral-800 md:text-[30px] ">
           <strong>Apple Unveils New AI-Powered macOS Sequoia</strong>
          
         </p>
-        <p className="mb-8 text-[18px] font-normal text-neutral-800 md:text-[20px] dark:text-neutral-200">
+        <p className="mb-8 text-[18px] font-normal text-neutral-800 md:text-[20px] ">
           At WWDC 2025, Apple introduced macOS Sequoia with built-in AI tools integrated across apps, enabling enhanced productivity and creative workflows.
         </p>
       </div>
@@ -108,11 +108,11 @@ export default function OneBlog() {
       title: "June 5, 2025",
       content: (
       <div>
-        <p className="mb-2 text-[18px] font-normal text-neutral-800 md:text-[30px] dark:text-neutral-200">
+        <p className="mb-2 text-[18px] font-normal text-neutral-800 md:text-[30px] ">
           <strong>Apple Unveils New AI-Powered macOS Sequoia</strong>
          
         </p>
-        <p className="mb-8 text-[18px] font-normal text-neutral-800 md:text-[20px] dark:text-neutral-200">
+        <p className="mb-8 text-[18px] font-normal text-neutral-800 md:text-[20px] ">
           At WWDC 2025, Apple introduced macOS Sequoia with built-in AI tools integrated across apps, enabling enhanced productivity and creative workflows.
         </p>
       </div>
@@ -122,11 +122,11 @@ export default function OneBlog() {
       title: "June 5, 2025",
       content: (
       <div>
-        <p className="mb-2 text-[18px] font-normal text-neutral-800 md:text-[30px] dark:text-neutral-200">
+        <p className="mb-2 text-[18px] font-normal text-neutral-800 md:text-[30px] ">
           <strong>Apple Unveils New AI-Powered macOS Sequoia</strong>
          
         </p>
-        <p className="mb-8 text-[18px] font-normal text-neutral-800 md:text-[20px] dark:text-neutral-200">
+        <p className="mb-8 text-[18px] font-normal text-neutral-800 md:text-[20px] ">
           At WWDC 2025, Apple introduced macOS Sequoia with built-in AI tools integrated across apps, enabling enhanced productivity and creative workflows.
         </p>
       </div>

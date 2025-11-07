@@ -447,22 +447,22 @@ export default function Home() {
    
     {/* Title */}
     <h2 className="uppercase text-[22px] tracking-widest text-gray-800 mt-16 mb-2">
-      Mac & Ross Chartered Accountants L.L.C
+      MAC & ROSS CHARTERED ACCOUNTANTS L.L.C
     </h2>
     <h2 className="text-5xl font-bold text-gray-800 mb-6">
-       Outsource Accounting and Auditing Firm in Dubai
+       Leading Outsource Accounting and Auditing Firm in Dubai
     </h2>
 
     {/* Two Column Content */}
    <div className="grid grid-cols-1 lg:grid-cols-2 px-4 gap-8 text-left pb-6">
   <div className="leading-relaxed">
     <p>
-      Mac & Ross Chartered Accountants L.L.C, a UAE-based auditing and consulting firm and a member of the RT ASEAN Network, has over a decade of expertise in Audit & Assurance, Accounting, Consultancy, and Taxation.
+      Mac & Ross Chartered Accountants L.L.C is a trusted UAE-based auditing and consulting firm with over a decade of excellence in Audit & Assurance, Accounting, Consultancy, and Taxation. As a proud member of the RT ASEAN Network recognized by the Forum of Firms we uphold the highest international standards of auditing, ethics, and quality control.
     </p>
   </div>
   <div className="leading-relaxed">
     <p>
-      As part of the Forum of Firms, we follow international standards for auditing, ethics, and quality control. Through RT ASEAN, we offer cross-border financial, legal, and digital services—tailored to drive business growth with secure and scalable solutions.
+      Through our global association with RT ASEAN, we deliver cross-border financial, legal, and digital services designed to help businesses in Dubai and across the UAE achieve sustainable growth through secure, scalable, and compliant solutions.
     </p>
   </div>
 </div>
@@ -488,11 +488,11 @@ export default function Home() {
     <p className="text-xs text-gray-400 mb-2 uppercase tracking-widest">
       Did you know that
     </p>
-    <h2 className="text-3xl md:text-4xl font-bold text-[#1B2A7C] mb-6 leading-snug">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1B2A7C] mb-6 leading-snug">
           We are trusted by clients <br /> across the UAE
     </h2>
     <p className="text-gray-500 mb-8 leading-relaxed text-sm">
-        With over a decade of professional service and the backing of the RT ASEAN Network, we have helped businesses implement effective auditing, accounting, taxation, and digital strategies. Our aim is to empower your business with high-quality financial services and global standards.
+        At Mac & Ross Chartered Accountants LLC, we believe trust is earned through precision, transparency, and results. As one of the most reliable auditing and accounting firms in Dubai, we combine international expertise with deep local insight to help businesses thrive in the UAE's fast-evolving financial landscape.
           </p>
     <button className="bg-white border cursor-pointer border-[#1B2A7C] text-[#1B2A7C] px-6 py-3 rounded-full font-semibold hover:bg-[#f0f4ff] transition-colors">
       Read Our Story
@@ -507,24 +507,44 @@ export default function Home() {
               <h2 className="text-3xl font-bold mb-4">
                Why Choose Mac & Ross</h2>
               <p className="text-gray-300 mb-8">
-                 We provide tailored financial and digital solutions that empower businesses in the UAE and beyond.
+                 At Mac & Ross Chartered Accountants LLC, we believe trust is earned through precision, transparency, and results. As one of the most reliable auditing and accounting firms in Dubai, we combine international expertise with deep local insight to help businesses thrive in the UAE's fast-evolving financial landscape.
           </p>
               
               <div className="space-y-4 mb-8">
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-sm text-gray-300">
-                   Member of globally recognized Forum of Firms</p>
+                  <div>
+                    <p className="text-sm font-semibold text-white mb-1">Global Standards, Local Expertise</p>
+                    <p className="text-xs text-gray-400">As a proud member of the RT ASEAN Network and the Forum of Firms, we follow globally recognized auditing and reporting standards. Our professionals bring decades of experience serving businesses of every scale — from startups to multinational corporations.</p>
+                  </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-sm text-gray-300">
-                   Backed by RT ASEAN's regional expertise</p>
+                  <div>
+                    <p className="text-sm font-semibold text-white mb-1">Comprehensive Financial Solutions</p>
+                    <p className="text-xs text-gray-400">We go beyond numbers. Our team offers end-to-end financial services covering auditing, taxation, VAT, excise, corporate compliance, and advisory support — all designed to streamline operations and enhance profitability.</p>
+                  </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-sm text-gray-300">
-                   Compliant with international quality & ethics standards</p>
+                  <div>
+                    <p className="text-sm font-semibold text-white mb-1">Dedicated and Experienced Professionals</p>
+                    <p className="text-xs text-gray-400">Our success lies in our people. Every Mac & Ross consultant is a qualified chartered accountant or tax advisor committed to delivering excellence through diligence, confidentiality, and proactive guidance.</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <p className="text-sm font-semibold text-white mb-1">Ethical, Transparent, and Reliable</p>
+                    <p className="text-xs text-gray-400">Integrity defines everything we do. We maintain full transparency in our processes, adhere to UAE's compliance requirements, and ensure our clients always receive unbiased, ethical financial advice.</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <p className="text-sm font-semibold text-white mb-1">Client-Centric Approach</p>
+                    <p className="text-xs text-gray-400">We treat every client as a partner. By understanding your goals, challenges, and growth plans, we tailor strategies that improve financial clarity, minimize risks, and empower smarter business decisions.</p>
+                  </div>
                 </div>
               </div>
 
