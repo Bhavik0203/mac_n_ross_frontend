@@ -62,6 +62,17 @@ const ProductStyle: React.FC = () => {
         gradientStart: '#a855f7', // Tailwind purple-500
         gradientEnd: '#db2777', // Tailwind pink-600
         accentColor: '#a855f7'
+      },
+      {
+        id: 5,
+        heading: 'Tax Compliance Inbox',
+        src: '/images/Rectangle5.png',
+        alt: 'Tax Compliance Inbox',
+        content: 'Automate indirect and direct tax filings with real-time validations, jurisdiction-specific rules, and collaborative workflows that keep every return accurate and on schedule.',
+        buttonText: 'tax-inbox',
+        gradientStart: '#0ea5e9', // Tailwind sky-500
+        gradientEnd: '#6366f1', // Tailwind indigo-500
+        accentColor: '#0ea5e9'
       }
   ];
 
