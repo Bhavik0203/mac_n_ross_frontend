@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import ProductStyle from '../components/product-style';
 
 const StackingCards = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -92,7 +93,7 @@ const StackingCards = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black ">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center">
         <div className="text-center max-w-4xl mx-auto text-white px-6">
@@ -113,6 +114,7 @@ const StackingCards = () => {
       {/* Cards Container - Algorithm Implementation */}
       <div className="relative">
         {/* Spacer for scroll effect */}
+        <ProductStyle/>
         <div className="h-[400vh]">
           {cards.map((card, index) => {
             const transform = calculateCardTransform(index, cards.length);
@@ -213,6 +215,7 @@ const StackingCards = () => {
           })}
         </div>
       </div>
+
 
       {/* Footer */}
       <section className="py-20 text-center">

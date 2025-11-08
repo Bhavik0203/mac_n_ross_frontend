@@ -507,43 +507,43 @@ export default function Home() {
               <h2 className="text-3xl font-bold mb-4">
                Why Choose Mac & Ross</h2>
               <p className="text-gray-300 mb-8">
-                 At Mac & Ross Chartered Accountants LLC, we believe trust is earned through precision, transparency, and results. As one of the most reliable auditing and accounting firms in Dubai, we combine international expertise with deep local insight to help businesses thrive in the UAE's fast-evolving financial landscape.
-          </p>
+                Mac & Ross Chartered Accountants pairs global standards with local know-how to keep your finances clear, compliant, and growth-ready.
+              </p>
               
               <div className="space-y-4 mb-8">
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
                   <div>
-                    <p className="text-sm font-semibold text-white mb-1">Global Standards, Local Expertise</p>
-                    <p className="text-xs text-gray-400">As a proud member of the RT ASEAN Network and the Forum of Firms, we follow globally recognized auditing and reporting standards. Our professionals bring decades of experience serving businesses of every scale — from startups to multinational corporations.</p>
+                    <p className="text-sm font-semibold text-white mb-1">Global Standards, Local Insight</p>
+                    <p className="text-xs text-gray-400">We blend international auditing rigor with on-the-ground UAE expertise.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
                   <div>
-                    <p className="text-sm font-semibold text-white mb-1">Comprehensive Financial Solutions</p>
-                    <p className="text-xs text-gray-400">We go beyond numbers. Our team offers end-to-end financial services covering auditing, taxation, VAT, excise, corporate compliance, and advisory support — all designed to streamline operations and enhance profitability.</p>
+                    <p className="text-sm font-semibold text-white mb-1">Complete Coverage</p>
+                    <p className="text-xs text-gray-400">Audit, tax, VAT, compliance, and advisory—handled under one roof.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
                   <div>
-                    <p className="text-sm font-semibold text-white mb-1">Dedicated and Experienced Professionals</p>
-                    <p className="text-xs text-gray-400">Our success lies in our people. Every Mac & Ross consultant is a qualified chartered accountant or tax advisor committed to delivering excellence through diligence, confidentiality, and proactive guidance.</p>
+                    <p className="text-sm font-semibold text-white mb-1">Seasoned Specialists</p>
+                    <p className="text-xs text-gray-400">Chartered pros who partner with you, not just your books.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
                   <div>
-                    <p className="text-sm font-semibold text-white mb-1">Ethical, Transparent, and Reliable</p>
-                    <p className="text-xs text-gray-400">Integrity defines everything we do. We maintain full transparency in our processes, adhere to UAE's compliance requirements, and ensure our clients always receive unbiased, ethical financial advice.</p>
+                    <p className="text-sm font-semibold text-white mb-1">Transparent & Trusted</p>
+                    <p className="text-xs text-gray-400">Straightforward guidance that keeps you compliant and confident.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
                   <div>
-                    <p className="text-sm font-semibold text-white mb-1">Client-Centric Approach</p>
-                    <p className="text-xs text-gray-400">We treat every client as a partner. By understanding your goals, challenges, and growth plans, we tailor strategies that improve financial clarity, minimize risks, and empower smarter business decisions.</p>
+                    <p className="text-sm font-semibold text-white mb-1">Client First</p>
+                    <p className="text-xs text-gray-400">Your goals lead every recommendation we make.</p>
                   </div>
                 </div>
               </div>
