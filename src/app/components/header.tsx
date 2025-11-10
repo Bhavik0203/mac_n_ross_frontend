@@ -282,7 +282,7 @@ const Header = () => {
                                 Audit & Assurance
                               </h3>
                               <div className="space-y-2">
-                                <a href="#" className="group/item flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200">
+                                <a href="externalaudit" className="group/item flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200">
                                   <div className="w-2 h-2 bg-blue-400 rounded-full group-hover/item:bg-blue-500"></div>
                                   <div>
                                     <div className="text-white font-medium group-hover/item:text-blue-600">External Audit</div>
