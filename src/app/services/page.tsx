@@ -95,7 +95,7 @@ const StackingCards = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black ">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center">
+      <section className="relative  flex items-center justify-center">
         <div className="text-center max-w-4xl mx-auto text-white px-6">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
             Stacking Cards Algorithm
@@ -103,14 +103,11 @@ const StackingCards = () => {
           <p className="text-xl text-gray-300 mb-8">
             Scroll karo aur dekho kaise cards ek ke upar ek stack hote hain! 🚀
           </p>
-          <div className="animate-bounce">
-            <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-              <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
-            </div>
-          </div>
+         
         </div>
       </section>
       <ProductStyle/>
+      
      
 
 
