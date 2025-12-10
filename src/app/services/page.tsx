@@ -95,7 +95,7 @@ const StackingCards = () => {
   return (
     <div className="min-h-screen" style={{ background: 'linear-gradient(to bottom right, #231F20, #231F20, #231F20)' }}>
       {/* Hero Section */}
-      <section className="relative  flex items-center justify-center">
+      <section className="relative h-[600px] flex items-center justify-center">
         <div className="text-center max-w-4xl mx-auto text-white px-6">
           <h1 className="text-5xl md:text-7xl font-bold mb-6" style={{ color: '#E76524' }}>
             Stacking Cards Algorithm

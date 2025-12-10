@@ -52,6 +52,12 @@ export default function Home() {
   }, []);
 
   const titles = ['OUR STRATEGY', 'OUR STANDARDS', 'OUR TEAM', 'OUR STRENGTH'];
+  const titleToIdMap: { [key: string]: string } = {
+    'OUR STRATEGY': 'strategy',
+    'OUR STANDARDS': 'standards',
+    'OUR STRENGTH': 'strength',
+    'OUR TEAM': 'team'
+  };
 
    const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
@@ -554,28 +560,28 @@ export default function Home() {
                   <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#E76524' }}></div>
                   <div>
                     <p className="text-sm font-semibold text-[#231F20] mb-1">Global Standards, Local Insight</p>
-                    <p className="text-xs text-[#666666]">International rigor with UAE expertise.</p>
+                    <p className=" text-[#666666]">International rigor with UAE expertise.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#E76524' }}></div>
                   <div>
                     <p className="text-sm font-semibold text-[#231F20] mb-1">Complete Coverage</p>
-                    <p className="text-xs text-[#666666]">All services—audit, tax, VAT, compliance—under one roof.</p>
+                    <p className=" text-[#666666]">All services—audit, tax, VAT, compliance—under one roof.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#E76524' }}></div>
                   <div>
                     <p className="text-sm font-semibold text-[#231F20] mb-1">Expert Partners</p>
-                    <p className="text-xs text-[#666666]">Chartered professionals focused on your success.</p>
+                    <p className=" text-[#666666]">Chartered professionals focused on your success.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#E76524' }}></div>
                   <div>
                     <p className="text-sm font-semibold text-[#231F20] mb-1">Transparent & Client-Focused</p>
-                    <p className="text-xs text-[#666666]">Clear guidance tailored to your goals.</p>
+                    <p className=" text-[#666666]">Clear guidance tailored to your goals.</p>
                   </div>
                 </div>
               </div>
@@ -634,35 +640,39 @@ export default function Home() {
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {titles.map((title, index) => (
-            <div
+            <Link
               key={title}
-              ref={el => { itemsRef.current[index] = el!; }}
-              className="opacity-0 transform translate-y-10 transition-all duration-700 delay-[index * 100] ease-out"
-              style={{ transitionDelay: `${index * 200}ms` }}
+              href={`/aboutus#${titleToIdMap[title]}`}
             >
-              <div className="flex flex-col items-center text-center group">
-                <div className="w-48 h-48 bg-white rounded-[10px] shadow-lg flex items-center justify-center mb-6 relative overflow-hidden transform transition-all duration-500 ease-out group-hover:scale-110 group-hover:shadow-2xl group-hover:-translate-y-2 cursor-pointer">
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: 'linear-gradient(to bottom right, rgba(231, 101, 36, 0.2), transparent)' }}></div>
-                  <Image
-                    src={pic}
-                    alt="Pillar Image"
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100">
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
+              <div
+                ref={el => { itemsRef.current[index] = el!; }}
+                className="opacity-0 transform translate-y-10 transition-all duration-700 delay-[index * 100] ease-out"
+                style={{ transitionDelay: `${index * 200}ms` }}
+              >
+                <div className="flex flex-col items-center text-center group">
+                  <div className="w-48 h-48 bg-white rounded-[10px] shadow-lg flex items-center justify-center mb-6 relative overflow-hidden transform transition-all duration-500 ease-out group-hover:scale-110 group-hover:shadow-2xl group-hover:-translate-y-2 cursor-pointer">
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: 'linear-gradient(to bottom right, rgba(231, 101, 36, 0.2), transparent)' }}></div>
+                    <Image
+                      src={pic}
+                      alt="Pillar Image"
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100">
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
                     </div>
                   </div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:scale-105 transition-all duration-300" style={{ '--hover-color': '#E76524' } as React.CSSProperties} onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
+                    {title}
+                  </h3>
+                  <div className="w-0 h-0.5 group-hover:w-full transition-all duration-300" style={{ backgroundColor: '#E76524' }}></div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:scale-105 transition-all duration-300" style={{ '--hover-color': '#E76524' } as React.CSSProperties} onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
-                  {title}
-                </h3>
-                <div className="w-0 h-0.5 group-hover:w-full transition-all duration-300" style={{ backgroundColor: '#E76524' }}></div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

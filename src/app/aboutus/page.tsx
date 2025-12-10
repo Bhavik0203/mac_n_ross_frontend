@@ -123,6 +123,7 @@ const cards = [
   { 
     title: "OUR STRATEGY", 
     color: "bg-[#231F20]",
+    id: "strategy",
     icon: CheckSquare,
     hoverContent: {
       badge: "Client-focused Business Approach",
@@ -132,6 +133,7 @@ const cards = [
   { 
     title: "OUR STRENGTH", 
     color: "bg-[#231F20]",
+    id: "strength",
     icon: Users,
     hoverContent: {
       badge: "Expert Professional Team",
@@ -141,6 +143,7 @@ const cards = [
   { 
     title: "OUR STANDARDS", 
     color: "bg-[#231F20]",
+    id: "standards",
     icon: Award,
     hoverContent: {
       badge: "International Quality Standards",
@@ -155,17 +158,19 @@ interface CardProps {
   color?: string;
   isVisible: boolean;
   icon: React.ComponentType<any>;
+  id?: string;
   hoverContent: {
     badge: string;
     description: string;
   };
 }
 
-const Card = ({ title, isLeft, color = "bg-[#231F20]", isVisible, icon: Icon, hoverContent }: CardProps) => {
+const Card = ({ title, isLeft, color = "bg-[#231F20]", isVisible, icon: Icon, id, hoverContent }: CardProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div 
+      id={id}
       className={`relative overflow-hidden rounded-[4px] ${color} p-8 h-[400px] w-[600px] transition-all duration-1000 ease-out transform cursor-pointer ${
         isVisible 
           ? 'opacity-100 translate-x-0' 
@@ -473,17 +478,19 @@ const AlternatingCards = () => {
         </div>
       </section>
       <section className="relative pb-20 px-4 bg-cover bg-center bg-no-repeat bg-fixed"
-        style={{ backgroundImage: `url('${banner1.src}')` }}>
+        style={{ backgroundImage: `url('${banner1.src}')` }} >
         <div className="space-y-12 max-w-6xl pt-28 pb-16 mx-auto">
           {cards.map((card, index) => (
             <Card
               key={index}
+              id={card.id}
               title={card.title}
               color={card.color}
               icon={card.icon}
               isLeft={index % 2 === 0}
               isVisible={visibleCards[index]}
               hoverContent={card.hoverContent}
+              
             />
           ))}
         </div>
@@ -494,7 +501,7 @@ const AlternatingCards = () => {
       style={{ backgroundImage: `url('${team.src}')` }}
     >
         <div className=" py-20 px-4 ">
-      <div className="max-w-6xl mx-auto">
+      <div id="team" className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="text-center ">
           <div className="inline-block">
