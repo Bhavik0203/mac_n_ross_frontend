@@ -122,7 +122,7 @@ const sections: { key: SectionKey; title: string; content: string }[] = [
 const cards = [
   { 
     title: "OUR STRATEGY", 
-    color: "bg-gray-600",
+    color: "bg-[#231F20]",
     icon: CheckSquare,
     hoverContent: {
       badge: "Client-focused Business Approach",
@@ -131,7 +131,7 @@ const cards = [
   },
   { 
     title: "OUR STRENGTH", 
-    color: "bg-gray-700",
+    color: "bg-[#231F20]",
     icon: Users,
     hoverContent: {
       badge: "Expert Professional Team",
@@ -140,7 +140,7 @@ const cards = [
   },
   { 
     title: "OUR STANDARDS", 
-    color: "bg-gray-800",
+    color: "bg-[#231F20]",
     icon: Award,
     hoverContent: {
       badge: "International Quality Standards",
@@ -161,7 +161,7 @@ interface CardProps {
   };
 }
 
-const Card = ({ title, isLeft, color = "bg-gray-600", isVisible, icon: Icon, hoverContent }: CardProps) => {
+const Card = ({ title, isLeft, color = "bg-[#231F20]", isVisible, icon: Icon, hoverContent }: CardProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -498,10 +498,10 @@ const AlternatingCards = () => {
         {/* Header Section */}
         <div className="text-center ">
           <div className="inline-block">
-            <h1 className="text-5xl font-bold bg-gradient-to-r from-slate-800 via-blue-900 to-indigo-900 bg-clip-text text-transparent mb-4 tracking-tight">
+            <h1 className="text-5xl font-bold mb-4 tracking-tight" style={{ color: '#231F20' }}>
               Introduce
             </h1>
-            <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full"></div>
+            <div className="h-1 w-24 mx-auto rounded-full" style={{ backgroundColor: '#E76524' }}></div>
           </div>
           <p className="text-slate-600 text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
             Meet our team of highly qualified professionals with decades of experience in audit, 
@@ -521,29 +521,29 @@ const AlternatingCards = () => {
               }}
             >
               {/* Background Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-indigo-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: 'linear-gradient(to bottom right, rgba(231, 101, 36, 0.05), rgba(231, 101, 36, 0.05), rgba(231, 101, 36, 0.05))' }}></div>
               
               {/* Image Container */}
               <div className="relative overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200 h-64">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-indigo-500/20"></div>
+                <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom right, rgba(231, 101, 36, 0.2), rgba(231, 101, 36, 0.2))' }}></div>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-xl">
+                  <div className="w-32 h-32 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-xl" style={{ background: 'linear-gradient(to bottom right, #E76524, #d1551a)' }}>
                     {member.name.split(' ').map(n => n[0]).join('')}
                   </div>
                 </div>
                 
                 {/* Floating Elements */}
-                <div className="absolute top-4 right-4 w-3 h-3 bg-blue-400 rounded-full opacity-60 group-hover:animate-pulse"></div>
-                <div className="absolute bottom-6 left-4 w-2 h-2 bg-indigo-400 rounded-full opacity-40 group-hover:animate-bounce"></div>
+                <div className="absolute top-4 right-4 w-3 h-3 rounded-full opacity-60 group-hover:animate-pulse" style={{ backgroundColor: '#E76524' }}></div>
+                <div className="absolute bottom-6 left-4 w-2 h-2 rounded-full opacity-40 group-hover:animate-bounce" style={{ backgroundColor: '#E76524' }}></div>
               </div>
 
               {/* Content */}
               <div className="p-6 relative z-10">
                 <div className="text-center mb-4">
-                  <h3 className="text-xl font-bold text-slate-800 mb-1 group-hover:text-blue-700 transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-slate-800 mb-1 transition-colors duration-300" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
                     {member.name}
                   </h3>
-                  <p className="text-blue-600 font-semibold text-sm mb-2">{member.position}</p>
+                  <p className="font-semibold text-sm mb-2" style={{ color: '#E76524' }}>{member.position}</p>
                   <div className="flex items-center justify-center text-xs text-slate-500 bg-slate-50 rounded-full px-3 py-1">
                     <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
                     {member.experience} experience
@@ -566,11 +566,11 @@ const AlternatingCards = () => {
 
                 {/* Contact Info */}
                 {/* <div className="space-y-2">
-                  <div className="flex items-center text-xs text-slate-600 group-hover:text-blue-600 transition-colors duration-300">
+                  <div className="flex items-center text-xs text-slate-600 transition-colors duration-300" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
                     <Mail className="w-3 h-3 mr-2" />
                     <span className="truncate">{member.email}</span>
                   </div>
-                  <div className="flex items-center text-xs text-slate-600 group-hover:text-blue-600 transition-colors duration-300">
+                  <div className="flex items-center text-xs text-slate-600 transition-colors duration-300" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
                     <Phone className="w-3 h-3 mr-2" />
                     <span>{member.phone}</span>
                   </div>
@@ -578,7 +578,7 @@ const AlternatingCards = () => {
 
                 {/* Social Link */}
                 {/* <div className="mt-4 pt-4 border-t border-slate-100">
-                  <button className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-2 px-4 rounded-lg text-xs font-semibold hover:from-blue-600 hover:to-indigo-700 transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2">
+                  <button className="w-full text-white py-2 px-4 rounded-lg text-xs font-semibold transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2" style={{ background: 'linear-gradient(to right, #E76524, #d1551a)' }} onMouseEnter={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #d1551a, #b84a15)'} onMouseLeave={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #E76524, #d1551a)'}>
                     <Linkedin className="w-3 h-3" />
                     <span>Connect</span>
                   </button>
@@ -586,7 +586,7 @@ const AlternatingCards = () => {
               </div>
 
               {/* Hover Effect Border */}
-              <div className="absolute inset-0 border-2 border-transparent group-hover:border-blue-200 rounded-2xl transition-all duration-500"></div>
+              <div className="absolute inset-0 border-2 border-transparent rounded-2xl transition-all duration-500" style={{ '--hover-border': 'rgba(231, 101, 36, 0.3)' } as React.CSSProperties} onMouseEnter={(e) => e.currentTarget.style.borderColor = 'rgba(231, 101, 36, 0.3)'} onMouseLeave={(e) => e.currentTarget.style.borderColor = 'transparent'}></div>
             </div>
           ))}
         </div>
@@ -601,7 +601,7 @@ const AlternatingCards = () => {
               Our team of certified professionals is ready to help you achieve your business objectives 
               through cost-effective and efficient professional services.
             </p>
-            <button className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-indigo-700 transform hover:scale-105 transition-all duration-300 shadow-lg">
+            <button className="text-white px-8 py-3 rounded-lg font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg" style={{ background: 'linear-gradient(to right, #E76524, #d1551a)' }} onMouseEnter={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #d1551a, #b84a15)'} onMouseLeave={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #E76524, #d1551a)'}>
               Get in Touch
             </button>
           </div>
@@ -630,7 +630,7 @@ const AlternatingCards = () => {
     </div>
     </section>
      
-    <ServicesSection />
+    {/* <ServicesSection /> */}
     <SuccessStories />
       
     </div>

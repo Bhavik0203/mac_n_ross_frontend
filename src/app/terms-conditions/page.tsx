@@ -164,11 +164,11 @@ const toggleSection = (sectionId: string) => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50" style={{ background: 'linear-gradient(to bottom right, #f8f9fa, #fff5f0, #fff5f0)' }}>
       {/* Header Section */}
-      <div className={`relative overflow-hidden bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'}`}>
+      <div className={`relative overflow-hidden transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'}`} style={{ background: 'linear-gradient(to right, #231F20, #231F20, #231F20)' }}>
         <div className="absolute inset-0 bg-black opacity-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-transparent"></div>
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(35, 31, 32, 0.2), transparent)' }}></div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="text-center">
@@ -178,12 +178,12 @@ const toggleSection = (sectionId: string) => {
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
               Terms & Conditions
             </h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: '#E76524' }}>
               Professional Services Agreement for Mac & Ross Chartered Accountants L.L.C
             </p>
-            <div className="mt-8 flex items-center justify-center space-x-4 text-blue-200">
+            <div className="mt-8 flex items-center justify-center space-x-4" style={{ color: '#E76524' }}>
               <span className="text-sm">Last Updated: June 2025</span>
-              <span className="w-1 h-1 bg-blue-300 rounded-full"></span>
+              <span className="w-1 h-1 rounded-full" style={{ backgroundColor: '#E76524' }}></span>
               <span className="text-sm">Version 2.1</span>
             </div>
           </div>
@@ -202,24 +202,26 @@ const toggleSection = (sectionId: string) => {
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div
-                className="flex items-center justify-between p-8 cursor-pointer hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 transition-all duration-300 group"
+                className="flex items-center justify-between p-8 cursor-pointer transition-all duration-300 group"
+                onMouseEnter={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #fff5f0, #ffe8d6)'}
+                onMouseLeave={(e) => e.currentTarget.style.background = ''}
                 onClick={() => toggleSection(section.id)}
               >
                 <div className="flex items-center space-x-4">
-                  <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <div className="flex items-center justify-center w-12 h-12 rounded-xl text-white shadow-lg group-hover:scale-110 transition-transform duration-300" style={{ background: 'linear-gradient(to bottom right, #E76524, #d1551a)' }}>
                     {section.icon}
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors duration-300">
+                    <h3 className="text-2xl font-bold text-gray-900 transition-colors duration-300" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
                       {section.title}
                     </h3>
                     <p className="text-gray-500 mt-1">Click to expand details</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="h-8 w-0.5 bg-gradient-to-b from-blue-500 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="h-8 w-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: 'linear-gradient(to bottom, #E76524, #d1551a)' }}></div>
                   <div className={`transform transition-transform duration-300 ${expandedSections[section.id] ? 'rotate-180' : ''}`}>
-                    <ChevronDown className="w-6 h-6 text-gray-400 group-hover:text-blue-600" />
+                    <ChevronDown className="w-6 h-6 text-gray-400" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''} />
                   </div>
                 </div>
               </div>
@@ -230,7 +232,7 @@ const toggleSection = (sectionId: string) => {
                   : 'max-h-0 opacity-0'
               } overflow-hidden`}>
                 <div className="px-8 pb-8">
-                  <div className="h-px bg-gradient-to-r from-blue-200 via-indigo-200 to-transparent mb-6"></div>
+                  <div className="h-px mb-6" style={{ background: 'linear-gradient(to right, rgba(231, 101, 36, 0.2), rgba(231, 101, 36, 0.2), transparent)' }}></div>
                   <div className="prose prose-lg max-w-none">
                     <p className="text-gray-700 leading-relaxed whitespace-pre-line">
                       {section.content}
@@ -243,12 +245,12 @@ const toggleSection = (sectionId: string) => {
         </div>
 
         {/* Contact Information */}
-        <div className={`mt-16 bg-gradient-to-r from-blue-900 to-indigo-900 rounded-2xl p-8 text-white transform transition-all duration-1000 ${
+        <div className={`mt-16 rounded-2xl p-8 text-white transform transition-all duration-1000 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
         }`} style={{ transitionDelay: '1000ms' }}>
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold mb-4">Questions About Our Terms?</h2>
-            <p className="text-blue-100 text-lg">Contact our professional team for clarification</p>
+            <p className="text-lg" style={{ color: '#E76524' }}>Contact our professional team for clarification</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-6">
@@ -258,7 +260,7 @@ const toggleSection = (sectionId: string) => {
               </div>
               <div>
                 <p className="font-semibold">Call Us</p>
-                <p className="text-blue-200 text-sm">+971 4 XXX XXXX</p>
+                <p className="text-sm" style={{ color: '#E76524' }}>+971 4 XXX XXXX</p>
               </div>
             </div>
             
@@ -268,7 +270,7 @@ const toggleSection = (sectionId: string) => {
               </div>
               <div>
                 <p className="font-semibold">Email Us</p>
-                <p className="text-blue-200 text-sm">info@macnross.com</p>
+                <p className="text-sm" style={{ color: '#E76524' }}>info@macnross.com</p>
               </div>
             </div>
             
@@ -278,7 +280,7 @@ const toggleSection = (sectionId: string) => {
               </div>
               <div>
                 <p className="font-semibold">Visit Us</p>
-                <p className="text-blue-200 text-sm">Dubai, UAE</p>
+                <p className="text-sm" style={{ color: '#E76524' }}>Dubai, UAE</p>
               </div>
             </div>
           </div>

@@ -111,7 +111,7 @@ const handleSubmit = (e: SubmitEvent) => {
 };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50" style={{ background: 'linear-gradient(to bottom right, #f8f9fa, #fff5f0)' }}>
       {/* Header Section */}
      <section className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
   {/* Background Image */}
@@ -172,11 +172,11 @@ const handleSubmit = (e: SubmitEvent) => {
                   onMouseEnter={() => setHoveredStep(step.number)}
                   onMouseLeave={() => setHoveredStep(null)}
                 >
-                  <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold transition-all duration-300 ${hoveredStep === step.number ? 'bg-pink-600 scale-110 shadow-lg' : 'bg-pink-500'}`}>
+                  <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold transition-all duration-300 ${hoveredStep === step.number ? 'scale-110 shadow-lg' : ''}`} style={{ backgroundColor: hoveredStep === step.number ? '#d1551a' : '#E76524' }}>
                     {step.number}
                   </div>
                   <div className="flex-1">
-                    <h3 className={`font-semibold text-gray-900 mb-2 transition-colors duration-300 ${hoveredStep === step.number ? 'text-pink-600' : ''}`}>
+                    <h3 className={`font-semibold text-gray-900 mb-2 transition-colors duration-300`} style={{ color: hoveredStep === step.number ? '#E76524' : '' }}>
                       {step.title}
                     </h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
@@ -191,15 +191,15 @@ const handleSubmit = (e: SubmitEvent) => {
             <div className="mt-12 p-6 bg-white rounded-xl shadow-lg border border-gray-100">
               <h3 className="font-semibold text-gray-900 mb-4">Contact Information</h3>
               <div className="space-y-3">
-                <div className="flex items-center space-x-3 text-gray-600 hover:text-blue-600 transition-colors cursor-pointer">
+                <div className="flex items-center space-x-3 text-gray-600 transition-colors cursor-pointer" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
                   <Phone className="w-4 h-4" />
                   <span className="text-sm">+971-4-3584999</span>
                 </div>
-                <div className="flex items-center space-x-3 text-gray-600 hover:text-blue-600 transition-colors cursor-pointer">
+                <div className="flex items-center space-x-3 text-gray-600 transition-colors cursor-pointer" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
                   <Phone className="w-4 h-4" />
                   <span className="text-sm">+971-55-1950580</span>
                 </div>
-                <div className="flex items-center space-x-3 text-gray-600 hover:text-blue-600 transition-colors cursor-pointer">
+                <div className="flex items-center space-x-3 text-gray-600 transition-colors cursor-pointer" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
                   <Mail className="w-4 h-4" />
                   <span className="text-sm">contact@macnross.com</span>
                 </div>
@@ -223,7 +223,7 @@ const handleSubmit = (e: SubmitEvent) => {
                       placeholder="Your name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-gray-50 border-0 rounded-lg focus:bg-white focus:ring-2 focus:ring-blue-500 transition-all duration-300 group-hover:bg-gray-100"
+                      className="w-full px-4 py-3 bg-gray-50 border-0 rounded-lg focus:bg-white focus:ring-2 focus:ring-[#E76524] transition-all duration-300 group-hover:bg-gray-100"
                       required
                     />
                   </div>
@@ -234,7 +234,7 @@ const handleSubmit = (e: SubmitEvent) => {
                       placeholder="Your email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-gray-50 border-0 rounded-lg focus:bg-white focus:ring-2 focus:ring-blue-500 transition-all duration-300 group-hover:bg-gray-100"
+                      className="w-full px-4 py-3 bg-gray-50 border-0 rounded-lg focus:bg-white focus:ring-2 focus:ring-[#E76524] transition-all duration-300 group-hover:bg-gray-100"
                       required
                     />
                   </div>
@@ -248,7 +248,7 @@ const handleSubmit = (e: SubmitEvent) => {
                       placeholder="Company"
                       value={formData.company}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-gray-50 border-0 rounded-lg focus:bg-white focus:ring-2 focus:ring-blue-500 transition-all duration-300 group-hover:bg-gray-100"
+                      className="w-full px-4 py-3 bg-gray-50 border-0 rounded-lg focus:bg-white focus:ring-2 focus:ring-[#E76524] transition-all duration-300 group-hover:bg-gray-100"
                     />
                   </div>
                   <div className="group relative">
@@ -256,7 +256,7 @@ const handleSubmit = (e: SubmitEvent) => {
                       name="budget"
                       value={formData.budget}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-gray-50 border-0 rounded-lg focus:bg-white focus:ring-2 focus:ring-blue-500 transition-all duration-300 group-hover:bg-gray-100 appearance-none cursor-pointer"
+                      className="w-full px-4 py-3 bg-gray-50 border-0 rounded-lg focus:bg-white focus:ring-2 focus:ring-[#E76524] transition-all duration-300 group-hover:bg-gray-100 appearance-none cursor-pointer"
                     >
                       <option value="">App budget</option>
                       {budgetRanges.map(range => (
@@ -273,7 +273,7 @@ const handleSubmit = (e: SubmitEvent) => {
                       name="service"
                       value={formData.service}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-gray-50 border-0 rounded-lg focus:bg-white focus:ring-2 focus:ring-blue-500 transition-all duration-300 group-hover:bg-gray-100 appearance-none cursor-pointer"
+                      className="w-full px-4 py-3 bg-gray-50 border-0 rounded-lg focus:bg-white focus:ring-2 focus:ring-[#E76524] transition-all duration-300 group-hover:bg-gray-100 appearance-none cursor-pointer"
                     >
                       <option value="">Select Service Type</option>
                       {services.map(service => (
@@ -292,12 +292,12 @@ const handleSubmit = (e: SubmitEvent) => {
                     value={formData.projectDetails}
                     onChange={handleInputChange}
                     rows={4}
-                    className="w-full px-4 py-3 bg-gray-50 border-0 rounded-lg focus:bg-white focus:ring-2 focus:ring-blue-500 transition-all duration-300 hover:bg-gray-100 resize-none"
+                    className="w-full px-4 py-3 bg-gray-50 border-0 rounded-lg focus:bg-white focus:ring-2 focus:ring-[#E76524] transition-all duration-300 hover:bg-gray-100 resize-none"
                   />
                 </div>
 
                 <div className="mb-8">
-                  <div className="border-2 border-dashed border-gray-200 rounded-lg p-8 text-center hover:border-blue-300 hover:bg-blue-50 transition-all duration-300 cursor-pointer group">
+                  <div className="border-2 border-dashed border-gray-200 rounded-lg p-8 text-center transition-all duration-300 cursor-pointer group" onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#E76524'; e.currentTarget.style.backgroundColor = '#fff5f0'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = ''; e.currentTarget.style.backgroundColor = ''; }}>
                     <input
                       type="file"
                       onChange={handleFileUpload}
@@ -306,8 +306,8 @@ const handleSubmit = (e: SubmitEvent) => {
                       accept=".pdf,.doc,.docx,.txt"
                     />
                     <label htmlFor="file-upload" className="cursor-pointer">
-                      <Upload className="w-8 h-8 text-gray-400 mx-auto mb-2 group-hover:text-blue-500 transition-colors" />
-                      <p className="text-gray-500 text-sm group-hover:text-blue-600 transition-colors">
+                      <Upload className="w-8 h-8 text-gray-400 mx-auto mb-2 transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''} />
+                      <p className="text-gray-500 text-sm transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
                         {formData.file ? formData.file.name : "DROP IT LIKE IT'S HOT"}
                       </p>
                     </label>
@@ -317,14 +317,17 @@ const handleSubmit = (e: SubmitEvent) => {
                 <button
                   type="button"
                   onClick={handleSubmit}
-                  className="w-full bg-blue-900 text-white py-4 rounded-lg font-semibold hover:bg-blue-800 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="w-full text-white py-4 rounded-lg font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  style={{ backgroundColor: '#E76524' }}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#d1551a'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#E76524'}
                 >
                   Send
                 </button>
 
                 <p className="text-center text-gray-500 text-sm mt-4">
                   If you need to have a DNA first, just contact us at{' '}
-                  <a href="mailto:contact@macnross.com" className="text-blue-600 hover:text-blue-800 transition-colors">
+                  <a href="mailto:contact@macnross.com" className="transition-colors" style={{ color: '#E76524' }} onMouseEnter={(e) => e.currentTarget.style.color = '#d1551a'} onMouseLeave={(e) => e.currentTarget.style.color = '#E76524'}>
                     contact@macnross.com
                   </a>
                 </p>
@@ -349,7 +352,7 @@ const handleSubmit = (e: SubmitEvent) => {
                 className={`bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
                 style={{ transitionDelay: `${800 + (index * 100)}ms` }}
               >
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style={{ background: 'linear-gradient(to right, #E76524, #d1551a)' }}>
                   <CheckCircle className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">{service}</h3>
@@ -362,17 +365,17 @@ const handleSubmit = (e: SubmitEvent) => {
         </div>
 
         {/* Call to Action Section */}
-        <div className={`mt-16 bg-gradient-to-r from-blue-900 to-blue-800 rounded-2xl p-12 text-center text-white transform transition-all duration-1000 delay-900 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+        <div className={`mt-16 rounded-2xl p-12 text-center text-white transform transition-all duration-1000 delay-900 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} style={{ background: 'linear-gradient(to right, #231F20, #231F20)' }}>
           <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-          <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="mb-8 max-w-2xl mx-auto" style={{ color: '#E76524' }}>
             Join hundreds of satisfied clients who trust Mac & Ross for their business needs. 
             Let's discuss how we can help your business grow.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transform hover:scale-105 transition-all duration-300">
+            <button className="bg-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transform hover:scale-105 transition-all duration-300" style={{ color: '#231F20' }}>
               Schedule Consultation
             </button>
-            <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transform hover:scale-105 transition-all duration-300">
+            <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white transform hover:scale-105 transition-all duration-300" onMouseEnter={(e) => e.currentTarget.style.color = '#231F20'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
               View Our Portfolio
             </button>
           </div>

@@ -90,7 +90,7 @@ export default function Home() {
       title: "VAT Consulting",
       description: "Expert VAT advisory services to help you navigate complex tax regulations and optimize your business operations.",
       icon: Calculator,
-      color: "from-blue-500 to-purple-600",
+      color: "from-[#E76524] to-[#d1551a]",
       image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop"
     },
     {
@@ -106,7 +106,7 @@ export default function Home() {
       title: "Excise Tax",
       description: "Specialized excise tax services ensuring full compliance with regulatory requirements.",
       icon: Shield,
-      color: "from-orange-500 to-red-600",
+      color: "from-[#E76524] to-[#d1551a]",
       image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=250&fit=crop"
     },
     {
@@ -122,7 +122,7 @@ export default function Home() {
       title: "Business Registration",
       description: "Complete business setup and registration services to get your company started legally.",
       icon: Users,
-      color: "from-indigo-500 to-blue-600",
+      color: "from-[#E76524] to-[#d1551a]",
       image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&h=250&fit=crop"
     },
     {
@@ -454,6 +454,7 @@ export default function Home() {
     </h2>
 
     {/* Two Column Content */}
+    
    <div className="grid grid-cols-1 lg:grid-cols-2 px-4 gap-8 text-left pb-6">
   <div className="leading-relaxed">
     <p>
@@ -467,118 +468,165 @@ export default function Home() {
   </div>
 </div>
 
-  </div>
-   <div className="max-w-6xl  z-50 mx-auto px-4 my-10 ">
-     <div className="grid grid-cols-1 md:grid-cols-2 gap-0 max-w-6xl mx-auto shadow-lg ">
-          {/* Top Left - Video Section */}
-          <div className="relative bg-gray-100">
-            <div className="relative w-full h-full min-h-[400px]">
-              <Image
-                src={pic}
-                alt="Business team meeting"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
 
-          {/* Top Right - Trust Content */}
-          <div className="bg-white p-8 flex flex-col justify-center items-start">
-  <div className="">
-    <p className="text-xs text-gray-400 mb-2 uppercase tracking-widest">
+  </div>
+  <section className="relative w-full py-8  ">
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-0 min-h-[400px] lg:min-h-[550px]">
+      
+    
+      <div
+        className="relative w-full lg:w-[70%] 
+                   lg:absolute lg:left-0 lg:top-1/2 lg:-translate-y-1/2 
+                   z-20 bg-white p-6 sm:p-8 lg:p-12 shadow-xl 
+                   mt-4 lg:mt-0 rounded-lg
+                   order-2 lg:order-1"
+      >
+         <div className="">
+    <p className="text-xs text-[#666666] mb-2 uppercase tracking-widest">
       Did you know that
     </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1B2A7C] mb-6 leading-snug">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#E76524] mb-6 leading-snug">
           We are trusted by clients <br /> across the UAE
     </h2>
-    <p className="text-gray-500 mb-8 leading-relaxed text-sm">
+    <p className="text-[#666666] mb-8 leading-relaxed ">
         At Mac & Ross Chartered Accountants LLC, we believe trust is earned through precision, transparency, and results. As one of the most reliable auditing and accounting firms in Dubai, we combine international expertise with deep local insight to help businesses thrive in the UAE's fast-evolving financial landscape.
           </p>
-    <button className="bg-white border cursor-pointer border-[#1B2A7C] text-[#1B2A7C] px-6 py-3 rounded-full font-semibold hover:bg-[#f0f4ff] transition-colors">
+    <button className="bg-white border cursor-pointer border-[#E76524] text-[#E76524] px-6 py-3 rounded-full font-semibold hover:bg-[#E76524] hover:text-white transition-colors">
       Read Our Story
     </button>
   </div>
-</div>
 
+      
+       
+      </div>
 
-          {/* Bottom Left - Expertise Content */}
-          <div className="bg-gray-900 text-white p-8 flex flex-col justify-center">
-            <div className="max-w-md">
+     
+      <div
+        className="relative w-full lg:w-[50%] 
+                   h-[300px] sm:h-[400px] lg:h-[550px] 
+                   flex-shrink-0 
+                   order-1 lg:order-2 lg:ml-auto"
+      >
+        <div className="block w-full h-full relative">
+          <Image
+            src={pic}
+            alt="UAE E-Invoicing Partnership"
+            fill
+            className="object-cover rounded-lg"
+            priority
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="overview" className="relative w-full py-8 ">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-0 min-h-[400px] lg:min-h-[550px]">
+              {/* Left Side - Image */}
+              <div className="relative w-full lg:w-[50%] h-[300px] sm:h-[400px] lg:h-[550px] flex-shrink-0 order-1 lg:order-1">
+                <div className="block w-full h-full">
+                  <Image
+                    src={pic}
+                    alt="UAE E-Invoicing Partnership"
+                    fill
+                    className="object-cover rounded-lg"
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
+              </div>
+
+              {/* Right Side - White Overlay Box */}
+              <div className="relative w-full lg:w-[70%] lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 z-20 bg-white p-6 sm:p-8 lg:p-12 shadow-xl lg:-ml-20 lg:mt-0 mt-4 order-2 lg:order-2 rounded-lg">
+                {/* Main Headline */}
+                <div className="">
               <h2 className="text-3xl font-bold mb-4">
                Why Choose Mac & Ross</h2>
-              <p className="text-gray-300 mb-8">
-                Mac & Ross Chartered Accountants pairs global standards with local know-how to keep your finances clear, compliant, and growth-ready.
+              <p className="text-[#666666] mb-8">
+                Global standards meets local expertise for clear, compliant, and growth-ready finances.
               </p>
               
-              <div className="space-y-4 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#E76524' }}></div>
                   <div>
-                    <p className="text-sm font-semibold text-white mb-1">Global Standards, Local Insight</p>
-                    <p className="text-xs text-gray-400">We blend international auditing rigor with on-the-ground UAE expertise.</p>
+                    <p className="text-sm font-semibold text-[#231F20] mb-1">Global Standards, Local Insight</p>
+                    <p className="text-xs text-[#666666]">International rigor with UAE expertise.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#E76524' }}></div>
                   <div>
-                    <p className="text-sm font-semibold text-white mb-1">Complete Coverage</p>
-                    <p className="text-xs text-gray-400">Audit, tax, VAT, compliance, and advisory—handled under one roof.</p>
+                    <p className="text-sm font-semibold text-[#231F20] mb-1">Complete Coverage</p>
+                    <p className="text-xs text-[#666666]">All services—audit, tax, VAT, compliance—under one roof.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#E76524' }}></div>
                   <div>
-                    <p className="text-sm font-semibold text-white mb-1">Seasoned Specialists</p>
-                    <p className="text-xs text-gray-400">Chartered pros who partner with you, not just your books.</p>
+                    <p className="text-sm font-semibold text-[#231F20] mb-1">Expert Partners</p>
+                    <p className="text-xs text-[#666666]">Chartered professionals focused on your success.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#E76524' }}></div>
                   <div>
-                    <p className="text-sm font-semibold text-white mb-1">Transparent & Trusted</p>
-                    <p className="text-xs text-gray-400">Straightforward guidance that keeps you compliant and confident.</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <p className="text-sm font-semibold text-white mb-1">Client First</p>
-                    <p className="text-xs text-gray-400">Your goals lead every recommendation we make.</p>
+                    <p className="text-sm font-semibold text-[#231F20] mb-1">Transparent & Client-Focused</p>
+                    <p className="text-xs text-[#666666]">Clear guidance tailored to your goals.</p>
                   </div>
                 </div>
               </div>
 
-                <button className="bg-white cursor-pointer text-gray-900 px-6 py-3 rounded-full hover:bg-gray-100 transition-colors">
-            Learn More
+              <button className="bg-white border cursor-pointer border-[#E76524] text-[#E76524] px-6 py-3 rounded-full font-semibold hover:bg-[#E76524] hover:text-white transition-colors">
+              Learn More
           </button>
             </div>
-          </div>
-
-          {/* Bottom Right - Team Image */}
-          <div className="relative bg-gray-100">
-            <div className="relative w-full h-full min-h-[400px]">
-              <Image
-                src={pic}
-                alt="Business team meeting"
-                fill
-                className="object-cover"
-              />
+               
+              </div>
             </div>
+
+            {/* Statistics Section - Below the white box */}
+            {/* <div className="w-full flex justify-center mt-6 sm:mt-8 lg:mt-16 px-4">
+              <div 
+                ref={statsRef}
+                className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 w-full max-w-7xl"
+              >
+                {stats.map((stat, index) => (
+                  <div key={index} className="text-center px-2 sm:px-0">
+                    <div className="text-[#1A1A1A] font-bold text-2xl sm:text-4xl lg:text-6xl mb-1 sm:mb-2">
+                      {shouldAnimate ? (
+                        stat.value >= 1000 ? (
+                          <span>{stat.value.toLocaleString()} +</span>
+                        ) : (
+                          <span>{stat.value} +</span>
+                        )
+                      ) : (
+                        "0 +"
+                      )}
+                    </div>
+                    <div className="text-[#666666] text-xs sm:text-sm lg:text-base leading-tight sm:leading-normal">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div> */}
           </div>
-        </div>
-    </div>
+        </section>
+  
 </section>
 
 {/* <ScrollImageAnimation/> */}
-     <section className="bg-red-50 py-16 px-4">
+     <section className="py-16 px-4" style={{ backgroundColor: '#fff5f0' }}>
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center ">
           <h2 className="text-5xl font-bold text-gray-800 ">
             A Brief About{' '}
-            <span className="text-red-500 relative inline-block underline-animation">
+            <span className="relative inline-block underline-animation" style={{ color: '#E76524' }}>
               Mac N Ross
-              <span className="absolute -bottom-2 left-0 w-full h-1 bg-red-500 scale-x-0 animation-underline"></span>
+              <span className="absolute -bottom-2 left-0 w-full h-1 scale-x-0 animation-underline" style={{ backgroundColor: '#E76524' }}></span>
             </span>
           </h2>
         </div>
@@ -594,7 +642,7 @@ export default function Home() {
             >
               <div className="flex flex-col items-center text-center group">
                 <div className="w-48 h-48 bg-white rounded-[10px] shadow-lg flex items-center justify-center mb-6 relative overflow-hidden transform transition-all duration-500 ease-out group-hover:scale-110 group-hover:shadow-2xl group-hover:-translate-y-2 cursor-pointer">
-                  <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: 'linear-gradient(to bottom right, rgba(231, 101, 36, 0.2), transparent)' }}></div>
                   <Image
                     src={pic}
                     alt="Pillar Image"
@@ -609,10 +657,10 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-red-500 group-hover:scale-105 transition-all duration-300">
+                <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:scale-105 transition-all duration-300" style={{ '--hover-color': '#E76524' } as React.CSSProperties} onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
                   {title}
                 </h3>
-                <div className="w-0 h-0.5 bg-red-500 group-hover:w-full transition-all duration-300"></div>
+                <div className="w-0 h-0.5 group-hover:w-full transition-all duration-300" style={{ backgroundColor: '#E76524' }}></div>
               </div>
             </div>
           ))}
@@ -696,7 +744,7 @@ export default function Home() {
 
                      
                       <div className="p-8">
-                        <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-500">
+                        <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-[#E76524] transition-all duration-500">
                           {service.title}
                         </h3>
                       <p className="text-gray-600 leading-relaxed mb-6 group-hover:text-gray-700 transition-colors duration-300">
@@ -713,7 +761,7 @@ export default function Home() {
                       </div>
 
                       
-                      <div className="absolute -bottom-2 -right-2 w-20 h-20 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full opacity-0 group-hover:opacity-20 transition-all duration-700 transform translate-x-4 translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0"></div>
+                      <div className="absolute -bottom-2 -right-2 w-20 h-20 rounded-full opacity-0 group-hover:opacity-20 transition-all duration-700 transform translate-x-4 translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0" style={{ background: 'linear-gradient(to right, #E76524, #d1551a)' }}></div>
                       <div className="absolute -top-2 -left-2 w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full opacity-0 group-hover:opacity-20 transition-all duration-700 transform -translate-x-4 -translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0"></div>
                     </div>
                   </div>
@@ -744,7 +792,7 @@ export default function Home() {
                 onClick={() => goToSlide(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   currentSlide === index
-                    ? 'bg-gradient-to-r from-blue-500 to-purple-600 w-8'
+                    ? 'w-8'
                     : 'bg-gray-300 hover:bg-gray-400'
                 }`}
               />
@@ -753,8 +801,8 @@ export default function Home() {
         </div>
 
         
-        <div className="text-center m-8 ">
-          <div className="bg-white rounded-2xl shadow-lg p-8  max-w-4xl mx-auto">
+        <div className="text-center ">
+          <div className="bg-white  p-8  max-w-4xl mx-auto">
            <h2 className="text-5xl font-bold text-gray-800 mb-6">
               Why Choose Our Services?
             </h2>
@@ -826,7 +874,7 @@ export default function Home() {
                 <h4 className="text-white text-lg sm:text-xl font-semibold">
                   {testimonials[currentSlide].author}
                 </h4>
-                <p className="text-blue-200 text-xs sm:text-sm font-medium tracking-widest uppercase">
+                <p className="text-xs sm:text-sm font-medium tracking-widest uppercase" style={{ color: '#E76524' }}>
                   {testimonials[currentSlide].position}
                 </p>
               </div>
@@ -870,7 +918,7 @@ export default function Home() {
           <h1 className="text-5xl font-bold text-gray-800 mb-4">
             Request a call back?
           </h1>
-          <div className="w-16 h-1 bg-blue-600 mb-8"></div>
+          <div className="w-16 h-1 mb-8" style={{ backgroundColor: '#E76524' }}></div>
           <div className="space-y-4 text-gray-600">
             <p className="text-lg">
               Please fill out the form and press the submit button.
@@ -893,7 +941,7 @@ export default function Home() {
                   value={formData.fullName}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-100 border-0 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-600"
+                  className="w-full px-4 py-3 bg-gray-100 border-0 rounded-md focus:outline-none focus:ring-2 focus:ring-[#E76524] placeholder-gray-600"
                 />
               </div>
               <div>
@@ -904,7 +952,7 @@ export default function Home() {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-100 border-0 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-600"
+                  className="w-full px-4 py-3 bg-gray-100 border-0 rounded-md focus:outline-none focus:ring-2 focus:ring-[#E76524] placeholder-gray-600"
                 />
               </div>
             </div>
@@ -918,7 +966,7 @@ export default function Home() {
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-100 border-0 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-600"
+                  className="w-full px-4 py-3 bg-gray-100 border-0 rounded-md focus:outline-none focus:ring-2 focus:ring-[#E76524] placeholder-gray-600"
                 />
               </div>
               <div>
@@ -928,7 +976,7 @@ export default function Home() {
                   placeholder="Phone Number"
                   value={formData.phoneNumber}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-gray-100 border-0 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-600"
+                  className="w-full px-4 py-3 bg-gray-100 border-0 rounded-md focus:outline-none focus:ring-2 focus:ring-[#E76524] placeholder-gray-600"
                 />
               </div>
             </div>
@@ -941,14 +989,17 @@ export default function Home() {
                 onChange={handleInputChange}
                 required
                 rows={6}
-                className="w-full px-4 py-3 bg-gray-100 border-0 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-600 resize-none"
+                className="w-full px-4 py-3 bg-gray-100 border-0 rounded-md focus:outline-none focus:ring-2 focus:ring-[#E76524] placeholder-gray-600 resize-none"
               />
             </div>
 
             <div className="flex justify-center">
               <button
                 type="submit"
-                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                className="text-white font-semibold px-8 py-3 rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#E76524] focus:ring-offset-2"
+                style={{ backgroundColor: '#E76524' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#d1551a'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#E76524'}
               >
                 Submit Now
               </button>

@@ -51,7 +51,7 @@ const scrollToSection = (sectionId: string): void => {
 };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50" style={{ background: 'linear-gradient(to bottom right, #f8f9fa, #fff5f0)' }}>
       {/* Header */}
       
        <section className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
@@ -86,10 +86,14 @@ const scrollToSection = (sectionId: string): void => {
                       <button
                         key={section.id}
                         onClick={() => scrollToSection(section.id)}
-                        className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-left transition-all duration-300 group hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:shadow-md hover:scale-105 ${
-                          activeSection === section.id 
-                            ? 'bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 shadow-md' 
-                            : 'text-gray-600 hover:text-blue-600'
+                        className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-left transition-all duration-300 group hover:shadow-md hover:scale-105 ${
+                            activeSection === section.id
+                            ? 'shadow-md' 
+                            : 'text-gray-600'
+                        }`}
+                        style={activeSection === section.id ? { background: 'linear-gradient(to right, #fff5f0, #ffe8d6)', color: '#E76524' } : {}}
+                        onMouseEnter={(e) => { if (activeSection !== section.id) { e.currentTarget.style.background = 'linear-gradient(to right, #fff5f0, #ffe8d6)'; e.currentTarget.style.color = '#E76524'; } }}
+                        onMouseLeave={(e) => { if (activeSection !== section.id) { e.currentTarget.style.background = ''; e.currentTarget.style.color = ''; } }}
                         }`}
                         style={{ animationDelay: `${index * 0.1}s` }}
                       >
@@ -136,7 +140,7 @@ const scrollToSection = (sectionId: string): void => {
     </div>
      
   </div>
-  <div className="bg-blue-50 border border-cyan-600 rounded-xl p-6">
+  <div className="rounded-xl p-6" style={{ backgroundColor: '#fff5f0', borderColor: '#E76524' }}>
       <ul className="list-disc pl-5 space-y-2">
         <li>
           Ensuring that the financial statements are in accordance with the appropriate reporting framework.
@@ -189,7 +193,7 @@ const scrollToSection = (sectionId: string): void => {
               {/* International Transfers */}
               <section id="international-transfers" data-section="international-transfers" className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                 <div className="flex items-center space-x-4 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center shadow-lg">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg" style={{ background: 'linear-gradient(to right, #E76524, #d1551a)' }}>
                     <Globe className="h-6 w-6 text-white" />
                   </div>
                   <h2 className="text-2xl font-bold text-gray-900">International Data Transfers</h2>
@@ -210,7 +214,7 @@ const scrollToSection = (sectionId: string): void => {
               </section>
 
               {/* Contact Us */}
-              <section id="contact-us" data-section="contact-us" className="bg-gradient-to-br from-gray-900 to-blue-900 rounded-2xl shadow-xl p-8 text-white hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+              <section id="contact-us" data-section="contact-us" className="rounded-2xl shadow-xl p-8 text-white hover:shadow-2xl transition-all duration-300 hover:-translate-y-1" style={{ background: 'linear-gradient(to bottom right, #231F20, #231F20)' }}>
                 <div className="flex items-center space-x-4 mb-6">
                   <div className="w-12 h-12 bg-gradient-to-r from-white to-gray-100 rounded-xl flex items-center justify-center shadow-lg">
                     <Mail className="h-6 w-6 text-gray-900" />

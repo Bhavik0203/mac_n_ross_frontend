@@ -162,7 +162,7 @@ const CareersPage = () => {
   const filteredJobs = activeTab === 'all' ? jobOpenings : jobOpenings.filter(job => job.category === activeTab);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50" style={{ background: 'linear-gradient(to bottom right, #f8f9fa, #fff5f0)' }}>
       {/* Hero Section */}
       <section
       className="relative py-10 px-4 bg-cover bg-center bg-no-repeat bg-fixed min-h-screen"
@@ -170,8 +170,8 @@ const CareersPage = () => {
     >
        <div className="absolute inset-0 bg-black/40"></div>
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-20 left-10 w-72 h-72 rounded-full blur-3xl animate-pulse" style={{ backgroundColor: 'rgba(231, 101, 36, 0.2)' }}></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full blur-3xl animate-pulse delay-1000" style={{ backgroundColor: 'rgba(231, 101, 36, 0.2)' }}></div>
         </div>
         
         <div className="relative max-w-7xl mx-auto px-6 my-auto mt-40">
@@ -184,20 +184,20 @@ const CareersPage = () => {
               transform: isVisible.hero ? 'translateY(0)' : 'translateY(2rem)'
             }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-blue-50 bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ color: '#E76524' }}>
               Build Your Career with Mac & Ross
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-50 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed" style={{ color: '#E76524' }}>
               Join UAE's leading chartered accountancy firm and shape the future of financial services in the region
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
              <Link href="/careers#contact" >
-              <button className="bg-white cursor-pointer  text-blue-900 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl">
+              <button className="bg-white cursor-pointer px-8 py-4 rounded-lg font-semibold transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl" style={{ color: '#231F20' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#fff5f0'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = ''}>
                 Explore Opportunities
               </button>
              </Link>
              <Link href="/aboutus">
-              <button className="border-2 cursor-pointer  border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transform hover:scale-105 transition-all duration-300">
+              <button className="border-2 cursor-pointer border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white transform hover:scale-105 transition-all duration-300" onMouseEnter={(e) => e.currentTarget.style.color = '#231F20'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
                 Learn About Us
               </button>
               </Link>
@@ -210,7 +210,7 @@ const CareersPage = () => {
       
             <SuccessStories/>
       {/* Why Work With Us */}
-      <section className="py-20 bg-gradient-to-r from-gray-50 to-blue-50">
+      <section className="py-20 bg-gradient-to-r from-gray-50" style={{ background: 'linear-gradient(to right, #f8f9fa, #fff5f0)' }}>
         <div className="max-w-6xl mx-auto px-6">
           <div 
             className="text-center mb-16 transform transition-all duration-1000"
@@ -240,7 +240,7 @@ const CareersPage = () => {
                   transitionDelay: `${index * 150}ms`
                 }}
               >
-                <div className="text-blue-600 mb-4 group-hover:text-blue-700 transition-colors duration-300">
+                <div className="mb-4 transition-colors duration-300" style={{ color: '#E76524' }} onMouseEnter={(e) => e.currentTarget.style.color = '#d1551a'} onMouseLeave={(e) => e.currentTarget.style.color = '#E76524'}>
                   {value.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
@@ -275,9 +275,10 @@ const CareersPage = () => {
                 onClick={() => setActiveTab(tab)}
                 className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 ${
                   activeTab === tab
-                    ? 'bg-blue-600 text-white shadow-lg'
+                    ? 'text-white shadow-lg'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
+                style={activeTab === tab ? { backgroundColor: '#E76524' } : {}}
               >
                 {tab.charAt(0).toUpperCase() + tab.slice(1)}
               </button>
@@ -300,12 +301,12 @@ const CareersPage = () => {
               >
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                    <h3 className="text-xl font-semibold text-gray-900 transition-colors duration-300" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
                       {job.title}
                     </h3>
-                    <p className="text-blue-600 font-medium">{job.department}</p>
+                    <p className="font-medium" style={{ color: '#E76524' }}>{job.department}</p>
                   </div>
-                  <div className="text-gray-400 group-hover:text-blue-600 transition-colors duration-300">
+                  <div className="text-gray-400 transition-colors duration-300" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
                     <Briefcase className="w-6 h-6" />
                   </div>
                 </div>
@@ -331,7 +332,7 @@ const CareersPage = () => {
 
                 <p className="text-gray-600 text-sm mb-6 leading-relaxed">{job.description}</p>
 
-                <button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 flex items-center justify-center group-hover:shadow-lg">
+                <button className="w-full text-white py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center group-hover:shadow-lg" style={{ background: 'linear-gradient(to right, #E76524, #d1551a)' }} onMouseEnter={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #d1551a, #b84a15)'} onMouseLeave={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #E76524, #d1551a)'}>
                   Apply Now
                   <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </button>
@@ -342,7 +343,7 @@ const CareersPage = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 to-indigo-900 text-white">
+      <section className="py-20 text-white" style={{ background: 'linear-gradient(to bottom right, #231F20, #231F20)' }}>
         <div className="max-w-6xl mx-auto px-6">
           <div 
             className="text-center mb-16 transform transition-all duration-1000"
@@ -354,7 +355,7 @@ const CareersPage = () => {
             }}
           >
             <h2 className="text-4xl font-bold mb-4">Employee Benefits</h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+            <p className="text-xl max-w-3xl mx-auto" style={{ color: '#E76524' }}>
               We invest in our people with comprehensive benefits and growth opportunities
             </p>
           </div>
@@ -372,11 +373,11 @@ const CareersPage = () => {
                   transitionDelay: `${index * 100}ms`
                 }}
               >
-                <div className="text-blue-300 mb-4 group-hover:text-white transition-colors duration-300">
+                <div className="mb-4 group-hover:text-white transition-colors duration-300" style={{ color: '#E76524' }}>
                   {benefit.icon}
                 </div>
                 <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
-                <p className="text-blue-100 leading-relaxed">{benefit.description}</p>
+                <p className="leading-relaxed" style={{ color: '#E76524' }}>{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -410,7 +411,7 @@ const CareersPage = () => {
               }}
             >
               <div className="flex items-center space-x-4 group cursor-pointer">
-                <div className="bg-blue-600 p-4 rounded-full group-hover:bg-blue-700 transition-colors duration-300">
+                <div className="p-4 rounded-full transition-colors duration-300" style={{ backgroundColor: '#E76524' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#d1551a'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#E76524'}>
                   <Phone className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -420,7 +421,7 @@ const CareersPage = () => {
               </div>
               
               <div className="flex items-center space-x-4 group cursor-pointer">
-                <div className="bg-blue-600 p-4 rounded-full group-hover:bg-blue-700 transition-colors duration-300">
+                <div className="p-4 rounded-full transition-colors duration-300" style={{ backgroundColor: '#E76524' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#d1551a'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#E76524'}>
                   <Mail className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -430,7 +431,7 @@ const CareersPage = () => {
               </div>
               
               <div className="flex items-center space-x-4 group cursor-pointer">
-                <div className="bg-blue-600 p-4 rounded-full group-hover:bg-blue-700 transition-colors duration-300">
+                <div className="p-4 rounded-full transition-colors duration-300" style={{ backgroundColor: '#E76524' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#d1551a'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#E76524'}>
                   <MapPin className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -455,25 +456,25 @@ const CareersPage = () => {
                   <input 
                     type="text" 
                     placeholder="Full Name" 
-                    className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                    className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E76524] focus:border-transparent transition-all duration-300"
                   />
                 </div>
                 <div>
                   <input 
                     type="email" 
                     placeholder="Email Address" 
-                    className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                    className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E76524] focus:border-transparent transition-all duration-300"
                   />
                 </div>
                 <div>
                   <input 
                     type="tel" 
                     placeholder="Phone Number" 
-                    className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                    className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E76524] focus:border-transparent transition-all duration-300"
                   />
                 </div>
                 <div>
-                  <select className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300">
+                  <select className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E76524] focus:border-transparent transition-all duration-300">
                     <option>Select Position</option>
                     <option>Senior Audit Manager</option>
                     <option>VAT Consultant</option>
@@ -486,10 +487,10 @@ const CareersPage = () => {
                 <div>
                   <input 
                     type="file" 
-                    className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                    className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E76524] focus:border-transparent transition-all duration-300"
                   />
                 </div>
-                <button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300">
+                <button className="w-full text-white py-4 rounded-lg font-semibold transition-all duration-300" style={{ background: 'linear-gradient(to right, #E76524, #d1551a)' }} onMouseEnter={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #d1551a, #b84a15)'} onMouseLeave={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #E76524, #d1551a)'}>
                   Submit Application
                 </button>
               </div>

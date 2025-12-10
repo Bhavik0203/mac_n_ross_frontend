@@ -25,9 +25,9 @@ const ProductStyle: React.FC = () => {
       alt: 'Compliance Management Inbox',
       content: 'Stay ahead of evolving regulations with automated alerts, audit trails, and customizable compliance workflows that reduce risk and ensure peace of mind.',
       buttonText: 'compliance-inbox',
-      gradientStart: '#3b82f6', // Tailwind blue-500
-      gradientEnd: '#7c3aed', // Tailwind purple-600
-      accentColor: '#3b82f6'
+      gradientStart: '#E76524', // Orange
+      gradientEnd: '#d1551a', // Darker orange
+      accentColor: '#E76524'
     },
     {
         id: 2,

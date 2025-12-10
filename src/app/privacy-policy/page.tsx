@@ -52,12 +52,12 @@ const scrollToSection = (sectionId: string): void => {
 };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50" style={{ background: 'linear-gradient(to bottom right, #f8f9fa, #fff5f0)' }}>
       {/* Header */}
       <div className={`bg-white shadow-lg transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center shadow-lg">
+            <div className="w-12 h-12 rounded-lg flex items-center justify-center shadow-lg" style={{ background: 'linear-gradient(to right, #E76524, #d1551a)' }}>
               <Shield className="h-6 w-6 text-white" />
             </div>
             <div>
@@ -82,10 +82,14 @@ const scrollToSection = (sectionId: string): void => {
                       <button
                         key={section.id}
                         onClick={() => scrollToSection(section.id)}
-                        className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-left transition-all duration-300 group hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:shadow-md hover:scale-105 ${
-                          activeSection === section.id 
-                            ? 'bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 shadow-md' 
-                            : 'text-gray-600 hover:text-blue-600'
+                        className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-left transition-all duration-300 group hover:shadow-md hover:scale-105 ${
+                            activeSection === section.id
+                            ? 'shadow-md' 
+                            : 'text-gray-600'
+                        }`}
+                        style={activeSection === section.id ? { background: 'linear-gradient(to right, #fff5f0, #ffe8d6)', color: '#E76524' } : {}}
+                        onMouseEnter={(e) => { if (activeSection !== section.id) { e.currentTarget.style.background = 'linear-gradient(to right, #fff5f0, #ffe8d6)'; e.currentTarget.style.color = '#E76524'; } }}
+                        onMouseLeave={(e) => { if (activeSection !== section.id) { e.currentTarget.style.background = ''; e.currentTarget.style.color = ''; } }}
                         }`}
                         style={{ animationDelay: `${index * 0.1}s` }}
                       >
@@ -106,7 +110,7 @@ const scrollToSection = (sectionId: string): void => {
               {/* Overview Section */}
               <section id="overview" data-section="overview" className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                 <div className="flex items-center space-x-4 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center shadow-lg">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg" style={{ background: 'linear-gradient(to right, #E76524, #d1551a)' }}>
                     <Shield className="h-6 w-6 text-white" />
                   </div>
                   <h2 className="text-2xl font-bold text-gray-900">Privacy Policy Overview</h2>
@@ -118,8 +122,8 @@ const scrollToSection = (sectionId: string): void => {
                   <p className="mb-4">
                     As a member of RT ASEAN Network and the Forum of Firms, we adhere to the highest international standards of confidentiality and data protection, ensuring that your information is handled with the utmost care and professionalism.
                   </p>
-                  <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
-                    <p className="text-blue-800 font-medium">Last Updated: June 2025</p>
+                  <div className="p-4 rounded-r-lg" style={{ backgroundColor: '#fff5f0', borderLeftColor: '#E76524', borderLeftWidth: '4px' }}>
+                    <p className="font-medium" style={{ color: '#E76524' }}>Last Updated: June 2025</p>
                   </div>
                 </div>
               </section>
@@ -143,7 +147,7 @@ const scrollToSection = (sectionId: string): void => {
                         <li>• Financial and accounting records</li>
                       </ul>
                     </div>
-                    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-100 hover:shadow-lg transition-all duration-300 hover:scale-105">
+                    <div className="p-6 rounded-xl border hover:shadow-lg transition-all duration-300 hover:scale-105" style={{ background: 'linear-gradient(to bottom right, #fff5f0, #ffe8d6)', borderColor: '#E76524' }}>
                       <h3 className="text-lg font-semibold text-gray-900 mb-3">Technical Information</h3>
                       <ul className="text-gray-600 space-y-2">
                         <li>• IP address and browser information</li>
@@ -167,7 +171,7 @@ const scrollToSection = (sectionId: string): void => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {[
                     { title: 'Service Delivery', desc: 'Providing audit, accounting, and consulting services', color: 'from-purple-500 to-pink-500' },
-                    { title: 'Communication', desc: 'Contacting you about our services and updates', color: 'from-blue-500 to-cyan-500' },
+                    { title: 'Communication', desc: 'Contacting you about our services and updates', color: 'from-[#E76524] to-[#d1551a]' },
                     { title: 'Compliance', desc: 'Meeting legal and regulatory requirements', color: 'from-green-500 to-emerald-500' }
                   ].map((item, index) => (
                     <div key={index} className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all duration-300 hover:scale-105 group">
@@ -272,7 +276,7 @@ const scrollToSection = (sectionId: string): void => {
               {/* International Transfers */}
               <section id="international-transfers" data-section="international-transfers" className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                 <div className="flex items-center space-x-4 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center shadow-lg">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg" style={{ background: 'linear-gradient(to right, #E76524, #d1551a)' }}>
                     <Globe className="h-6 w-6 text-white" />
                   </div>
                   <h2 className="text-2xl font-bold text-gray-900">International Data Transfers</h2>
@@ -293,7 +297,7 @@ const scrollToSection = (sectionId: string): void => {
               </section>
 
               {/* Contact Us */}
-              <section id="contact-us" data-section="contact-us" className="bg-gradient-to-br from-gray-900 to-blue-900 rounded-2xl shadow-xl p-8 text-white hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+              <section id="contact-us" data-section="contact-us" className="rounded-2xl shadow-xl p-8 text-white hover:shadow-2xl transition-all duration-300 hover:-translate-y-1" style={{ background: 'linear-gradient(to bottom right, #231F20, #231F20)' }}>
                 <div className="flex items-center space-x-4 mb-6">
                   <div className="w-12 h-12 bg-gradient-to-r from-white to-gray-100 rounded-xl flex items-center justify-center shadow-lg">
                     <Mail className="h-6 w-6 text-gray-900" />
@@ -308,11 +312,11 @@ const scrollToSection = (sectionId: string): void => {
                     </p>
                     <div className="space-y-4">
                       <div className="flex items-center space-x-3">
-                        <Mail className="h-5 w-5 text-blue-300" />
+                        <Mail className="h-5 w-5" style={{ color: '#E76524' }} />
                         <span>privacy@macnross.com</span>
                       </div>
                       <div className="flex items-center space-x-3">
-                        <Phone className="h-5 w-5 text-blue-300" />
+                        <Phone className="h-5 w-5" style={{ color: '#E76524' }} />
                         <span>+971 4 XXX XXXX</span>
                       </div>
                     </div>

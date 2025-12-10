@@ -24,7 +24,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-white to-blue-50 py-20 px-4">
+    <div className="bg-gradient-to-br from-slate-50 via-white py-20 px-4" style={{ background: 'linear-gradient(to bottom right, #f8f9fa, #ffffff, #fff5f0)' }}>
       <div className="max-w-6xl mx-auto">
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -41,26 +41,26 @@ const ServicesSection = () => {
               <div className="relative mb-8 flex justify-center">
                 <div className="relative">
                   {/* Background Circle */}
-                  <div className="w-24 h-24 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-full flex items-center justify-center group-hover:from-blue-100 group-hover:to-indigo-200 transition-all duration-500 shadow-lg group-hover:shadow-xl">
+                  <div className="w-24 h-24 rounded-full flex items-center justify-center transition-all duration-500 shadow-lg group-hover:shadow-xl" style={{ background: 'linear-gradient(to bottom right, #fff5f0, #ffe8d6)' }} onMouseEnter={(e) => e.currentTarget.style.background = 'linear-gradient(to bottom right, #ffe8d6, #ffd4b3)'} onMouseLeave={(e) => e.currentTarget.style.background = 'linear-gradient(to bottom right, #fff5f0, #ffe8d6)'}>
                     {/* Icon */}
-                    <div className="text-blue-600 group-hover:text-indigo-600 group-hover:scale-110 transform transition duration-300">
+                    <div className="group-hover:scale-110 transform transition duration-300" style={{ color: '#E76524' }}>
                       {service.icon}
                     </div>
                   </div>
                   
                   {/* Floating Animation Elements */}
-                  <div className="absolute -top-2 -right-2 w-4 h-4 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity duration-300"></div>
-                  <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-indigo-400 rounded-full opacity-0 group-hover:opacity-60 group-hover:animate-bounce transition-opacity duration-500"></div>
+                  <div className="absolute -top-2 -right-2 w-4 h-4 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity duration-300" style={{ backgroundColor: '#E76524' }}></div>
+                  <div className="absolute -bottom-1 -left-1 w-3 h-3 rounded-full opacity-0 group-hover:opacity-60 group-hover:animate-bounce transition-opacity duration-500" style={{ backgroundColor: '#E76524' }}></div>
                   
                   {/* Glow Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-indigo-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-150"></div>
+                  <div className="absolute inset-0 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-150" style={{ background: 'linear-gradient(to bottom right, rgba(231, 101, 36, 0.2), rgba(231, 101, 36, 0.2))' }}></div>
                 </div>
               </div>
 
               {/* Content */}
               <div className="space-y-4">
                 {/* Title */}
-                <h3 className="text-2xl font-bold text-slate-800 group-hover:text-blue-700 transition-colors duration-300">
+                <h3 className="text-2xl font-bold text-slate-800 transition-colors duration-300" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
                   {service.title}
                 </h3>
                 
@@ -70,11 +70,11 @@ const ServicesSection = () => {
                 </p>
                 
                 {/* Animated Underline */}
-                <div className="w-0 h-0.5 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto group-hover:w-16 transition-all duration-500 ease-out"></div>
+                <div className="w-0 h-0.5 mx-auto group-hover:w-16 transition-all duration-500 ease-out" style={{ background: 'linear-gradient(to right, #E76524, #d1551a)' }}></div>
               </div>
 
               {/* Hover Background Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-indigo-50/50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl transform scale-110"></div>
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl transform scale-110" style={{ background: 'linear-gradient(to bottom right, rgba(255, 245, 240, 0.5), rgba(255, 232, 214, 0.5))' }}></div>
             </div>
           ))}
         </div>

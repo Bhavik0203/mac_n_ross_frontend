@@ -16,28 +16,28 @@ const SuccessStories = () => {
       number: 10000,
       suffix: '+',
       label: 'Happy Clients',
-      color: 'from-blue-500 to-blue-600'
+      color: 'from-[#E76524] to-[#d1551a]'
     },
     {
       icon: Calendar,
       number: 979,
       suffix: '',
       label: 'Completed This Year',
-      color: 'from-blue-500 to-blue-600'
+      color: 'from-[#E76524] to-[#d1551a]'
     },
     {
       icon: Globe,
       number: 300,
       suffix: '+',
       label: 'New Projects',
-      color: 'from-blue-500 to-blue-600'
+      color: 'from-[#E76524] to-[#d1551a]'
     },
     {
       icon: TrendingUp,
       number: 35,
       suffix: '%',
       label: 'Avg Profit Increased',
-      color: 'from-blue-500 to-blue-600'
+      color: 'from-[#E76524] to-[#d1551a]'
     }
   ];
 
@@ -106,7 +106,7 @@ const getAnimatedValue = (index: number): number => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
             Our Success Stories
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+          <div className="w-24 h-1 mx-auto rounded-full" style={{ background: 'linear-gradient(to right, #E76524, #d1551a)' }}></div>
         </div>
 
         {/* Stats Grid */}
@@ -122,16 +122,16 @@ const getAnimatedValue = (index: number): number => {
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
                 {/* Background Gradient Overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br  opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}></div>
+                <div className={`absolute inset-0 opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`} style={{ background: 'linear-gradient(to bottom right, rgba(231, 101, 36, 0.05), rgba(231, 101, 36, 0.05))' }}></div>
                 
                 {/* Icon */}
-                <div className={`relative mb-6 w-16 h-16 mx-auto bg-gradient-to-br  rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg border-2 border-indigo-600`}>
-                  <Icon className="w-8 h-8 text-indigo-600" />
+                <div className={`relative mb-6 w-16 h-16 mx-auto rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg border-2`} style={{ background: 'linear-gradient(to bottom right, #E76524, #d1551a)', borderColor: '#E76524' }}>
+                  <Icon className="w-8 h-8" style={{ color: '#E76524' }} />
                 </div>
 
                 {/* Number */}
                 <div className="relative text-center mb-4">
-                  <span className="text-4xl md:text-5xl font-bold text-gray-800 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text transition-all duration-300">
+                  <span className="text-4xl md:text-5xl font-bold text-gray-800 transition-all duration-300" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
                     {getAnimatedValue(index).toLocaleString()}
                     {stat.suffix}
                   </span>
@@ -156,10 +156,10 @@ const getAnimatedValue = (index: number): number => {
           {[...Array(3)].map((_, i) => (
             <div
               key={i}
-              className={`w-2 h-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 transform transition-all duration-1000 ${
+              className={`w-2 h-2 rounded-full transform transition-all duration-1000 ${
                 isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
               }`}
-              style={{ transitionDelay: `${i * 100 + 800}ms` }}
+              style={{ transitionDelay: `${i * 100 + 800}ms`, background: 'linear-gradient(to right, #E76524, #d1551a)' }}
             ></div>
           ))}
         </div>

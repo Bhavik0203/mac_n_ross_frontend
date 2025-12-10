@@ -5,7 +5,7 @@ import banner2 from '@/app/images/b1.png';
 import banner3 from '@/app/images/b.png';
 import ServicesScrollBar from '../components/servicesscrollbar';
 
-const ExternalAuditPage = () => {
+const AuditAndAssurancePage = () => {
   const [isVisible, setIsVisible] = useState<{
     hero?: boolean;
     about?: boolean;
@@ -173,19 +173,19 @@ const ExternalAuditPage = () => {
             <FileCheck className="w-20 h-20 mx-auto mb-6 animate-pulse" style={{ color: '#E76524' }} />
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6" style={{ color: '#E76524' }}>
-            External Audit Services
+            Audit and Assurance Services
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-300 leading-relaxed">
-            Professional, independent audit services to ensure accuracy, compliance, and transparency in your financial reporting
+            Comprehensive audit and assurance services to ensure accuracy, compliance, and transparency in your financial reporting and business operations
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="group px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg" style={{ background: 'linear-gradient(to right, #E76524, #d1551a)' }} onMouseEnter={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #d1551a, #b84a15)'} onMouseLeave={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #E76524, #d1551a)'}>
               <span className="flex items-center justify-center">
-                Get Audit Consultation
+                Get Audit and Assurance Consultation
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
             </button>
-            <button className="border-2 border-indigo-400 hover:bg-indigo-400 hover:text-gray-900 px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+            <button className="border-2 px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105" style={{ borderColor: '#E76524' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#E76524'; e.currentTarget.style.color = '#231F20'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = ''; }}>
               Learn More
             </button>
           </div>
@@ -199,13 +199,13 @@ const ExternalAuditPage = () => {
     
 
       {/* Key Benefits */}
-      <section id="benefits" className="py-20 bg-gray-900">
+      <section id="benefits" className="py-20" style={{ backgroundColor: '#231F20' }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className={`transform transition-all duration-1000 ${
             isVisible.benefits ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
           }`}>
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-16" style={{ color: '#E76524' }}>
-              Why Choose Our External Audit Services?
+              Why Choose Our Audit and Assurance Services?
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {benefits.map((benefit, index) => {
@@ -242,14 +242,14 @@ const ExternalAuditPage = () => {
             <div className="bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl p-8 border border-gray-600">
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="text-2xl font-bold mb-6" style={{ color: '#E76524' }}>Schedule Your Audit</h3>
+                  <h3 className="text-2xl font-bold mb-6" style={{ color: '#E76524' }}>Schedule Your Audit and Assurance Consultation</h3>
                   <p className="text-gray-300 mb-6 leading-relaxed">
-                    Our audit experts will assess your requirements and provide a comprehensive audit plan 
-                    tailored to your organization's needs. Contact us today to discuss your audit requirements.
+                    Our audit and assurance experts will assess your requirements and provide a comprehensive plan 
+                    tailored to your organization's needs. Contact us today to discuss your audit and assurance requirements.
                   </p>
                   <div className="space-y-4">
                     <div className="flex items-center">
-                      <Phone className="w-5 h-5 text-blue-400 mr-3" />
+                      <Phone className="w-5 h-5 mr-3" style={{ color: '#E76524' }} />
                       <span className="text-gray-300">+971-4-3584999</span>
                     </div>
                     <div className="flex items-center">
@@ -294,7 +294,7 @@ const ExternalAuditPage = () => {
                         value={phone}
                         onChange={handlePhoneChange}
                         onBlur={handlePhoneBlur}
-                        className={`w-full px-4 py-3 rounded-md bg-gray-900 border text-white placeholder-gray-400 focus:outline-none focus:ring-2 ${
+                        className={`w-full px-4 py-3 rounded-md border text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E76524] ${
                           phoneError 
                             ? 'border-red-500 focus:ring-red-500' 
                             : 'border-gray-700 focus:ring-[#E76524]'
@@ -312,7 +312,7 @@ const ExternalAuditPage = () => {
                     </div>
                     <textarea
                       name="message"
-                      placeholder="Tell us about your audit requirements..."
+                      placeholder="Tell us about your audit and assurance requirements..."
                       rows={4}
                       className="w-full px-4 py-3 rounded-md border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E76524]"
                       style={{ backgroundColor: '#231F20' }}
@@ -325,7 +325,7 @@ const ExternalAuditPage = () => {
                       onMouseEnter={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #d1551a, #b84a15)'}
                       onMouseLeave={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #E76524, #d1551a)'}
                     >
-                      Request Audit Consultation
+                      Request Audit and Assurance Consultation
                     </button>
                   </form>
                 </div>
@@ -338,5 +338,5 @@ const ExternalAuditPage = () => {
   );
 };
 
-export default ExternalAuditPage;
+export default AuditAndAssurancePage;
 

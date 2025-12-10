@@ -42,7 +42,7 @@ const CybersecurityPage = () => {
       icon: Network,
       title: "Network Security",
       description: "Securing computer networks from intruders, targeted attackers and opportunistic malware.",
-      color: "from-blue-500 to-cyan-500"
+      color: "from-[#E76524] to-[#d1551a]"
     },
     {
       icon: Smartphone,
@@ -60,7 +60,7 @@ const CybersecurityPage = () => {
       icon: RotateCcw,
       title: "Disaster Recovery",
       description: "Business continuity plans for cyber incidents and operational loss recovery.",
-      color: "from-red-500 to-pink-500"
+      color: "from-[#E76524] to-[#d1551a]"
     },
     {
       icon: GraduationCap,
@@ -132,31 +132,31 @@ const CybersecurityPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white overflow-hidden">
+    <div className="min-h-screen text-white overflow-hidden" style={{ backgroundColor: '#231F20' }}>
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+      <section id="hero" className="relative min-h-screen flex items-center justify-center" style={{ background: 'linear-gradient(to bottom right, #231F20, #231F20, #231F20)' }}>
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-          <div className="absolute top-40 right-32 w-1 h-1 bg-purple-400 rounded-full animate-ping"></div>
-          <div className="absolute bottom-32 left-1/4 w-1.5 h-1.5 bg-cyan-400 rounded-full animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-2 h-2 bg-pink-400 rounded-full animate-ping"></div>
+          <div className="absolute top-20 left-20 w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: '#E76524' }}></div>
+          <div className="absolute top-40 right-32 w-1 h-1 rounded-full animate-ping" style={{ backgroundColor: '#E76524' }}></div>
+          <div className="absolute bottom-32 left-1/4 w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: '#E76524' }}></div>
+          <div className="absolute bottom-20 right-20 w-2 h-2 rounded-full animate-ping" style={{ backgroundColor: '#E76524' }}></div>
         </div>
         
         <div className={`relative z-10 text-center max-w-4xl mx-auto px-6 transform transition-all duration-1000 ${
           isVisible.hero ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
         }`}>
           <div className="mb-8">
-            <Shield className="w-20 h-20 mx-auto mb-6 text-blue-400 animate-pulse" />
+            <Shield className="w-20 h-20 mx-auto mb-6 animate-pulse" style={{ color: '#E76524' }} />
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6" style={{ color: '#E76524' }}>
             Cyber Security
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-300 leading-relaxed">
             Protecting critical systems and sensitive information from digital attacks
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25">
+            <button className="group px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg" style={{ background: 'linear-gradient(to right, #E76524, #d1551a)' }} onMouseEnter={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #d1551a, #b84a15)'} onMouseLeave={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #E76524, #d1551a)'}>
               <span className="flex items-center justify-center">
                 Get Protected
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -175,7 +175,7 @@ const CybersecurityPage = () => {
           <div className={`transform transition-all duration-1000 ${
             isVisible.about ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
           }`}>
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-12" style={{ color: '#E76524' }}>
               What is Cyber Security?
             </h2>
             <div className="text-center max-w-4xl mx-auto mb-16">
@@ -215,7 +215,7 @@ const CybersecurityPage = () => {
                 </p>
               </div>
               <div className="relative">
-                <div className="bg-gradient-to-br from-gray-900/80 to-gray-900/40 rounded-2xl p-8 backdrop-blur-sm border border-blue-500/20">
+                <div className="bg-gradient-to-br from-gray-900/80 to-gray-900/40 rounded-2xl p-8 backdrop-blur-sm" style={{ borderColor: 'rgba(231, 101, 36, 0.2)' }}>
                   <Lock className="w-16 h-16 text-white mb-4 animate-pulse" />
                   <h3 className="text-2xl font-bold mb-4 text-white">Comprehensive Protection</h3>
                   <p className="text-gray-300">
@@ -230,7 +230,7 @@ const CybersecurityPage = () => {
 
 
       {/* Cybersecurity Categories */}
-      <section id="categories" className="py-20 bg-gray-900">
+      <section id="categories" className="py-20" style={{ backgroundColor: '#231F20' }}>
         <div className="max-w-7xl mx-auto px-6">
           <div className={`transform transition-all duration-1000 ${
             isVisible.categories ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
@@ -244,13 +244,16 @@ const CybersecurityPage = () => {
                 return (
                   <div
                     key={index}
-                    className="group bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl border border-gray-600 hover:border-blue-500/50 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/20 cursor-pointer"
+                    className="group bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl border border-gray-600 transition-all duration-300 transform hover:scale-105 hover:shadow-xl cursor-pointer"
+                    style={{ '--hover-border': 'rgba(231, 101, 36, 0.5)' } as React.CSSProperties}
+                    onMouseEnter={(e) => e.currentTarget.style.borderColor = 'rgba(231, 101, 36, 0.5)'}
+                    onMouseLeave={(e) => e.currentTarget.style.borderColor = ''}
                     onMouseEnter={() => setActiveCategory(index)}
                   >
                     <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${category.color} p-4 mb-4 group-hover:scale-110 transition-transform duration-300`}>
                       <Icon className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold mb-3 group-hover:text-blue-400 transition-colors">
+                    <h3 className="text-xl font-bold mb-3 transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
                       {category.title}
                     </h3>
                     <p className="text-gray-300 leading-relaxed text-sm">
@@ -270,7 +273,7 @@ const CybersecurityPage = () => {
           <div className={`transform transition-all duration-1000 ${
             isVisible.services ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
           }`}>
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16" style={{ color: '#E76524' }}>
               How Mac N Ross Can Help?
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
@@ -282,7 +285,7 @@ const CybersecurityPage = () => {
                     className="group bg-gradient-to-br from-gray-800/80 to-gray-700/80 backdrop-blur-sm p-8 rounded-2xl border border-gray-600 hover:border-purple-500/50 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20"
                   >
                     <div className="flex items-start mb-6">
-                      <div className="bg-gradient-to-r from-purple-600 to-blue-600 p-3 rounded-xl mr-4 group-hover:scale-110 transition-transform duration-300">
+                      <div className="p-3 rounded-xl mr-4 group-hover:scale-110 transition-transform duration-300" style={{ background: 'linear-gradient(to right, #E76524, #d1551a)' }}>
                         <Icon className="w-8 h-8 text-white" />
                       </div>
                       <div className="flex-1">
@@ -354,20 +357,20 @@ const CybersecurityPage = () => {
       </section>
 
       {/* Key Benefits */}
-      <section id="benefits" className="py-20 bg-gray-900">
+      <section id="benefits" className="py-20" style={{ backgroundColor: '#231F20' }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className={`transform transition-all duration-1000 ${
             isVisible.benefits ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
           }`}>
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16" style={{ color: '#E76524' }}>
               Why Choose Our Approach?
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center group">
-                <div className="bg-gradient-to-r from-blue-600 to-purple-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300" style={{ background: 'linear-gradient(to right, #E76524, #d1551a)' }}>
                   <Shield className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 group-hover:text-blue-400 transition-colors">
+                <h3 className="text-xl font-bold mb-4 transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
                   Comprehensive Protection
                 </h3>
                 <p className="text-gray-300 text-sm leading-relaxed">
@@ -386,7 +389,7 @@ const CybersecurityPage = () => {
                 </p>
               </div>
               <div className="text-center group">
-                <div className="bg-gradient-to-r from-cyan-600 to-blue-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300" style={{ background: 'linear-gradient(to right, #E76524, #d1551a)' }}>
                   <Zap className="w-10 h-10 text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-4 group-hover:text-cyan-400 transition-colors">
@@ -413,49 +416,52 @@ const CybersecurityPage = () => {
     <div className="bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl p-8 border border-gray-600">
       <div className="grid md:grid-cols-2 gap-8">
         <div>
-          <h3 className="text-2xl font-bold mb-6 text-blue-400">Ready to Get Protected?</h3>
+          <h3 className="text-2xl font-bold mb-6" style={{ color: '#E76524' }}>Ready to Get Protected?</h3>
           <p className="text-gray-300 mb-6 leading-relaxed">
             Our cybersecurity experts will assess your current security posture and design 
             a comprehensive protection strategy for your organization.
           </p>
           <div className="space-y-4">
             <div className="flex items-center">
-              <Phone className="w-5 h-5 text-blue-400 mr-3" />
+              <Phone className="w-5 h-5 mr-3" style={{ color: '#E76524' }} />
               <span className="text-gray-300">Call us for consultation</span>
             </div>
             <div className="flex items-center">
-              <Mail className="w-5 h-5 text-blue-400 mr-3" />
+              <Mail className="w-5 h-5 mr-3" style={{ color: '#E76524' }} />
               <span className="text-gray-300">security@macnross.com</span>
             </div>
             <div className="flex items-center">
-              <MapPin className="w-5 h-5 text-blue-400 mr-3" />
+              <MapPin className="w-5 h-5 mr-3" style={{ color: '#E76524' }} />
               <span className="text-gray-300">Expert Security Services</span>
             </div>
           </div>
         </div>
 
         {/* Form Section */}
-        <div className="bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-xl p-6 backdrop-blur-sm">
+        <div className="rounded-xl p-6 backdrop-blur-sm" style={{ background: 'linear-gradient(to bottom right, rgba(231, 101, 36, 0.2), rgba(231, 101, 36, 0.2))' }}>
           <form className="space-y-4">
             <input
               type="text"
               name="name"
               placeholder="Your Name"
-              className="w-full px-4 py-3 rounded-md bg-gray-900 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 rounded-md border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E76524]"
+              style={{ backgroundColor: '#231F20' }}
               required
             />
             <input
               type="email"
               name="email"
               placeholder="Your Email"
-              className="w-full px-4 py-3 rounded-md bg-gray-900 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 rounded-md border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E76524]"
+              style={{ backgroundColor: '#231F20' }}
               required
             />
             <input
               type="tel"
               name="phone"
               placeholder="Your Phone Number"
-              className="w-full px-4 py-3 rounded-md bg-gray-900 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 rounded-md border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E76524]"
+              style={{ backgroundColor: '#231F20' }}
               maxLength={10}
               pattern="[0-9]{10}"
               required
@@ -464,12 +470,16 @@ const CybersecurityPage = () => {
               name="message"
               placeholder="Your Message"
               rows={4}
-              className="w-full px-4 py-3 rounded-md bg-gray-900 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 rounded-md border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E76524]"
+              style={{ backgroundColor: '#231F20' }}
               required
             ></textarea>
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25"
+              className="w-full px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+              style={{ background: 'linear-gradient(to right, #E76524, #d1551a)' }}
+              onMouseEnter={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #d1551a, #b84a15)'}
+              onMouseLeave={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #E76524, #d1551a)'}
             >
               Submit
             </button>
@@ -486,8 +496,8 @@ const CybersecurityPage = () => {
       {/* <footer className="py-12 bg-black border-t border-gray-800">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <div className="flex items-center justify-center mb-6">
-            <Shield className="w-8 h-8 text-blue-400 mr-3" />
-            <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <Shield className="w-8 h-8 mr-3" style={{ color: '#E76524' }} />
+            <span className="text-2xl font-bold" style={{ color: '#E76524' }}>
               Mac N Ross
             </span>
           </div>
@@ -495,9 +505,9 @@ const CybersecurityPage = () => {
             Comprehensive cybersecurity solutions for modern businesses
           </p>
           <div className="flex justify-center space-x-6">
-            <button className="text-gray-400 hover:text-blue-400 transition-colors">Privacy Policy</button>
-            <button className="text-gray-400 hover:text-blue-400 transition-colors">Terms of Service</button>
-            <button className="text-gray-400 hover:text-blue-400 transition-colors">Contact Us</button>
+            <button className="text-gray-400 transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Privacy Policy</button>
+            <button className="text-gray-400 transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Terms of Service</button>
+            <button className="text-gray-400 transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Contact Us</button>
           </div>
         </div>
       </footer> */}

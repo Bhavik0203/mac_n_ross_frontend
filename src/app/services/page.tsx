@@ -16,7 +16,7 @@ const StackingCards = () => {
       id: 1,
       title: "Subscription Management Platform",
       description: "User-centered approach ke saath intuitive interface banaya gaya financial management ke liye with gamification.",
-      color: "from-teal-400 to-teal-600",
+      color: "from-[#E76524] to-[#d1551a]",
       metrics: [
         { label: "Engagement", value: "12 min" },
         { label: "User Satisfaction", value: "4.5*" }
@@ -26,7 +26,7 @@ const StackingCards = () => {
       id: 2,
       title: "E-Commerce Website Revamp",
       description: "User-friendly interface create kiya premium operational web scraping proxies ke access ko simplify karne ke liye.",
-      color: "from-blue-400 to-blue-600",
+      color: "from-[#E76524] to-[#d1551a]",
       metrics: [
         { label: "Usability", value: "85%" },
         { label: "User Retention", value: "70%" }
@@ -36,7 +36,7 @@ const StackingCards = () => {
       id: 3,
       title: "Mobile Health Tracking App",
       description: "Leading Bitcoin Data aur Stats site. Live price action, on-chain data monitor, aur key economic indicators track karte hain.",
-      color: "from-orange-400 to-orange-600",
+      color: "from-[#E76524] to-[#d1551a]",
       metrics: [
         { label: "Conversion Rate", value: "120%" },
         { label: "User Satisfaction", value: "4.8*" }
@@ -46,7 +46,7 @@ const StackingCards = () => {
       id: 4,
       title: "Corporate Intranet Optimization",
       description: "Innovative app unused internet ka fayda uthane ke liye. Simplicity, functions, aur extra money earning ke ways ke wajah se different hai.",
-      color: "from-cyan-400 to-cyan-600",
+      color: "from-[#E76524] to-[#d1551a]",
       metrics: [
         { label: "Conversion Rate", value: "20%" },
         { label: "User Satisfaction", value: "95%" }
@@ -93,11 +93,11 @@ const StackingCards = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black ">
+    <div className="min-h-screen" style={{ background: 'linear-gradient(to bottom right, #231F20, #231F20, #231F20)' }}>
       {/* Hero Section */}
       <section className="relative  flex items-center justify-center">
         <div className="text-center max-w-4xl mx-auto text-white px-6">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6" style={{ color: '#E76524' }}>
             Stacking Cards Algorithm
           </h1>
           <p className="text-xl text-gray-300 mb-8">
