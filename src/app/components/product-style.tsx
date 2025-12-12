@@ -20,64 +20,64 @@ const ProductStyle: React.FC = () => {
    
     {
       id: 1,
-      heading: 'Compliance Management Inbox',
-      src: '/images/Rectangle.png',
-      alt: 'Compliance Management Inbox',
-      content: 'Stay ahead of evolving regulations with automated alerts, audit trails, and customizable compliance workflows that reduce risk and ensure peace of mind.',
-      buttonText: 'compliance-inbox',
+      heading: 'Audit and Assurance Services in UAE',
+      src: 'https://picsum.photos/seed/audit-accounting/500/300',
+      alt: 'Audit and Assurance Services in UAE',
+      content: 'At MAC & ROSS Chartered Accountants, we are a leading audit firm in UAE, approved by the Ministry of Economy and recognized by multiple Free Zones. With years of trusted experience, we help businesses of all sizes from startups and SMEs to multinational corporations strengthen their financial reporting, compliance, and internal controls. Our expert auditors deliver accurate, transparent, and timely audit and assurance services that meet both local and international standards. We go beyond numbers providing insights that help you improve performance, minimize risks, and ensure regulatory compliance.',
+      buttonText: 'audit-assurance-services',
       gradientStart: '#E76524', // Orange
       gradientEnd: '#d1551a', // Darker orange
       accentColor: '#E76524'
     },
     {
         id: 2,
-        heading: 'Audit Flow Inbox',
-        src: '/images/Rectangle2.png',
-        alt: 'Audit Flow Inbox',
-        content: 'Centralize your audit workflow with an intelligent inbox that prioritizes tasks, tracks progress, and ensures nothing falls through the cracks.',
-        buttonText: 'audit-inbox',
-        gradientStart: '#22c55e', // Tailwind green-500
-        gradientEnd: '#0d9488', // Tailwind teal-600
-        accentColor: '#22c55e'
+        heading: 'Accounting Services',
+        src: 'https://picsum.photos/seed/accounting-bookkeeping/500/300',
+        alt: 'Accounting Services',
+        content: 'We provide end-to-end bookkeeping and accounting services that keep your business financially organized and compliant. From day-to-day transactions to financial reporting, our team ensures accuracy, transparency, and timely insights.',
+        buttonText: 'accounting-services',
+        gradientStart: '#E76524', // Orange
+        gradientEnd: '#d1551a', // Darker orange
+        accentColor: '#E76524'
       },
     {
       id: 3,
-      heading: 'Financial Statement Inbox',
-      src: '/images/Rectangle3.png',
-      alt: 'Financial Statement Inbox',
-      content: 'Generate professional financial statements with advanced reporting capabilities, automated calculations, and customizable templates that meet industry standards.',
-      buttonText: 'financial-inbox',
-      gradientStart: '#f97316', // Tailwind orange-500
-      gradientEnd: '#dc2626', // Tailwind red-600
-      accentColor: '#f97316'
+      heading: 'Management Consultancy',
+      src: 'https://picsum.photos/seed/business-consulting/500/300',
+      alt: 'Management Consultancy',
+      content: 'Our strategic business consulting services help organizations optimize operations, improve efficiency, and achieve growth. We advise on structure, performance, and governance to align your business strategy with market opportunities.',
+      buttonText: 'management-consultancy',
+      gradientStart: '#E76524', // Orange
+      gradientEnd: '#d1551a', // Darker orange
+      accentColor: '#E76524'
     },
     
     {
         id: 4,
-        heading: 'Analytics Inbox',
-        src: '/images/Rectangle4.png',
-        alt: 'Analytics Inbox',
-        content: 'Data-Driven Decisions. Simplified. Analytics Inbox is a comprehensive MIS automation and business intelligence platform designed for small to mid-size organizations. Seamlessly integrates with popular ERP systems including Tally.ERP9, Tally Prime, SAP Business One, Microsoft NAV/Business Central, BUSY ERP, and various databases, enabling organizations to transform raw data into actionable insights through automated report generation and distribution.',
-        buttonText: 'analytics-inbox',
-        gradientStart: '#a855f7', // Tailwind purple-500
-        gradientEnd: '#db2777', // Tailwind pink-600
-        accentColor: '#a855f7'
+        heading: 'Corporate Finance',
+        src: 'https://picsum.photos/seed/corporate-finance/500/300',
+        alt: 'Corporate Finance',
+        content: 'We assist in financial planning, investment advisory, and capital restructuring to help businesses achieve financial stability and expansion. Our corporate finance experts provide practical, data-driven guidance for sustainable success.',
+        buttonText: 'corporate-finance',
+        gradientStart: '#E76524', // Orange
+      gradientEnd: '#d1551a', // Darker orange
+      accentColor: '#E76524'
       },
       {
         id: 5,
-        heading: 'Tax Compliance Inbox',
-        src: '/images/Rectangle5.png',
-        alt: 'Tax Compliance Inbox',
-        content: 'Automate indirect and direct tax filings with real-time validations, jurisdiction-specific rules, and collaborative workflows that keep every return accurate and on schedule.',
-        buttonText: 'tax-inbox',
-        gradientStart: '#0ea5e9', // Tailwind sky-500
-        gradientEnd: '#6366f1', // Tailwind indigo-500
-        accentColor: '#0ea5e9'
+        heading: 'Company Formation',
+        src: 'https://picsum.photos/seed/company-startup/500/300',
+        alt: 'Company Formation',
+        content: 'Starting a business in the UAE? Our company formation services simplify the process — from choosing the right business structure to completing legal registrations and licensing. We help entrepreneurs set up efficiently and compliantly.',
+        buttonText: 'company-formation',
+        gradientStart: '#E76524', // Orange
+        gradientEnd: '#d1551a', // Darker orange
+        accentColor: '#E76524'
       }
   ];
 
   return (
-    <div className=' max-w-6xl mx-auto'>
+    <div className=' max-w-6xl mx-auto '>
     <div className={styles.stickyContainer}>
       {productData.map((product) => (
         <div
@@ -99,6 +99,7 @@ const ProductStyle: React.FC = () => {
                 width={500}
                 height={300}
                 className={styles.image}
+                unoptimized
               />
             </div>
             <div className={styles.productContent}>

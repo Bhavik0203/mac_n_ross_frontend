@@ -3,13 +3,14 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ChevronDown, Search, ShoppingCart, Clock, Phone, Mail, Facebook, Instagram, Twitter, Menu, X } from 'lucide-react';
+import { ChevronDown, ChevronRight, Search, ShoppingCart, Clock, Phone, Mail, Facebook, Instagram, Twitter, Menu, X } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [cartCount, setCartCount] = useState(1);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
+  const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(null);
   const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
   const [consultationFormData, setConsultationFormData] = useState({
     name: '',
@@ -67,6 +68,11 @@ const Header = () => {
 
   const toggleMobileDropdown = (itemName: string) => {
     setOpenMobileDropdown(openMobileDropdown === itemName ? null : itemName);
+    setOpenMobileSubmenu(null); // Close submenu when opening/closing main dropdown
+  };
+
+  const toggleMobileSubmenu = (submenuName: string) => {
+    setOpenMobileSubmenu(openMobileSubmenu === submenuName ? null : submenuName);
   };
 
   const openConsultationModal = () => {
@@ -151,11 +157,11 @@ const Header = () => {
             <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-1">
                 <span className="font-medium" style={{ color: '#E76524' }}>En</span>
-                <ChevronDown className="w-4 h-4 text-gray-500" />
+                <ChevronDown className="w-4 h-4 text-gray-1000" />
               </div>
               <div className="flex items-center space-x-1">
                 <span className="font-medium" style={{ color: '#E76524' }}>Dubai, UAE</span>
-                <ChevronDown className="w-4 h-4 text-gray-500" />
+                <ChevronDown className="w-4 h-4 text-gray-1000" />
               </div>
               <div className="flex items-center space-x-2 text-gray-600">
                 <Clock className="w-4 h-4" />
@@ -174,10 +180,10 @@ const Header = () => {
                 <span>info@macnross.com</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Facebook className="w-4 h-4 text-gray-500 cursor-pointer" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''} />
+                <Facebook className="w-4 h-4 text-gray-1000 cursor-pointer" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''} />
                 <div className="w-4 h-4 bg-pink-500 rounded cursor-pointer"></div>
-                <Twitter className="w-4 h-4 text-gray-500 cursor-pointer" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''} />
-                <Instagram className="w-4 h-4 text-gray-500 hover:text-pink-600 cursor-pointer" />
+                <Twitter className="w-4 h-4 text-gray-1000 cursor-pointer" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''} />
+                <Instagram className="w-4 h-4 text-gray-1000 hover:text-pink-600 cursor-pointer" />
               </div>
             </div>
           </div>
@@ -195,12 +201,12 @@ const Header = () => {
             {/* Logo - Always visible */}
             {!isScrolled && (
             <div className="flex items-center">
-              <a href="https://www.macnross.com/" className="flex items-center space-x-2">
+              <Link href="https://www.macnross.com/" className="flex items-center space-x-2">
                 <div className="w-10 h-10 rounded-[4px] flex items-center justify-center" style={{ background: 'linear-gradient(to bottom right, #E76524, #d1551a)' }}>
                   <div className="w-6 h-6 bg-white rounded transform rotate-12"></div>
                 </div>
                 <span className="text-white text-2xl font-bold">Mac & Ross</span>
-              </a>
+              </Link>
             </div>
 
             )}
@@ -221,15 +227,15 @@ const Header = () => {
               <div className="hidden lg:flex items-center space-x-12 transition-all duration-300">
                 <div className="text-center">
                   <div className="text-white font-bold text-sm">RT ASEAN</div>
-                  <div className="text-sm" style={{ color: '#E76524' }}>Network Member</div>
+                  <div className="text-sm" style={{ color: '#fc8f58' }}>Network Member</div>
                 </div>
                 <div className="text-center">
                   <div className="text-white font-bold text-sm">Forum of Firms</div>
-                  <div className="text-sm" style={{ color: '#E76524' }}>Member</div>
+                  <div className="text-sm" style={{ color: '#fc8f58' }}>Member</div>
                 </div>
                 <div className="text-center">
                   <div className="text-white font-bold text-sm">Over Decade</div>
-                  <div className="text-sm" style={{ color: '#E76524' }}>Experience in UAE</div>
+                  <div className="text-sm" style={{ color: '#fc8f58' }}>Experience in UAE</div>
                 </div>
               </div>
             )}
@@ -257,7 +263,7 @@ const Header = () => {
               <ul className="flex space-x-8">
                 {navigationItems.map((item, index) => (
                   <li key={index} className="relative group">
-                    <a 
+                    <Link 
                       href={item.href}
                       className={`flex items-center space-x-1 py-2 transition-colors duration-200 ${
                         item.active 
@@ -269,117 +275,60 @@ const Header = () => {
                       {item.hasDropdown && (
                         <ChevronDown className="w-4 h-4" />
                       )}
-                    </a>
+                    </Link>
                     
                     {/* Desktop Dropdown for Services */}
                     {item.hasDropdown && item.name === 'Services' && (
-                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 mx-35 w-screen justify-center items-center rounded-[4px] max-w-5xl bg-white shadow-xl border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                        <div className="px-6 py-2">
-                          <div className="flex gap-8 px-8">
-                            {/* Left Side - 1/3 width - Audit & Assurance */}
-                            <div className="w-1/3 space-y-4 ">
-                              <h3 className="text-xl font-bold text-white pb-2 border-b border-gray-200">
-                                Audit & Assurance
-                              </h3>
-                              <div className="space-y-2">
-                                <a href="externalaudit" className="group/item flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200">
-                                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#E76524' }}></div>
-                                  <div>
-                                    <div className="text-white font-medium group-hover/item:text-[#E76524]">External Audit</div>
-                                    <div className="text-gray-600 text-sm">Professional external audit services</div>
-                                  </div>
-                                </a>
-                                <a href="#" className="group/item flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200">
-                                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#E76524' }}></div>
-                                  <div>
-                                    <div className="text-black font-medium group-hover/item:text-[#E76524]">Internal Audit</div>
-                                    <div className="text-gray-600 text-sm">Internal control assessments</div>
-                                  </div>
-                                </a>
-                                <a href="#" className="group/item flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200">
-                                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#E76524' }}></div>
-                                  <div>
-                                    <div className="text-black font-medium group-hover/item:text-blue-600">IFRS Advisory</div>
-                                    <div className="text-gray-600 text-sm">International standards guidance</div>
-                                  </div>
-                                </a>
-                                <a href="#" className="group/item flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200">
-                                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#E76524' }}></div>
-                                  <div>
-                                    <div className="text-black font-medium group-hover/item:text-blue-600">Custom Audit</div>
-                                    <div className="text-gray-600 text-sm">Tailored audit solutions</div>
-                                  </div>
-                                </a>
-                                <a href="#" className="group/item flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200">
-                                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#E76524' }}></div>
-                                  <div>
-                                    <div className="text-black font-medium group-hover/item:text-blue-600">Investigation Audit</div>
-                                    <div className="text-gray-600 text-sm">Forensic and investigative services</div>
-                                  </div>
-                                </a>
-                              </div>
-                            </div>
-
-                            {/* Right Side - 2/3 width - Business Services */}
-                            <div className="w-2/3">
-                              <div className="space-y-4">
-                                <h3 className="text-xl font-bold text-black pb-2 border-b border-gray-200">
-                                  Business Services
-                                </h3>
-                                <div className="grid grid-cols-2 gap-6">
-                                  <div className="space-y-2">
-                                    <a href="#" className="group/item flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200">
-                                      <div className="w-2 h-2 bg-green-400 rounded-full mt-2 group-hover/item:bg-green-500"></div>
-                                      <div>
-                                        <div className="text-black font-medium group-hover/item:text-green-600">Accounting Services</div>
-                                        <div className="text-gray-600 text-sm">Bookkeeping and financial management</div>
-                                      </div>
-                                    </a>
-                                    <a href="#" className="group/item flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200">
-                                      <div className="w-2 h-2 bg-green-400 rounded-full mt-2 group-hover/item:bg-green-500"></div>
-                                      <div>
-                                        <div className="text-black font-medium group-hover/item:text-green-600">Management Consultancy</div>
-                                        <div className="text-gray-600 text-sm">Strategic business consulting</div>
-                                      </div>
-                                    </a>
-                                  </div>
-                                  <div className="space-y-2">
-                                    <a href="#" className="group/item flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200">
-                                      <div className="w-2 h-2 bg-green-400 rounded-full mt-2 group-hover/item:bg-green-500"></div>
-                                      <div>
-                                        <div className="text-black font-medium group-hover/item:text-green-600">Corporate Finance</div>
-                                        <div className="text-gray-600 text-sm">Financial planning and advisory</div>
-                                      </div>
-                                    </a>
-                                    <a href="#" className="group/item flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200">
-                                      <div className="w-2 h-2 bg-green-400 rounded-full mt-2 group-hover/item:bg-green-500"></div>
-                                      <div>
-                                        <div className="text-black font-medium group-hover/item:text-green-600">Company Formation</div>
-                                        <div className="text-gray-600 text-sm">Business setup and incorporation</div>
-                                      </div>
-                                    </a>
-                                  </div>
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-gray-50 rounded-lg shadow-xl border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <div className="flex">
+                          {/* Left Column - Main Services */}
+                          <div className="w-64 border-r border-gray-200">
+                            <div className="p-4">
+                              <h3 className="text-gray-900 font-bold text-sm mb-4">All Services</h3>
+                              <div className="space-y-1">
+                                <div className="relative group/submenu">
+                                  <Link href="/audit-and-assurance" className="flex items-center justify-between px-3 py-2 rounded-md bg-gray-200 hover:bg-gray-300 hover:text-[#E76524] transition-colors group">
+                                    <span className="text-gray-900 text-sm group-hover:text-[#E76524]">Audit and Assurance</span>
+                                    <ChevronRight className="w-4 h-4 text-gray-600 group-hover:text-[#E76524] group-hover:translate-x-1 transition-all" />
+                                  </Link>
                                 </div>
+                                <Link href="/accounting-services" className="flex items-center justify-between px-3 py-2 rounded-md hover:bg-gray-200 transition-colors">
+                                  <span className="text-gray-600 text-sm">Accounting Services</span>
+                                </Link>
+                                <Link href="/management-consultancy" className="flex items-center justify-between px-3 py-2 rounded-md hover:bg-gray-200 transition-colors">
+                                  <span className="text-gray-600 text-sm">Management Consultancy</span>
+                                </Link>
+                                <Link href="/corporate-finance" className="flex items-center justify-between px-3 py-2 rounded-md hover:bg-gray-200 transition-colors">
+                                  <span className="text-gray-600 text-sm">Corporate Finance</span>
+                                </Link>
+                                <Link href="/company-formation" className="flex items-center justify-between px-3 py-2 rounded-md hover:bg-gray-200 transition-colors">
+                                  <span className="text-gray-600 text-sm">Company Formation</span>
+                                </Link>
                               </div>
                             </div>
                           </div>
                           
-                          {/* CTA Section */}
-                          <div className="bg-gray-50 border-t border-gray-200 rounded-b-[8px] mt-4">
-                            <div className="flex justify-between items-center px-6 py-4">
-                              <div>
-                                <h4 className="text-black font-semibold text-lg">Need Expert Consultation?</h4>
-                                <p className="text-gray-600 text-sm">Get personalized advice from our experienced professionals</p>
+                          {/* Right Column - Submenu for Audit and Assurance */}
+                          <div className="w-64">
+                            <div className="p-4">
+                              <Link href="/audit-and-assurance" className="block text-gray-900 font-bold text-sm mb-4 px-3 py-2 rounded-md hover:bg-gray-200 hover:text-[#E76524] transition-colors">  <span > Audit and Assurance</span></Link>
+                              <div className="space-y-1">
+                                <Link href="/audit-and-assurance/externalaudit" className="block px-3 py-2 rounded-md hover:bg-gray-200 transition-colors">
+                                  <span className="text-gray-600 text-sm">External Audit</span>
+                                </Link>
+                                <Link href="/audit-and-assurance/internalaudit" className="block px-3 py-2 rounded-md hover:bg-gray-200 transition-colors">
+                                  <span className="text-gray-600 text-sm">Internal Audit</span>
+                                </Link>
+                                <Link href="/audit-and-assurance/ifrsadvisory" className="block px-3 py-2 rounded-md hover:bg-gray-200 transition-colors">
+                                  <span className="text-gray-600 text-sm">IFRS Advisory</span>
+                                </Link>
+                                <Link href="/audit-and-assurance/customaudit" className="block px-3 py-2 rounded-md hover:bg-gray-200 transition-colors">
+                                  <span className="text-gray-600 text-sm">Custom Audit</span>
+                                </Link>
+                                <Link href="/audit-and-assurance/investigationaudit" className="block px-3 py-2 rounded-md hover:bg-gray-200 transition-colors">
+                                  <span className="text-gray-600 text-sm">Investigation Audit</span>
+                                </Link>
                               </div>
-                              <button 
-                                onClick={openConsultationModal}
-                                className="text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 shadow-lg"
-                                style={{ background: 'linear-gradient(to right, #E76524, #d1551a)' }}
-                                onMouseEnter={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #d1551a, #b84a15)'}
-                                onMouseLeave={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #E76524, #d1551a)'}
-                              >
-                                Contact Us
-                              </button>
                             </div>
                           </div>
                         </div>
@@ -388,29 +337,16 @@ const Header = () => {
                     
                     {/* Desktop Dropdown for Taxation */}
                     {item.hasDropdown && item.name === 'Taxation' && (
-                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-5xl bg-white rounded-lg shadow-xl border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                        <div className="p-6">
-                          <div className="grid grid-cols-2 gap-8">
-                            {/* Tax Services Column */}
-                            <div>
-                              <h3 className="text-gray-900 font-semibold text-sm mb-4 pb-2 border-b border-gray-200">Tax Services</h3>
-                              <div className="space-y-3">
-                                <a href="#" className="block text-gray-600 text-sm py-1" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Value Added Tax (VAT)</a>
-                                <a href="#" className="block text-gray-600 text-sm py-1" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>UAE Corporate Tax</a>
-                                <a href="#" className="block text-gray-600 text-sm py-1" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Excise Tax</a>
-                                <a href="#" className="block text-gray-600 text-sm py-1" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Transfer Pricing</a>
-                              </div>
-                            </div>
-
-                            {/* Compliance Services Column */}
-                            <div>
-                              <h3 className="text-gray-900 font-semibold text-sm mb-4 pb-2 border-b border-gray-200">Compliance Services</h3>
-                              <div className="space-y-3">
-                                <a href="#" className="block text-gray-600 text-sm py-1" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Country by Country Reporting (CBCR)</a>
-                                <a href="#" className="block text-gray-600 text-sm py-1" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Ultimate Beneficial Ownership(UBO)</a>
-                                <a href="#" className="block text-gray-600 text-sm py-1" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Anti Money Laundering</a>
-                              </div>
-                            </div>
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-64 bg-white rounded-lg shadow-xl border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <div className="p-4">
+                          <div className="space-y-2">
+                            <Link href="#" className="block text-gray-600 text-sm py-2 hover:text-[#E76524] transition-colors">Value Added Tax (VAT)</Link>
+                            <Link href="#" className="block text-gray-600 text-sm py-2 hover:text-[#E76524] transition-colors">UAE Corporate Tax</Link>
+                            <Link href="#" className="block text-gray-600 text-sm py-2 hover:text-[#E76524] transition-colors">Excise Tax</Link>
+                            <Link href="#" className="block text-gray-600 text-sm py-2 hover:text-[#E76524] transition-colors">Transfer Pricing</Link>
+                            <Link href="#" className="block text-gray-600 text-sm py-2 hover:text-[#E76524] transition-colors">Country by Country Reporting (CBCR)</Link>
+                            <Link href="#" className="block text-gray-600 text-sm py-2 hover:text-[#E76524] transition-colors">Ultimate Beneficial Ownership (UBO)</Link>
+                            <Link href="#" className="block text-gray-600 text-sm py-2 hover:text-[#E76524] transition-colors">Anti Money Laundering</Link>
                           </div>
                         </div>
                       </div>
@@ -425,7 +361,7 @@ const Header = () => {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40" onClick={toggleMobileMenu}></div>
+        <div className="lg:hidden fixed inset-0 bg-[#231F20] bg-opacity-50 z-40" onClick={toggleMobileMenu}></div>
       )}
 
       {/* Mobile Menu */}
@@ -446,24 +382,24 @@ const Header = () => {
             {navigationItems.map((item, index) => (
               <div key={index}>
                 <div className="flex items-center justify-between">
-                  <a 
+                  <Link 
                     href={item.href}
                     className={`flex-1 py-3 px-4 rounded-lg transition-colors duration-200 ${
                       item.active 
                         ? 'font-medium'
-                        : 'text-gray-700 hover:bg-gray-50'
+                        : 'text-gray-700 hover:bg-gray-100'
                     }`}
                     style={item.active ? { backgroundColor: '#fff5f0', color: '#E76524' } : {}}
                     onClick={!item.hasDropdown ? toggleMobileMenu : undefined}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                   {item.hasDropdown && (
                     <button 
                       onClick={() => toggleMobileDropdown(item.name)}
                       className="p-2 hover:bg-gray-100 rounded-md"
                     >
-                      <ChevronDown className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${
+                      <ChevronDown className={`w-4 h-4 text-gray-1000 transition-transform duration-200 ${
                         openMobileDropdown === item.name ? 'rotate-180' : ''
                       }`} />
                     </button>
@@ -472,51 +408,48 @@ const Header = () => {
 
                 {/* Mobile Dropdown Content */}
                 {item.hasDropdown && openMobileDropdown === item.name && (
-                  <div className="ml-4 mt-2 space-y-2">
+                  <div className="ml-4 mt-2 space-y-1">
                     {item.name === 'Services' && (
-                      <div className="space-y-3">
+                      <>
                         <div>
-                          <h4 className="text-sm font-semibold text-gray-900 mb-2">Audit & Assurance</h4>
-                          <div className="space-y-1 ml-2">
-                            <a href="#" className="block text-sm text-gray-600 py-1" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>External Audit</a>
-                            <a href="#" className="block text-sm text-gray-600 py-1" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Internal Audit</a>
-                            <a href="#" className="block text-sm text-gray-600 py-1" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>IFRS Advisory</a>
-                            <a href="#" className="block text-sm text-gray-600 py-1" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Custom Audit</a>
-                            <a href="#" className="block text-sm text-gray-600 py-1" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Investigation Audit</a>
+                          <div className="flex items-center justify-between">
+                            <div className="block text-sm text-gray-600 py-2">Audit and Assurance</div>
+                            <button 
+                              onClick={() => toggleMobileSubmenu('audit')}
+                              className="p-1 hover:bg-gray-100 rounded-md"
+                            >
+                              <ChevronDown className={`w-3 h-3 text-gray-600 transition-transform duration-200 ${
+                                openMobileSubmenu === 'audit' ? 'rotate-180' : ''
+                              }`} />
+                            </button>
                           </div>
+                          {openMobileSubmenu === 'audit' && (
+                            <div className="ml-4 mt-1 space-y-1">
+                              <Link href="externalaudit" className="block text-sm text-gray-600 py-2 hover:text-[#E76524] transition-colors" onClick={toggleMobileMenu}>External Audit</Link>
+                              <Link href="#" className="block text-sm text-gray-600 py-2 hover:text-[#E76524] transition-colors" onClick={toggleMobileMenu}>Internal Audit</Link>
+                              <Link href="#" className="block text-sm text-gray-600 py-2 hover:text-[#E76524] transition-colors" onClick={toggleMobileMenu}>IFRS Advisory</Link>
+                              <Link href="#" className="block text-sm text-gray-600 py-2 hover:text-[#E76524] transition-colors" onClick={toggleMobileMenu}>Custom Audit</Link>
+                              <Link href="#" className="block text-sm text-gray-600 py-2 hover:text-[#E76524] transition-colors" onClick={toggleMobileMenu}>Investigation Audit</Link>
+                            </div>
+                          )}
                         </div>
-                        <div>
-                          <h4 className="text-sm font-semibold text-gray-900 mb-2">Business Services</h4>
-                          <div className="space-y-1 ml-2">
-                            <a href="#" className="block text-sm text-gray-600 py-1 hover:text-green-600">Accounting Services</a>
-                            <a href="#" className="block text-sm text-gray-600 py-1 hover:text-green-600">Management Consultancy</a>
-                            <a href="#" className="block text-sm text-gray-600 py-1 hover:text-green-600">Corporate Finance</a>
-                            <a href="#" className="block text-sm text-gray-600 py-1 hover:text-green-600">Company Formation</a>
-                          </div>
-                        </div>
-                      </div>
+                        <Link href="#" className="block text-sm text-gray-600 py-2 hover:text-[#E76524] transition-colors" onClick={toggleMobileMenu}>Accounting Services</Link>
+                        <Link href="#" className="block text-sm text-gray-600 py-2 hover:text-[#E76524] transition-colors" onClick={toggleMobileMenu}>Management Consultancy</Link>
+                        <Link href="#" className="block text-sm text-gray-600 py-2 hover:text-[#E76524] transition-colors" onClick={toggleMobileMenu}>Corporate Finance</Link>
+                        <Link href="#" className="block text-sm text-gray-600 py-2 hover:text-[#E76524] transition-colors" onClick={toggleMobileMenu}>Company Formation</Link>
+                      </>
                     )}
 
                     {item.name === 'Taxation' && (
-                      <div className="space-y-3">
-                        <div>
-                          <h4 className="text-sm font-semibold text-gray-900 mb-2">Tax Services</h4>
-                          <div className="space-y-1 ml-2">
-                            <a href="#" className="block text-sm text-gray-600 py-1" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Value Added Tax (VAT)</a>
-                            <a href="#" className="block text-sm text-gray-600 py-1" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>UAE Corporate Tax</a>
-                            <a href="#" className="block text-sm text-gray-600 py-1" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Excise Tax</a>
-                            <a href="#" className="block text-sm text-gray-600 py-1" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Transfer Pricing</a>
-                          </div>
-                        </div>
-                        <div>
-                          <h4 className="text-sm font-semibold text-gray-900 mb-2">Compliance Services</h4>
-                          <div className="space-y-1 ml-2">
-                            <a href="#" className="block text-sm text-gray-600 py-1" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Country by Country Reporting (CBCR)</a>
-                            <a href="#" className="block text-sm text-gray-600 py-1" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Ultimate Beneficial Ownership(UBO)</a>
-                            <a href="#" className="block text-sm text-gray-600 py-1" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Anti Money Laundering</a>
-                          </div>
-                        </div>
-                      </div>
+                      <>
+                        <Link href="#" className="block text-sm text-gray-600 py-2 hover:text-[#E76524] transition-colors" onClick={toggleMobileMenu}>Value Added Tax (VAT)</Link>
+                        <Link href="#" className="block text-sm text-gray-600 py-2 hover:text-[#E76524] transition-colors" onClick={toggleMobileMenu}>UAE Corporate Tax</Link>
+                        <Link href="#" className="block text-sm text-gray-600 py-2 hover:text-[#E76524] transition-colors" onClick={toggleMobileMenu}>Excise Tax</Link>
+                        <Link href="#" className="block text-sm text-gray-600 py-2 hover:text-[#E76524] transition-colors" onClick={toggleMobileMenu}>Transfer Pricing</Link>
+                        <Link href="#" className="block text-sm text-gray-600 py-2 hover:text-[#E76524] transition-colors" onClick={toggleMobileMenu}>Country by Country Reporting (CBCR)</Link>
+                        <Link href="#" className="block text-sm text-gray-600 py-2 hover:text-[#E76524] transition-colors" onClick={toggleMobileMenu}>Ultimate Beneficial Ownership (UBO)</Link>
+                        <Link href="#" className="block text-sm text-gray-600 py-2 hover:text-[#E76524] transition-colors" onClick={toggleMobileMenu}>Anti Money Laundering</Link>
+                      </>
                     )}
                   </div>
                 )}
@@ -555,10 +488,10 @@ const Header = () => {
 
             {/* Mobile Social Icons */}
             <div className="flex items-center space-x-4 mt-4">
-              <Facebook className="w-5 h-5 text-gray-500 cursor-pointer" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''} />
+              <Facebook className="w-5 h-5 text-gray-1000 cursor-pointer" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''} />
               <div className="w-5 h-5 bg-pink-500 rounded cursor-pointer"></div>
-              <Twitter className="w-5 h-5 text-gray-500 cursor-pointer" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''} />
-              <Instagram className="w-5 h-5 text-gray-500 hover:text-pink-600 cursor-pointer" />
+              <Twitter className="w-5 h-5 text-gray-1000 cursor-pointer" onMouseEnter={(e) => e.currentTarget.style.color = '#E76524'} onMouseLeave={(e) => e.currentTarget.style.color = ''} />
+              <Instagram className="w-5 h-5 text-gray-1000 hover:text-pink-600 cursor-pointer" />
             </div>
           </div>
         </div>
@@ -569,7 +502,7 @@ const Header = () => {
         <>
           {/* Modal Backdrop */}
           <div 
-            className="fixed inset-0 bg-black bg-opacity-50 z-[100] transition-opacity duration-300 "
+            className="fixed inset-0 bg-[#231F20] bg-opacity-50 z-[100] transition-opacity duration-300 "
             onClick={closeConsultationModal}
           ></div>
           
@@ -714,7 +647,7 @@ const Header = () => {
                     <button
                       type="button"
                       onClick={closeConsultationModal}
-                      className="px-6 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition-colors duration-200"
+                      className="px-6 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-100 transition-colors duration-200"
                     >
                       Cancel
                     </button>

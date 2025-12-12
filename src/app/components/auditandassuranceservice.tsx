@@ -5,6 +5,7 @@ import zzzz5Gif from '../../app/images/zzzz5.gif';
 import zzzz2Gif from '../../app/images/zzzz2.gif';
 import zzzz1Gif from '../../app/images/zzzz1.gif';
 import zzzzGif from '../../app/images/zzzz.gif';
+import zzzz5Gif1 from '../../app/images/zzzz5.gif';
 
 const AIAgentCustomization = () => {
   const [activeSection, setActiveSection] = useState(0);
@@ -13,88 +14,149 @@ const AIAgentCustomization = () => {
   const sections = [
     {
       id: 0,
-      title: "Proactive Security and Monitoring",
+      title: "External Audit Services in UAE",
       description: (
         <div>
-         
+          <p className="mb-4 text-[15px] md:text-[16px] text-gray-800">
+            An external audit ensures your financial statements are true, fair, and compliant with UAE and international standards.
+          </p>
+          <p className="mb-2 text-[17px] font-normal text-neutral-800 md:text-[20px]">
+            <strong>Our external audit services include:</strong>
+          </p>
           <ul className="list-disc list-inside space-y-2">
             <li className="text-[15px] md:text-[16px] text-gray-800">
-            We provide continuous threat detection and real-time security event analysis.</li>
-            <li className="text-[15px] md:text-[16px] text-gray-800"> Our proactive incident response capabilities ensure robust defense mechanisms are maintained across your entire IT environment.
-            
+              Verifying financial statements according to IFRS and applicable laws.
             </li>
-           
-           
+            <li className="text-[15px] md:text-[16px] text-gray-800">
+              Ensuring accuracy and transparency in financial reporting.
+            </li>
+            <li className="text-[15px] md:text-[16px] text-gray-800">
+              Evaluating internal systems and financial controls.
+            </li>
+            <li className="text-[15px] md:text-[16px] text-gray-800">
+              Providing assurance to stakeholders, investors, and regulators.
+            </li>
+            <li className="text-[15px] md:text-[16px] text-gray-800">
+              Delivering performance analysis reports for better management decisions.
+            </li>
           </ul>
-         
-         
+          <p className="mt-4 text-[15px] md:text-[16px] text-gray-800 font-medium">
+            Build trust with transparent and compliant financial reports.
+          </p>
         </div>
       ),
       image: zzzz5Gif
     },
     {
       id: 1,
-      title: "Advanced Antivirus and Anti-Malware Management",
+      title: "Internal Audit Services",
       description: (
         <div>
-          {/* <p className="mb-2 text-[17px] font-normal text-neutral-900 md:text-[30px] ">
-            <strong></strong>
-          </p> */}
+          <p className="mb-4 text-[15px] md:text-[16px] text-gray-800">
+            Our internal audit services in UAE help organizations enhance governance, manage risks, and strengthen internal processes.
+          </p>
+          <p className="mb-2 text-[17px] font-normal text-neutral-800 md:text-[20px]">
+            <strong>We assist you with:</strong>
+          </p>
           <ul className="list-disc list-inside space-y-2">
             <li className="text-[15px] md:text-[16px] text-gray-800">
-            Our program implements multi-layered protection strategies using advanced threat detection technologies.
+              Reviewing operational, compliance, and financial processes.
             </li>
-            <li className="text-[15px] md:text-[16px] text-gray-800"> We use automated response systems to identify, quarantine, and eliminate malicious software before it can compromise your systems. 
-              </li>
-              <li className="text-[15px] md:text-[16px] text-gray-800"> maintain current threat intelligence databases and deploy signature updates across all endpoints to protect against known and emerging threats.
+            <li className="text-[15px] md:text-[16px] text-gray-800">
+              Evaluating internal controls to prevent fraud and inefficiency.
             </li>
-           
-           
+            <li className="text-[15px] md:text-[16px] text-gray-800">
+              Identifying and mitigating business risks.
+            </li>
+            <li className="text-[15px] md:text-[16px] text-gray-800">
+              Ensuring adherence to company policies and legal requirements.
+            </li>
+            <li className="text-[15px] md:text-[16px] text-gray-800">
+              Providing actionable recommendations to improve performance.
+            </li>
           </ul>
+          <p className="mt-4 text-[15px] md:text-[16px] text-gray-800 font-medium">
+            Our goal is to help you run your business with confidence, control, and compliance.
+          </p>
         </div>
       ),
       image: zzzz2Gif
     },
     {
       id: 2,
-      title: "Systematic Security Patch Management",
+      title: "IFRS Advisory Services",
       description: (
-        <div className="max-"> 
-          <p className="mb-2 text-[17px] font-normal text-neutral-800 md:text-[30px] ">
-            <strong>Systematic Security Patch Management</strong>
+        <div>
+          <p className="mb-4 text-[15px] md:text-[16px] text-gray-800">
+            Stay ahead of ever-changing accounting standards with our IFRS advisory services in UAE. Our experts guide you through the latest International Financial Reporting Standards and help ensure your organization's smooth transition.
+          </p>
+          <p className="mb-2 text-[17px] font-normal text-neutral-800 md:text-[20px]">
+            <strong>Our IFRS services include:</strong>
           </p>
           <ul className="list-disc list-inside space-y-2">
             <li className="text-[15px] md:text-[16px] text-gray-800">
-            We ensure all critical security updates are evaluated, tested, and deployed in a timely manner. 
-          </li>
-            <li className="text-[15px] md:text-[16px] text-gray-800"> Our process addresses vulnerabilities across operating systems, applications, and network infrastructure components.
-               </li>
-              <li className="text-[15px] md:text-[16px] text-gray-800">  We use comprehensive testing protocols to minimize operational disruption while maintaining security integrity. </li>
-           
-           
+              Customized IFRS training and workshops.
+            </li>
+            <li className="text-[15px] md:text-[16px] text-gray-800">
+              Guidance on implementation and compliance.
+            </li>
+            <li className="text-[15px] md:text-[16px] text-gray-800">
+              Advisory support during transitions or audits.
+            </li>
           </ul>
+          <p className="mt-4 text-[15px] md:text-[16px] text-gray-800 font-medium">
+            Stay compliant, transparent, and globally aligned with our IFRS expertise.
+          </p>
         </div>
       ),
       image: zzzz1Gif
     },
     {
       id: 3,
-      title: "Advanced Firewall Management",
+      title: "Custom Audit Solutions",
       description: (
         <div>
-          {/* <p className="mb-2 text-[17px] font-normal text-neutral-900 md:text-[30px] ">
-            <strong>Advanced Firewall Management</strong>
-          </p> */}
+          <p className="mb-4 text-[15px] md:text-[16px] text-gray-800">
+            Every business is unique and so are its audit needs. Our custom audit services are designed to give you a deeper understanding of your business processes and financial systems.
+          </p>
+          <p className="mb-2 text-[17px] font-normal text-neutral-800 md:text-[20px]">
+            <strong>We specialize in:</strong>
+          </p>
           <ul className="list-disc list-inside space-y-2">
-            <li className="text-[15px] md:text-[16px] text-gray-800"> Our services include the configuration, monitoring, and maintenance of your network security perimeters. </li>
-            <li className="text-[15px] md:text-[16px] text-gray-800"> We implement rule-based access controls and intrusion detection and prevention systems. </li>
-           
-            <li className="text-[15px] md:text-[16px] text-gray-800"> Our continuous monitoring protocols establish secure network boundaries to prevent unauthorized access while enabling legitimate data flow.  </li>
-             
+            <li className="text-[15px] md:text-[16px] text-gray-800">
+              Operating and accounting systems reviews.
+            </li>
+            <li className="text-[15px] md:text-[16px] text-gray-800">
+              Enterprise risk management assessments.
+            </li>
+            <li className="text-[15px] md:text-[16px] text-gray-800">
+              Business process audits and performance benchmarking.
+            </li>
+            <li className="text-[15px] md:text-[16px] text-gray-800">
+              Recommendations to enhance efficiency and compliance.
+            </li>
           </ul>
+          <p className="mt-4 text-[15px] md:text-[16px] text-gray-800 font-medium">
+            We tailor every audit to strengthen your operations and help you make informed decisions.
+          </p>
         </div>
       ),
       image: zzzzGif
+    },
+    {
+      id: 4,
+      title: "Investigation Audit",
+      description: (
+        <div>
+          <p className="mb-4 text-[15px] md:text-[16px] text-gray-800">
+            Our investigation audit services provide detailed financial analysis to uncover irregularities, fraud, or mismanagement.
+          </p>
+          <p className="text-[15px] md:text-[16px] text-gray-800">
+            We use advanced audit techniques and deep industry knowledge to find facts and deliver actionable insights.
+          </p>
+        </div>
+      ),
+      image: zzzz5Gif1
     }
   ];
 

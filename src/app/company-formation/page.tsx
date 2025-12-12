@@ -1,11 +1,8 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { FileCheck, Shield, TrendingUp, Users, CheckCircle, ArrowRight, Phone, Mail, MapPin, BarChart, ClipboardList, Target, Award, Clock, Globe } from 'lucide-react';
-import banner2 from '@/app/images/b1.png';
-import banner3 from '@/app/images/b.png';
-import ServicesScrollBar from '../components/auditandassuranceservicesscrollbar';
+import { Building2, FileCheck, TrendingUp, Users, CheckCircle, ArrowRight, Phone, Mail, MapPin, Briefcase, Globe, Award, Clock, Shield, Zap } from 'lucide-react';
 
-const AuditAndAssurancePage = () => {
+const CompanyFormationPage = () => {
   const [isVisible, setIsVisible] = useState<{
     hero?: boolean;
     about?: boolean;
@@ -41,10 +38,8 @@ const AuditAndAssurancePage = () => {
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    // Remove any non-digit characters
     const digitsOnly = value.replace(/\D/g, '');
     
-    // Limit to 10 digits
     if (digitsOnly.length <= 10) {
       setPhone(digitsOnly);
       if (digitsOnly.length === 10) {
@@ -65,92 +60,92 @@ const AuditAndAssurancePage = () => {
     }
   };
 
-  const auditServices = [
+  const formationServices = [
+    {
+      icon: Building2,
+      title: "Company Registration",
+      description: "Complete company registration services in UAE including mainland, free zone, and offshore company formation with all necessary documentation.",
+      color: "from-[#E76524] to-[#d1551a]"
+    },
     {
       icon: FileCheck,
-      title: "Financial Statement Audit",
-      description: "Comprehensive examination of your financial statements to ensure accuracy, compliance, and transparency in financial reporting.",
+      title: "License Application",
+      description: "Assistance with obtaining business licenses, trade licenses, and professional licenses from relevant authorities in UAE.",
+      color: "from-green-500 to-emerald-500"
+    },
+    {
+      icon: Briefcase,
+      title: "Visa Processing",
+      description: "Comprehensive visa processing services for company owners, partners, and employees including residence visas and work permits.",
+      color: "from-purple-500 to-indigo-500"
+    },
+    {
+      icon: Globe,
+      title: "Free Zone Setup",
+      description: "Expert guidance on free zone company formation with benefits including 100% foreign ownership and tax advantages.",
       color: "from-[#E76524] to-[#d1551a]"
     },
     {
       icon: Shield,
-      title: "Compliance Audit",
-      description: "Verify adherence to regulatory requirements, industry standards, and internal policies to maintain legal compliance.",
-      color: "from-green-500 to-emerald-500"
-    },
-    {
-      icon: BarChart,
-      title: "Performance Audit",
-      description: "Evaluate operational efficiency, effectiveness, and economy of your business processes and resource utilization.",
-      color: "from-purple-500 to-indigo-500"
-    },
-    {
-      icon: ClipboardList,
-      title: "Internal Controls Assessment",
-      description: "Review and assess the effectiveness of internal control systems to identify risks and improvement opportunities.",
-      color: "from-[#E76524] to-[#d1551a]"
-    },
-    {
-      icon: Target,
-      title: "Risk-Based Audit",
-      description: "Focus on high-risk areas with strategic audit planning to provide maximum value and insight.",
+      title: "Compliance & Documentation",
+      description: "Complete documentation services including MOA, AOA, shareholder agreements, and ongoing compliance support.",
       color: "from-teal-500 to-cyan-500"
     },
     {
-      icon: Award,
-      title: "Special Purpose Audit",
-      description: "Tailored audit services for specific requirements including due diligence, forensic audits, and regulatory compliance.",
+      icon: Zap,
+      title: "Post-Incorporation Services",
+      description: "Ongoing support after company formation including bank account opening, accounting setup, and regulatory compliance.",
       color: "from-pink-500 to-rose-500"
     }
   ];
 
-  const auditProcess = [
+  const formationProcess = [
     {
       step: 1,
-      title: "Planning & Risk Assessment",
-      description: "We begin by understanding your business, identifying key risk areas, and developing a comprehensive audit plan tailored to your organization.",
-      icon: Target
+      title: "Consultation & Planning",
+      description: "We begin by understanding your business goals, structure preferences, and requirements to recommend the best company formation option.",
+      icon: Briefcase
     },
     {
       step: 2,
-      title: "Fieldwork & Testing",
-      description: "Our experienced auditors conduct detailed testing of transactions, controls, and balances to gather sufficient audit evidence.",
+      title: "Documentation & Application",
+      description: "We prepare and submit all required documents, applications, and forms to the relevant authorities for company registration.",
       icon: FileCheck
     },
     {
       step: 3,
-      title: "Analysis & Evaluation",
-      description: "We analyze findings, evaluate internal controls, and assess compliance with applicable standards and regulations.",
-      icon: BarChart
+      title: "Approval & Registration",
+      description: "We track your application, coordinate with authorities, and ensure timely approval and completion of registration process.",
+      icon: CheckCircle
     },
     {
       step: 4,
-      title: "Reporting & Recommendations",
-      description: "We provide clear, actionable audit reports with recommendations to help improve your business processes and controls.",
-      icon: ClipboardList
+      title: "Post-Setup Support",
+      description: "We provide ongoing support including bank account setup, visa processing, and compliance guidance to get your business operational.",
+      icon: Building2
     }
   ];
 
   const benefits = [
     {
-      icon: Shield,
-      title: "Enhanced Credibility",
-      description: "Independent audit opinions enhance stakeholder confidence and credibility in your financial reporting."
+      icon: Zap,
+      title: "Fast & Efficient",
+      description: "Streamlined company formation process with expert guidance to get your business registered quickly and efficiently."
     },
     {
-      icon: TrendingUp,
-      title: "Improved Operations",
-      description: "Identify inefficiencies and opportunities for improvement in your business processes and controls."
+      icon: Shield,
+      title: "Compliance Guaranteed",
+      description: "Ensure full compliance with UAE regulations and legal requirements throughout the company formation process."
     },
     {
       icon: Users,
-      title: "Expert Insights",
-      description: "Gain valuable insights from experienced auditors with deep industry knowledge and best practices."
+      title: "Expert Guidance",
+      description: "Work with experienced professionals who understand UAE business regulations and can guide you through every step."
     },
     {
-      icon: CheckCircle,
-      title: "Regulatory Compliance",
-      description: "Ensure compliance with applicable laws, regulations, and accounting standards relevant to your industry."
+      icon: Award,
+      title: "Comprehensive Support",
+      description: "End-to-end support from initial consultation to post-incorporation services to ensure your business is set up correctly."
     }
   ];
 
@@ -171,15 +166,15 @@ const AuditAndAssurancePage = () => {
         }`}>
          
           <h1 className="text-5xl md:text-7xl font-bold md-4 mt-16" style={{ color: '#E76524' }}>
-            Audit and Assurance Services
+            Company Formation Services
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-300 leading-relaxed">
-            Comprehensive audit and assurance services to ensure accuracy, compliance, and transparency in your financial reporting and business operations
+            Expert company formation services in UAE to help you establish your business quickly, efficiently, and in full compliance with local regulations
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="group px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg" style={{ background: 'linear-gradient(to right, #E76524, #d1551a)' }} onMouseEnter={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #d1551a, #b84a15)'} onMouseLeave={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #E76524, #d1551a)'}>
               <span className="flex items-center justify-center">
-                Get Audit and Assurance Consultation
+                Get Company Formation Consultation
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
             </button>
@@ -189,12 +184,74 @@ const AuditAndAssurancePage = () => {
           </div>
         </div>
       </section>
-      <ServicesScrollBar/>
 
-      
+      {/* Services Section */}
+      <section id="services" className="py-20" style={{ backgroundColor: '#231F20' }}>
+        <div className="max-w-6xl mx-auto px-6">
+          <div className={`transform transition-all duration-1000 ${
+            isVisible.services ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+          }`}>
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-4" style={{ color: '#E76524' }}>
+              Our Company Formation Services
+            </h2>
+            <p className="text-center text-gray-300 mb-16 text-lg">
+              Comprehensive company formation solutions for businesses of all sizes
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {formationServices.map((service, index) => {
+                const Icon = service.icon;
+                return (
+                  <div key={index} className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700 hover:border-[#E76524] transition-all duration-300 transform hover:scale-105">
+                    <div className={`w-16 h-16 rounded-lg bg-gradient-to-br ${service.color} flex items-center justify-center mb-4`}>
+                      <Icon className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-3" style={{ color: '#E76524' }}>
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-300 text-sm leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
 
-      
-    
+      {/* Process Section */}
+      <section id="process" className="py-20" style={{ backgroundColor: '#1a1718' }}>
+        <div className="max-w-6xl mx-auto px-6">
+          <div className={`transform transition-all duration-1000 ${
+            isVisible.process ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+          }`}>
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16" style={{ color: '#E76524' }}>
+              Our Company Formation Process
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {formationProcess.map((step, index) => {
+                const Icon = step.icon;
+                return (
+                  <div key={index} className="text-center">
+                    <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 bg-gradient-to-br from-[#E76524] to-[#d1551a]">
+                      <Icon className="w-10 h-10 text-white" />
+                    </div>
+                    <div className="text-3xl font-bold mb-2" style={{ color: '#E76524' }}>
+                      {step.step}
+                    </div>
+                    <h3 className="text-xl font-bold mb-4">
+                      {step.title}
+                    </h3>
+                    <p className="text-gray-300 text-sm leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Key Benefits */}
       <section id="benefits" className="py-20" style={{ backgroundColor: '#231F20' }}>
@@ -203,7 +260,7 @@ const AuditAndAssurancePage = () => {
             isVisible.benefits ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
           }`}>
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-16" style={{ color: '#E76524' }}>
-              Why Choose Our Audit and Assurance Services?
+              Why Choose Our Company Formation Services?
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {benefits.map((benefit, index) => {
@@ -227,7 +284,6 @@ const AuditAndAssurancePage = () => {
         </div>
       </section>
 
-    
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-[#231F20]">
         <div className="max-w-6xl mx-auto px-6">
@@ -240,10 +296,10 @@ const AuditAndAssurancePage = () => {
             <div className="bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl p-8 border border-gray-600">
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="text-2xl font-bold mb-6" style={{ color: '#E76524' }}>Schedule Your Audit and Assurance Consultation</h3>
+                  <h3 className="text-2xl font-bold mb-6" style={{ color: '#E76524' }}>Schedule Your Company Formation Consultation</h3>
                   <p className="text-gray-300 mb-6 leading-relaxed">
-                    Our audit and assurance experts will assess your requirements and provide a comprehensive plan 
-                    tailored to your organization's needs. Contact us today to discuss your audit and assurance requirements.
+                    Our company formation experts will assess your requirements and provide a comprehensive plan 
+                    tailored to your business needs. Contact us today to discuss your company formation requirements.
                   </p>
                   <div className="space-y-4">
                     <div className="flex items-center">
@@ -310,7 +366,7 @@ const AuditAndAssurancePage = () => {
                     </div>
                     <textarea
                       name="message"
-                      placeholder="Tell us about your audit and assurance requirements..."
+                      placeholder="Tell us about your company formation requirements..."
                       rows={4}
                       className="w-full px-4 py-3 rounded-md border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E76524]"
                      
@@ -323,7 +379,7 @@ const AuditAndAssurancePage = () => {
                       onMouseEnter={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #d1551a, #b84a15)'}
                       onMouseLeave={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #E76524, #d1551a)'}
                     >
-                      Request Audit and Assurance Consultation
+                      Request Company Formation Consultation
                     </button>
                   </form>
                 </div>
@@ -336,5 +392,7 @@ const AuditAndAssurancePage = () => {
   );
 };
 
-export default AuditAndAssurancePage;
+export default CompanyFormationPage;
+
+
 

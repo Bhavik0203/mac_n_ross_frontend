@@ -3,9 +3,11 @@ import React, { useState, useEffect } from 'react';
 import { FileCheck, Shield, TrendingUp, Users, CheckCircle, ArrowRight, Phone, Mail, MapPin, BarChart, ClipboardList, Target, Award, Clock, Globe } from 'lucide-react';
 import banner2 from '@/app/images/b1.png';
 import banner3 from '@/app/images/b.png';
-import ServicesScrollBar from '../components/auditandassuranceservicesscrollbar';
+import ServicesScrollBar from '../../components/auditandassuranceservicesscrollbar';
+import Image from 'next/image';
+import pic from '@/app/images/pics2.jpg';
 
-const AuditAndAssurancePage = () => {
+const InvestigationAuditPage = () => {
   const [isVisible, setIsVisible] = useState<{
     hero?: boolean;
     about?: boolean;
@@ -170,26 +172,184 @@ const AuditAndAssurancePage = () => {
           isVisible.hero ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
         }`}>
          
-          <h1 className="text-5xl md:text-7xl font-bold md-4 mt-16" style={{ color: '#E76524' }}>
-            Audit and Assurance Services
+          <h1 className="text-5xl md:text-7xl font-bold mb-6" style={{ color: '#E76524' }}>
+            Investigation Audit
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-300 leading-relaxed">
-            Comprehensive audit and assurance services to ensure accuracy, compliance, and transparency in your financial reporting and business operations
+            Uncover discrepancies and resolve concerns related to financial irregularities and potential fraud with comprehensive investigation audit services
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="group px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg" style={{ background: 'linear-gradient(to right, #E76524, #d1551a)' }} onMouseEnter={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #d1551a, #b84a15)'} onMouseLeave={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #E76524, #d1551a)'}>
               <span className="flex items-center justify-center">
-                Get Audit and Assurance Consultation
+                Get Investigation Consultation
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
             </button>
-            <button className="border-2 px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105" style={{ borderColor: '#E76524' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#E76524'; e.currentTarget.style.color = '#231F20'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = ''; }}>
-              Learn More
-            </button>
+           
           </div>
         </div>
       </section>
-      <ServicesScrollBar/>
+      
+      <section className="relative w-full py-8  ">
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-0 min-h-[400px] lg:min-h-[550px]">
+      
+    
+      <div
+        className="relative w-full lg:w-[70%] 
+                   lg:absolute lg:left-0 lg:top-1/2 lg:-translate-y-1/2 
+                   z-20 bg-white p-6 sm:p-8 lg:p-12 shadow-xl 
+                   mt-4 lg:mt-0 rounded-lg
+                   order-2 lg:order-1"
+      >
+         <div className="">
+    <p className="text-xs text-[#666666] mb-2 uppercase tracking-widest">
+      Our Approach
+    </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#E76524] mb-6 leading-snug">
+          What We Do
+    </h2>
+    <p className="text-[#666666] mb-8 leading-relaxed ">
+        Our investigation audit services focus on uncovering discrepancies and resolving concerns related to financial irregularities and potential fraud. With extensive industry experience, we thoroughly examine financial records, trace inconsistencies, and evaluate the accuracy of reports to provide management with clear, reliable insights.
+          </p>
+    
+  </div>
+
+      
+       
+      </div>
+
+     
+      <div
+        className="relative w-full lg:w-[50%] 
+                   h-[300px] sm:h-[400px] lg:h-[550px] 
+                   flex-shrink-0 
+                   order-1 lg:order-2 lg:ml-auto"
+      >
+        <div className="block w-full h-full relative">
+          <Image
+            src={pic}
+            alt="Investigation Audit Services"
+            fill
+            className="object-cover rounded-lg"
+            priority
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="overview" className="relative w-full py-8 ">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-0 min-h-[400px] lg:min-h-[550px]">
+              {/* Left Side - Image */}
+              <div className="relative w-full lg:w-[50%] h-[300px] sm:h-[400px] lg:h-[550px] flex-shrink-0 order-1 lg:order-1">
+                <div className="block w-full h-full">
+                  <Image
+                    src={pic}
+                    alt="Investigation Audit Process"
+                    fill
+                    className="object-cover rounded-lg"
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
+              </div>
+
+              {/* Right Side - White Overlay Box */}
+              <div className="relative w-full lg:w-[70%] lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 z-20 bg-white p-6 sm:p-8 lg:p-12 shadow-xl lg:-ml-20 lg:mt-0 mt-4 order-2 lg:order-2 rounded-lg">
+                {/* Main Headline */}
+                <div className="">
+              <h2 className="text-3xl font-bold mb-4 text-[#E76524]">
+               Our Process Includes</h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-1 gap-4 mb-8">
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#E76524' }}></div>
+                  <div>
+                    <p className="text-sm font-semibold text-[#231F20] mb-1">Deep review of accounting and financial documents</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#E76524' }}></div>
+                  <div>
+                    <p className="text-sm font-semibold text-[#231F20] mb-1">Identifying red flags, unusual transactions, or fraudulent activity</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#E76524' }}></div>
+                  <div>
+                    <p className="text-sm font-semibold text-[#231F20] mb-1">Assessing the fairness and validity of claims or internal reports</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#E76524' }}></div>
+                  <div>
+                    <p className="text-sm font-semibold text-[#231F20] mb-1">Presenting findings with clear interpretations for decision-makers</p>
+                  </div>
+                </div>
+              </div>
+
+             
+            </div>
+               
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="relative w-full py-8  ">
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-0 min-h-[400px] lg:min-h-[550px]">
+      
+    
+      <div
+        className="relative w-full lg:w-[70%] 
+                   lg:absolute lg:left-0 lg:top-1/2 lg:-translate-y-1/2 
+                   z-20 bg-white p-6 sm:p-8 lg:p-12 shadow-xl 
+                   mt-4 lg:mt-0 rounded-lg
+                   order-2 lg:order-1"
+      >
+         <div className="">
+    <p className="text-xs text-[#666666] mb-2 uppercase tracking-widest">
+      Our Goal
+    </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#E76524] mb-6 leading-snug">
+          How We Help
+    </h2>
+    <p className="text-[#666666] mb-8 leading-relaxed ">
+        Our goal is to deliver precise and meaningful conclusions that support your organization in addressing issues effectively and strengthening internal integrity.
+          </p>
+    <button className="bg-white border cursor-pointer border-[#E76524] text-[#E76524] px-6 py-3 rounded-full font-semibold hover:bg-[#E76524] hover:text-white transition-colors">
+      Contact Us
+    </button>
+  </div>
+
+      
+       
+      </div>
+
+     
+      <div
+        className="relative w-full lg:w-[50%] 
+                   h-[300px] sm:h-[400px] lg:h-[550px] 
+                   flex-shrink-0 
+                   order-1 lg:order-2 lg:ml-auto"
+      >
+        <div className="block w-full h-full relative">
+          <Image
+            src={pic}
+            alt="How We Help"
+            fill
+            className="object-cover rounded-lg"
+            priority
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       
 
@@ -197,13 +357,13 @@ const AuditAndAssurancePage = () => {
     
 
       {/* Key Benefits */}
-      <section id="benefits" className="py-20" style={{ backgroundColor: '#231F20' }}>
+      <section id="benefits" className="py-20 bg-gray-900">
         <div className="max-w-6xl mx-auto px-6">
           <div className={`transform transition-all duration-1000 ${
             isVisible.benefits ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
           }`}>
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-16" style={{ color: '#E76524' }}>
-              Why Choose Our Audit and Assurance Services?
+              Why Choose Our Investigation Audit Services?
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {benefits.map((benefit, index) => {
@@ -229,7 +389,7 @@ const AuditAndAssurancePage = () => {
 
     
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-[#231F20]">
+      <section id="contact" className="py-20 bg-gray-800">
         <div className="max-w-6xl mx-auto px-6">
           <div className={`transform transition-all duration-1000 ${
             isVisible.contact ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
@@ -240,14 +400,14 @@ const AuditAndAssurancePage = () => {
             <div className="bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl p-8 border border-gray-600">
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="text-2xl font-bold mb-6" style={{ color: '#E76524' }}>Schedule Your Audit and Assurance Consultation</h3>
+                  <h3 className="text-2xl font-bold mb-6" style={{ color: '#E76524' }}>Schedule Your Investigation</h3>
                   <p className="text-gray-300 mb-6 leading-relaxed">
-                    Our audit and assurance experts will assess your requirements and provide a comprehensive plan 
-                    tailored to your organization's needs. Contact us today to discuss your audit and assurance requirements.
+                    Our investigation audit experts will assess your requirements and provide a comprehensive investigation plan 
+                    tailored to your organization's needs. Contact us today to discuss your investigation audit requirements.
                   </p>
                   <div className="space-y-4">
                     <div className="flex items-center">
-                      <Phone className="w-5 h-5 mr-3" style={{ color: '#E76524' }} />
+                      <Phone className="w-5 h-5 text-blue-400 mr-3" />
                       <span className="text-gray-300">+971-4-3584999</span>
                     </div>
                     <div className="flex items-center">
@@ -266,14 +426,14 @@ const AuditAndAssurancePage = () => {
                 </div>
 
                 {/* Form Section */}
-                <div className="rounded-xl p-6 backdrop-blur-sm bg-white" >
+                <div className="rounded-xl p-6 backdrop-blur-sm" style={{ background: 'linear-gradient(to bottom right, rgba(231, 101, 36, 0.2), rgba(231, 101, 36, 0.2))' }}>
                   <form className="space-y-4">
                     <input
                       type="text"
                       name="name"
                       placeholder="Your Name"
                       className="w-full px-4 py-3 rounded-md border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E76524]"
-                     
+                      style={{ backgroundColor: '#231F20' }}
                       required
                     />
                     <input
@@ -281,7 +441,7 @@ const AuditAndAssurancePage = () => {
                       name="email"
                       placeholder="Your Email"
                       className="w-full px-4 py-3 rounded-md border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E76524]"
-                     
+                      style={{ backgroundColor: '#231F20' }}
                       required
                     />
                     <div>
@@ -292,7 +452,7 @@ const AuditAndAssurancePage = () => {
                         value={phone}
                         onChange={handlePhoneChange}
                         onBlur={handlePhoneBlur}
-                        className={`w-full px-4 py-3 rounded-md border text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E76524] ${
+                        className={`w-full px-4 py-3 rounded-md bg-gray-900 border text-white placeholder-gray-400 focus:outline-none focus:ring-2 ${
                           phoneError 
                             ? 'border-red-500 focus:ring-red-500' 
                             : 'border-gray-700 focus:ring-[#E76524]'
@@ -310,10 +470,10 @@ const AuditAndAssurancePage = () => {
                     </div>
                     <textarea
                       name="message"
-                      placeholder="Tell us about your audit and assurance requirements..."
+                      placeholder="Tell us about your investigation audit requirements..."
                       rows={4}
                       className="w-full px-4 py-3 rounded-md border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E76524]"
-                     
+                      style={{ backgroundColor: '#231F20' }}
                       required
                     ></textarea>
                     <button
@@ -323,7 +483,7 @@ const AuditAndAssurancePage = () => {
                       onMouseEnter={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #d1551a, #b84a15)'}
                       onMouseLeave={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #E76524, #d1551a)'}
                     >
-                      Request Audit and Assurance Consultation
+                      Request Investigation Consultation
                     </button>
                   </form>
                 </div>
@@ -336,5 +496,5 @@ const AuditAndAssurancePage = () => {
   );
 };
 
-export default AuditAndAssurancePage;
+export default InvestigationAuditPage;
 

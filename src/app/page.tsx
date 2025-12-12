@@ -549,7 +549,7 @@ export default function Home() {
               <div className="relative w-full lg:w-[70%] lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 z-20 bg-white p-6 sm:p-8 lg:p-12 shadow-xl lg:-ml-20 lg:mt-0 mt-4 order-2 lg:order-2 rounded-lg">
                 {/* Main Headline */}
                 <div className="">
-              <h2 className="text-3xl font-bold mb-4">
+              <h2 className="text-3xl font-bold mb-4 text-[#E76524]">
                Why Choose Mac & Ross</h2>
               <p className="text-[#666666] mb-8">
                 Global standards meets local expertise for clear, compliant, and growth-ready finances.
